@@ -88,7 +88,7 @@
     <div class="main-feedback-container">
         <div class="feedback-container">
             <div class="feedback-container-form">
-                <h1 class="feedback-main-text">Оставить обращение</h1>
+                <h1 class="feedback-main-text" id="t1">Оставить обращение</h1>
                 <form class="feedback-form">
                     <input type="text" class="feedback-form-input" placeholder="ФИО"/>
                     <input type="text" class="feedback-form-input" placeholder="Email"/>

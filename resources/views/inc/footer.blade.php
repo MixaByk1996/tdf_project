@@ -12,7 +12,7 @@
                 <a href="/" class="footer-menu-item-url">Каталог</a>
             </li>
             <li class="footer-menu-item">
-                <a href="/" class="footer-menu-item-url">Оставить заявку</a>
+                <a href="#t1" class="footer-menu-item-url">Оставить заявку</a>
             </li>
             <li class="footer-menu-item">
                 <a href="/" class="footer-menu-item-url">Контакты</a>
@@ -37,7 +37,7 @@
                     <a href="/" class="footer-contacts-item">
                         <img src="/img/tg-footer.png"/>
                     </a>
-                </div> 
+                </div>
             </div>
             <a href="/" class="politic-text">Политика конфиденциальности</a>
         </div>
