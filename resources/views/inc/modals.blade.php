@@ -11,13 +11,13 @@
                         <input class="register-input-small" name="emailreg" placeholder="Email"/>
                         <input class="register-input-small" name="phonereg" placeholder="Номер телефона"/>
                     </div>
-                    <input class="register-input" name="passreg" placeholder="Пароль"/>
-                    <input class="register-input" name="passrepreg" placeholder="Подтверждение пароля"/>
+                    <input class="register-input" name="passreg" type="password" placeholder="Пароль"/>
+                    <input class="register-input" name="passrepreg" type="password" placeholder="Подтверждение пароля"/>
                 </div>
                 <div class="errors-register-container"></div>
                 <div class="register-submit-container">
                     <div class="register-politics-container">
-                        <input id="chks" type="checkbox" checked="checked" class="register-politics-checkbox"/>
+                        <input id="chks" type="checkbox" class="register-politics-checkbox"/>
                         <label class="register-politics-label">Даю согласие на обработку персональных данных.</label>
                     </div>
                     <input type="submit" class="register-submit-btn" value="Зарегистрироваться"/>
@@ -34,7 +34,7 @@
                 <span class="auth-form-main-text">Авторизация</span>
                 <div class="auth-input-container">
                     <input class="auth-input" name="emailauth" placeholder="Email"/>
-                    <input class="auth-input" name="passwordauth" placeholder="Пароль"/>
+                    <input class="auth-input" name="passwordauth" type="password" placeholder="Пароль"/>
                     <input type="submit" class="auth-submit-btn" value="Войти"/>
                 </div>
                 <div class="errors-auth-container"></div>

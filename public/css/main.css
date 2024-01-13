@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 body {
     padding: 0px;
@@ -207,7 +207,7 @@ body {
     font-size: 50px;
     font-style: italic;
     font-weight: 700;
-    line-height: 105.9%; 
+    line-height: 105.9%;
 }
 .marquee-section{
     display: flex;
@@ -517,7 +517,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 122.5%;
-    max-width:189px;    
+    max-width:189px;
 }
 .personal-data-labelon{
     color: #FFF;
@@ -526,7 +526,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 122.5%;
-    max-width:189px;    
+    max-width:189px;
 }
 .feedback-checkbox-input{
     display: flex;
@@ -639,6 +639,7 @@ body {
     gap:136px;
 
 }
+
 .appeal-container-first{
     display: flex;
     flex-direction: column;
@@ -706,7 +707,7 @@ body {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 105.9%; 
+    line-height: 105.9%;
 }
 .appeal-firstmanager-container{
     display: flex;
@@ -752,10 +753,27 @@ body {
     font-family: "Montserrat";
     font-size: 17px;
     font-style: normal;
-    font-weight: 400;   
+    font-weight: 400;
     line-height: 122.5%;
     text-decoration: none;
 }
+a:hover{
+    color: #b48181;
+}
+
+button:hover{
+    color: #b48181;
+}
+.footer-menu-item-url {
+    color: #FFF;
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.5%;
+    text-decoration: none;
+}
+
 .politic-text{
     color: #FFF;
     font-family: "Montserrat";
@@ -804,7 +822,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 122.5%;
-    text-decoration: none; 
+    text-decoration: none;
 }
 .error-section{
     display: flex;
@@ -822,21 +840,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px; 
+    gap: 40px;
 }
 .error-container-main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
 }
 .error-container-btns{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px; 
+    gap: 40px;
 }
 .error-maintext{
     margin: 0px;
@@ -967,7 +985,7 @@ body {
     font-weight: 700;
     line-height: 105.9%;
     margin: 0px;
-    padding: 0px; 
+    padding: 0px;
 }
 .show-products-items{
     display: flex;
@@ -1036,7 +1054,7 @@ body {
     color: #5D5D5D;
     text-align: center;
     font-family: "Montserrat";
-    font-size: 13px;    
+    font-size: 13px;
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
@@ -1160,7 +1178,7 @@ body {
     padding-right: 28px;
     width: -webkit-fill-available;
     border-radius: 30px;
-    background: #FFF;  
+    background: #FFF;
 }
 .filters-container-typechar-values{
     display: flex;
@@ -1235,7 +1253,7 @@ body {
     line-height: 100%;
     padding: 0px;
     margin: 0px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .clearing-filters{
     display: flex;
@@ -1333,7 +1351,7 @@ body {
     text-decoration: none;
     color: #2B2B2B;
     text-align: center;
-    font-family: "Montserrat";    
+    font-family: "Montserrat";
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
@@ -1347,7 +1365,7 @@ body {
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
-    line-height: 122.5%; 
+    line-height: 122.5%;
 }
 .products-item-img{
     display: flex;
@@ -1424,7 +1442,7 @@ body {
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 105.9%; 
+    line-height: 105.9%;
     max-width: 1423px;
 }
 .products-articlename-text{
@@ -1500,7 +1518,7 @@ body {
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%; 
+    line-height: 120%;
 }
 .products-price-text{
     color: #5D5D5D;
@@ -1508,7 +1526,7 @@ body {
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; 
+    line-height: 150%;
 }
 .products-likes-container{
     display: flex;
@@ -1598,7 +1616,7 @@ body {
     outline: none;
     background-color: transparent;
     padding: 0px;
-    margin: 0px; 
+    margin: 0px;
 }
 .cartmain-section{
     gap: 50px;
@@ -1626,7 +1644,7 @@ body {
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
-    line-height: 105.9%; 
+    line-height: 105.9%;
 }
 .cart-item-menu-cart-container {
     display: flex;
@@ -1731,7 +1749,7 @@ body {
     cursor: pointer;
     border-radius: 2px;
     border: 1px solid #C75006;
-    
+
 }
 .cartcheck-chekbox:checked {
     background-image: url("/img/cartfilter.svg");
@@ -1745,7 +1763,7 @@ body {
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%; 
+    line-height: 100%;
 }
 .cartcheck-remove-btn{
     display: flex;
@@ -1824,7 +1842,7 @@ body {
     cursor: pointer;
     border-radius: 2px;
     border: 1px solid #C75006;
-    
+
 }
 .cart-product-chekbox:checked {
     background-image: url("/img/cartfilter.svg");
@@ -1876,7 +1894,7 @@ body {
 .cart-product-character-name{
     color: #2B2B2B;
     font-family: "Montserrat";
-    font-size: 13px;    
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -2071,7 +2089,7 @@ body {
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; 
+    line-height: 150%;
 }
 .comment-two-dotted{
     display: flex;
@@ -2588,16 +2606,16 @@ body {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 122.5%; 
+    line-height: 122.5%;
 }
 .payment-final-text-price{
     color: #EA600A;
     text-align: center;
     font-family: "Montserrat1";
-    font-size: 24px;    
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; 
+    line-height: 150%;
 }
 .payment-final-dotted {
     display: flex;
@@ -2737,7 +2755,7 @@ body {
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%; 
+    line-height: 100%;
     margin: 0px;
     outline: none;
     border: none;

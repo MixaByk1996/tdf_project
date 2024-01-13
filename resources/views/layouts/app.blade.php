@@ -10,18 +10,22 @@
     <script src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="../../css/app.css">
     <title>@yield('title-block')</title>
 </head>
 <body>
+<div class="adaptive">
     @include('inc.modals')
     @include('inc.header')
     @yield('content')
-{{--    @if(session('status'))--}}
-{{--        <div class="alert alert-success">--}}
-{{--            {{ session('status') }}--}}
-{{--        </div>--}}
-{{--    @endif--}}
+    {{--    @if(session('status'))--}}
+    {{--        <div class="alert alert-success">--}}
+    {{--            {{ session('status') }}--}}
+    {{--        </div>--}}
+    {{--    @endif--}}
     @include('inc.appeal')
     @include('inc.footer')
+</div>
+
 </body>
 </html>

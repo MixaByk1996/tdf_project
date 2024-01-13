@@ -6,16 +6,16 @@
                 <a href="/" class="footer-menu-item-url">Главная</a>
             </li>
             <li class="footer-menu-item">
-                <a href="/" class="footer-menu-item-url">О нас</a>
+                <a href="{{url('about')}}" class="footer-menu-item-url">О нас</a>
             </li>
             <li class="footer-menu-item">
-                <a href="/" class="footer-menu-item-url">Каталог</a>
+                <a href="/catalog" class="footer-menu-item-url">Каталог</a>
             </li>
             <li class="footer-menu-item">
                 <a href="#t1" class="footer-menu-item-url">Оставить заявку</a>
             </li>
             <li class="footer-menu-item">
-                <a href="/" class="footer-menu-item-url">Контакты</a>
+                <a href="{{url('contacts')}}" class="footer-menu-item-url">Контакты</a>
             </li>
         </ul>
         <div class="last-footer-container">
@@ -39,7 +39,7 @@
                     </a>
                 </div>
             </div>
-            <a href="/" class="politic-text">Политика конфиденциальности</a>
+            <a href="{{url('politics')}}" class="politic-text">Политика конфиденциальности</a>
         </div>
     </div>
 </footer>

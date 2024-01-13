@@ -29,10 +29,10 @@
                         <form class="data-profile-container-alls">
                             <div class="data-profile-input-container">
                                 <input class="data-profile-input" value="{{$user->fio}}" placeholder="ФИО"/>
-                                <input class="data-profile-input" placeholder="Город"/>
+                                <input class="data-profile-input" value="{{$user->city}}" placeholder="Город"/>
                                 <div class="input-profile-row-container">
-                                    <input class="data-profile-input-small" placeholder="Номер телефона"/>
-                                    <input class="data-profile-input-small" placeholder="Email"/>
+                                    <input class="data-profile-input-small" value="{{$user->phone}}" placeholder="Номер телефона"/>
+                                    <input class="data-profile-input-small" value="{{$user->email}}" placeholder="Email"/>
                                 </div>
                             </div>
                             <input type="submit" class="data-profile-input-send" value="Обновить данные"/>

@@ -210,7 +210,10 @@ function send_auth_form(){
           }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert(errorThrown);
+            if( textStatus !== 'parsererror'){
+                alert(errorThrown);
+            }
+
         }
       });
     }

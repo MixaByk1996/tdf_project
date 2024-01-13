@@ -28,7 +28,7 @@
                 </button>
             @else
                 <button class="register-btn-shows">
-                    <svg height="36px" width="36px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 502.987 502.987" xml:space="preserve">
+                    <svg height="26px" width="26px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 502.987 502.987" xml:space="preserve">
                         <g>
                             <g>
                                 <circle style="fill: #FFFFFF;" cx="185.994" cy="102.008" r="102.008" />
@@ -66,7 +66,7 @@
                     </svg>
                 </button>
                 <button class="auth-btn-shows">
-                    <svg fill="#FFFFFF" height="36px" width="36px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 296.999 296.999" xml:space="preserve">
+                    <svg fill="#FFFFFF" height="26px" width="26px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 296.999 296.999" xml:space="preserve">
                         <g>
                             <g>
                                 <g>
@@ -93,10 +93,10 @@
                             </g>
                         </g>
                     </svg>
-                </button>                
+                </button>
             @endif
-                
-                
+
+
             </div>
         </div>
     </div>

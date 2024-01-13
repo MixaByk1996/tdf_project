@@ -13,6 +13,9 @@ Route::get('/',
 Route::get('/home',
     [App\Http\Controllers\HomeController::class,'index']
 );
+Route::get('/contacts', [\App\Http\Controllers\HomeController::class, 'contacts']);
+Route::get('/politics', [\App\Http\Controllers\HomeController::class, 'politics']);
+Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/error',
     [App\Http\Controllers\ErrorController::class,'index']
 );
