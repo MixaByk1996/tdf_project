@@ -32,7 +32,7 @@
                     </svg>
                     <div class="cart-count-block">
                         <span class="cart-count-text">1</span>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,133 +180,240 @@
             <div class="catalog-products-block">
                 <div class="catalog-products-container">
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/2.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/3.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/4.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
                     <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/2.png"/>
+                        <div style="display: flex; flex-direction: row">
+                            <div style="width: 30%">
+                                <div class="products-item-img">
+                                    <img src="/img/products/1.png"/>
+                                </div>
+                            </div>
+                            <div style="width: 20%">
+                                <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                            </div>
+                            <div style="width: 60%">
+                                <div style="float: right; margin-right: 20px">
+                                    <span class="products-item-price">823.36 ₽</span>
+                                    <button class="products-item-button">В корзину</button>
+                                </div>
+
+                            </div>
                         </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
                     </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/3.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/4.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/2.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/3.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/4.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/2.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/3.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
-                    <div class="products-item">
-                        <div class="products-item-img">
-                            <img src="/img/products/4.png"/>
-                        </div>
-                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>    
-                        <span class="products-item-price">823.36 ₽</span>
-                        <button class="products-item-button">В корзину</button>
-                    </div>
+
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/2.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/3.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/4.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/1.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/2.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/3.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/4.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/1.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/2.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/3.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/4.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/1.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/2.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 30°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/3.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 20°, наложение II, чашка</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="products-item">--}}
+{{--                        <div class="products-item-img">--}}
+{{--                            <img src="/img/products/4.png"/>--}}
+{{--                        </div>--}}
+{{--                        <span class="products-item-name">CLIP top BLUMOTION угловая петля 45°, полунакладная I</span>--}}
+{{--                        <span class="products-item-price">823.36 ₽</span>--}}
+{{--                        <button class="products-item-button">В корзину</button>--}}
+{{--                    </div>--}}
                 </div>
 
                 <div class="products-pagination-container">

@@ -48,39 +48,40 @@
     <div class="main-catalog-container">
         <h1 class="main-catalog-text">Каталог</h1>
         <div class="catalog-main-items">
-            <div class="catalog-main-item">
+
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Подъемные механизмы</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Системы петель</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Системы выдвижения</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Системы направляющих</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Системы зонирования</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Система внутренних разделителей</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Технологии движения</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Конструкции шкафов</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Прочие изделия</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Приспособления для сборки мебели</span>
-            </div>
-            <div class="catalog-main-item">
+            </button>
+            <button class="catalog-main-item">
                 <span class="catalog-main-item-text">Сопутствующие изделия</span>
-            </div>
+            </button>
         </div>
     </div>
 </section>
