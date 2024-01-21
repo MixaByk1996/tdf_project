@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500); // Задержка должна соответствовать времени анимации
     }
 
-    // Обработчики для кнопок деталей и возврата
     detailsButtons.forEach(button => {
         button.addEventListener('click', function () {
             toggleVisibility(orderSummary, profileOrdersContainer, 'flex');
@@ -246,12 +245,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500);
     }
 
-    // Устанавливаем видимость для data-profileform-container
     profileFormContainer.style.display = 'block';
     profileFormContainer.style.opacity = '1';
     profileFormContainer.style.transform = 'translateY(0)';
 
-    // Скрываем data-profile-orders-container
     profileOrdersContainer.style.display = 'none';
     profileOrdersContainer.style.opacity = '0';
     profileOrdersContainer.style.transform = 'translateY(20px)';

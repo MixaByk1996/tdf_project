@@ -1,23 +1,6 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <ul class="footer-menu">
-            <li class="footer-menu-item">
-                <a href="/" class="footer-menu-item-url">Главная</a>
-            </li>
-            <li class="footer-menu-item">
-                <a href="{{url('about')}}" class="footer-menu-item-url">О нас</a>
-            </li>
-            <li class="footer-menu-item">
-                <a href="/catalog" class="footer-menu-item-url">Каталог</a>
-            </li>
-            <li class="footer-menu-item">
-                <a href="#t1" class="footer-menu-item-url">Оставить заявку</a>
-            </li>
-            <li class="footer-menu-item">
-                <a href="{{url('contacts')}}" class="footer-menu-item-url">Контакты</a>
-            </li>
-        </ul>
         <div class="last-footer-container">
             <div class="footer-information">
                 <div class="logo-footer-container">
