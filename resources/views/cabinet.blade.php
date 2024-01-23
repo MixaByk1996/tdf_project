@@ -79,7 +79,10 @@
                         <div class="order-details">
                             <span class="order-date">07.01.2024</span>
                             <img src="/img/products/1.png" width="171px" height="171px" />
-                            <span class="order-total">Сумма................1702.52 Р</span>
+                            <div class="order-total">
+                                <span>Сумма</span>
+                                <span>1702.52 Р</span>
+                               </div>
                         </div>
                     </div>
                     <div class="order-button-container">
@@ -93,7 +96,10 @@
                         <div class="order-details">
                             <span class="order-date">07.01.2024</span>
                             <img src="/img/products/1.png" width="171px" height="171px" />
-                            <span class="order-total">Сумма................1702.52 Р</span>
+                             <div class="order-total">
+                                <span>Сумма</span>
+                                <span>1702.52 Р</span>
+                               </div>
                         </div>
                     </div>
                     <div class="order-button-container">
