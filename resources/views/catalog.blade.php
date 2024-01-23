@@ -715,13 +715,23 @@
 
     var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
 
-// Добавляем обработчик событий для каждого элемента
 productItems.forEach(function(item) {
     item.addEventListener('click', function() {
-        // Осуществляем перенаправление
         window.location.href = '/product';
     });
 });
+
+var addToCartButtons = document.querySelectorAll('.products-item-button');
+
+addToCartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            // Предотвращаем всплытие события
+            event.stopPropagation();
+
+            // Перенаправляем пользователя на страницу корзины
+            window.location.href = '/cart';
+        });
+    });
     
     function toggleFilter() {
         filterBlock.style.transform = 'translateY(-40%)'; 

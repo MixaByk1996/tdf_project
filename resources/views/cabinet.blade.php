@@ -23,7 +23,7 @@
             <div class="data-profile-urls">
                 <span class="data-url data-url-data data-url-active">Личные данные</span>
                 <span class="data-url data-url-history">История заказов</span>
-                <span class="data-url">Избранные</span>
+                <a class="data-url" href="/favorite">Избранные</a>
                 <span class="data-url">Личные сообщения</span>
             </div>
 
@@ -166,6 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const profileOrdersContainer = document.querySelector('.data-profile-orders-container');
     const backButton = document.querySelector('.back-button');
 
+    document.querySelector('.cabinet-main-text').style.opacity = 1;
+
+
     // Установка начальных стилей для анимации
     orderSummary.style.opacity = '0';
     orderSummary.style.transform = 'translateY(20px)';
@@ -276,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
 
 
 @endsection
