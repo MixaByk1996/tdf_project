@@ -10,24 +10,24 @@
                 <div class="catalog-main-grides">
                     <span class="catalog-main-grides-text">Главная / Избранное</span>
                     <div class="show-products-container">
-                        <div class="show-products-items">
+                    <div class="show-products-items">
                             <svg  id="svgOne" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
-                                fill="none">
+                                fill="#EA600A">
                                 <path
                                     d="M14 0H2C0.875 0 0 0.90625 0 2V12C0 13.125 0.875 14 2 14H14C15.0938 14 16 13.125 16 12V2C16 0.90625 15.0938 0 14 0ZM2 2H7V6H2V2ZM2 12V8H7V12H2ZM14 12H9V8H14V12ZM14 6H9V2H14V6Z"
-                                    fill="#EA600A" />
+                                     />
                             </svg>
                             <svg  id="svgTwo" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
-                                fill="none">
+                                fill="white">
                                 <path
                                     d="M1.5 5.5C0.65625 5.5 0 6.1875 0 7C0 7.84375 0.65625 8.5 1.5 8.5C2.3125 8.5 3 7.84375 3 7C3 6.1875 2.3125 5.5 1.5 5.5ZM1.5 10.5C0.65625 10.5 0 11.1875 0 12C0 12.8438 0.65625 13.5 1.5 13.5C2.3125 13.5 3 12.8438 3 12C3 11.1875 2.3125 10.5 1.5 10.5ZM1.5 0.5C0.65625 0.5 0 1.1875 0 2C0 2.84375 0.65625 3.5 1.5 3.5C2.3125 3.5 3 2.84375 3 2C3 1.1875 2.3125 0.5 1.5 0.5ZM6 3H15C15.5312 3 16 2.5625 16 2.03125C16 1.53125 15.5312 1 15 1H6C5.4375 1 5 1.46875 5 2C5 2.5 5.4375 3 6 3ZM15 6H6C5.4375 6 5 6.46875 5 7C5 7.5625 5.4375 8 6 8H15C15.5312 8 16 7.5625 16 7C16 6.46875 15.5312 6 15 6ZM15 11H6C5.4375 11 5 11.4688 5 12C5 12.5625 5.4375 13 6 13H15C15.5312 13 16 12.5625 16 12C16 11.4688 15.5312 11 15 11Z"
-                                    fill="white" fill-opacity="0.6" />
+                                    />
                             </svg>
                             <svg  id="svgThree" xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13"
-                                fill="none">
+                                fill="white">
                                 <path
                                     d="M1 2.5H15C15.5312 2.5 16 2.0625 16 1.53125C16 1.03125 15.5312 0.5 15 0.5H1C0.4375 0.5 0 0.96875 0 1.5C0 2 0.4375 2.5 1 2.5ZM15 5.5H1C0.4375 5.5 0 5.96875 0 6.5C0 7.0625 0.4375 7.5 1 7.5H15C15.5312 7.5 16 7.0625 16 6.5C16 5.96875 15.5312 5.5 15 5.5ZM15 10.5H1C0.4375 10.5 0 10.9688 0 11.5C0 12.0625 0.4375 12.5 1 12.5H15C15.5312 12.5 16 12.0625 16 11.5C16 10.9688 15.5312 10.5 15 10.5Z"
-                                    fill="white" fill-opacity="0.6" />
+                                     />
                             </svg>
                         </div>
                         <div class="count-tovars-container">
@@ -616,117 +616,5 @@
     </div>
 </section>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var modal = document.getElementById("myModal");
-
-        var btn = document.getElementById("myBtn");
-
-        var span = document.getElementsByClassName("close--cart")[0];
-        var body = document.body;
-
-        btn.onclick = function(event) {
-        if (window.innerWidth < 750) {
-            // Для экранов меньше 750 пикселей, показываем модальное окно по центру
-            modal.style.display = "block";
-            modal.style.top = "";
-            modal.style.left = "";
-        } else {
-            // Для экранов больше или равных 750 пикселей, показываем модальное окно в зависимости от положения кнопки
-            if (modal.style.display === "block") {
-                modal.style.display = "none";
-                // body.classList.remove('no-scroll');
-            } else {
-                modal.style.display = "block";
-                var rect = btn.getBoundingClientRect();
-                modal.style.top = rect.top + "px";
-                var modalWidth = modal.offsetWidth;
-                modal.style.left = (rect.left - modalWidth) + "px";
-                // body.classList.add('no-scroll');
-            }
-        }
-        event.stopPropagation();
-    };
 
 
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    });
-
-</script>
-
-
-<script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const blockOne = document.querySelector('.block__one');
-        const blockTwo = document.querySelector('.block__two');
-
-
-
-    var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
-
-productItems.forEach(function(item) {
-    item.addEventListener('click', function() {
-        window.location.href = '/product';
-    });
-});
-
-var addToCartButtons = document.querySelectorAll('.products-item-button');
-
-addToCartButtons.forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            // Предотвращаем всплытие события
-            event.stopPropagation();
-
-            // Перенаправляем пользователя на страницу корзины
-            window.location.href = '/cart';
-        });
-    });
-    
-
-
-        const blockThree = document.querySelector('.block__three');
-        document.querySelector('.catalog-main-text').style.opacity = 1;
-
-
-        blockOne.style.opacity = 1;
-        blockTwo.style.opacity = 1;
-        blockThree.style.opacity = 1;
-
-        blockOne.style.transform = "translateY(0)";
-        blockTwo.style.transform = "translateY(0)";
-        blockThree.style.transform = "translateY(0)";
-
-
-        const svgOne = document.getElementById('svgOne');
-        const svgTwo = document.getElementById('svgTwo');
-        const svgThree = document.getElementById('svgThree');
-
-        svgOne.addEventListener('click', function() {
-            blockOne.style.display = 'none';
-            blockTwo.style.display = 'flex';
-            blockThree.style.display = 'none';
-        });
-
-        svgTwo.addEventListener('click', function() {
-            blockOne.style.display = 'flex';
-            blockTwo.style.display = 'none';
-            blockThree.style.display = 'none';
-        });
-
-        svgThree.addEventListener('click', function() {
-            blockOne.style.display = 'none';
-            blockTwo.style.display = 'none';
-            blockThree.style.display = 'flex';
-        });
-    });
-</script>

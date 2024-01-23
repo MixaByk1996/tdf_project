@@ -591,6 +591,7 @@ width: 100%;
 
 
 
+
 .catalog-main-item{
     display: flex;
     flex-direction: column;
@@ -607,6 +608,14 @@ width: 100%;
 @media screen  and (max-width:800px){
     .catalog-main-item{
         width: 189px;
+        height: 79px;
+    }
+    
+}
+
+@media screen  and (max-width:500px){
+    .catalog-main-item{
+        width: 90%;
         height: 79px;
     }
     
@@ -1762,6 +1771,7 @@ button:hover{
   @media screen and (max-width:750px) {
     .modal-content--cart {
         width: 320px;
+        margin-top: 170px;
     }
     
   }
@@ -2300,7 +2310,7 @@ border-radius: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 1300px;
+    max-width: auto;
     gap: 30px;
     margin-left: 30px;
     margin-right: 30px;

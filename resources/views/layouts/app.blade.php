@@ -8,6 +8,16 @@
     <script src="/js/marquee.js"></script>
     <script type="text/javascript" src="/js/validate.js"></script>
     <script src="/js/main.js"></script>
+
+    <script src="/js/filterFavorite.js"></script>
+    <script src="/js/catalog.js"></script>
+    <script src="/js/filterCatalog.js"></script>
+    <script src="/js/modalCart.js"></script>
+    <script src="/js/cabinet.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/burgerMenu.js"></script>
+
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/media.css">
     <link rel="stylesheet" href="../../css/app.css">
