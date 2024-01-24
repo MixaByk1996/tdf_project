@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const burgerMenuIcon = document.querySelector('.burger-menu-icon');
     const burgerMenuContainer = document.querySelector('.burger-menu-container');
+    const header = document.querySelector('.header'); // Получаем элемент header
     const body = document.body;
     let isMenuOpen = false;
 
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.addEventListener('click', function (e) {
+    header.addEventListener('click', function (e) {
+        // Проверяем, что клик произошёл не на бургер-иконке и не на контейнере меню, и что меню открыто
         if (!burgerMenuContainer.contains(e.target) && !burgerMenuIcon.contains(e.target) && isMenuOpen) {
             burgerMenuContainer.classList.add('close');
             burgerMenuContainer.classList.remove('open');

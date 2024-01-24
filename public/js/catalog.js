@@ -1,24 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function () {
+    const filterButton = document.querySelector('.catalog-filters-button');
+    const filterBlock = document.querySelector('.catalog-filters-block');
+    let timeoutId; // Variable to store timeout ID
 
-const filterButton = document.querySelector('.catalog-filters-button');
-const filterBlock = document.querySelector('.catalog-filters-block');
+    function toggleFilter(event) {
+        event.stopPropagation(); // Stop the click event from propagating
+        clearTimeout(timeoutId); // Clear any existing timeout
 
-function toggleFilter() {
-    filterBlock.style.transform = 'translateY(-40%)'; 
-    if (filterBlock.style.display === 'none' || filterBlock.style.display === '') {
-        filterBlock.style.display = 'flex';
-        filterButton.style.background = '#8a3d0d';
-        setTimeout(() => {
-            filterBlock.style.transform = 'translateY(0)';
-        }, 10);
-    } else {
-        filterBlock.style.transform = 'translateY(0%)'; 
-        filterButton.style.backgroundColor = ''; 
-        setTimeout(() => {
+        if (!filterBlock.classList.contains('hidden-filter')) {
+            // If filterBlock is visible, hide it
+            filterBlock.classList.add('hidden-filter');
+            filterButton.style.backgroundColor = '';
             filterBlock.style.display = 'none';
-        }, 0); 
+            console.log(2);
+        } else {
+            // If filterBlock is hidden, show it
+            filterBlock.classList.remove('hidden-filter');
+            filterButton.style.background = '#8a3d0d';
+            timeoutId = setTimeout(() => {
+                filterBlock.style.display = 'flex';
+            }, 500);
+            console.log(1);
+        }
     }
-}
 
-filterButton.addEventListener('click', toggleFilter);
-});
+    filterButton.addEventListener('click', toggleFilter);
+}

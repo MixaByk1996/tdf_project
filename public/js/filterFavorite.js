@@ -19,18 +19,6 @@ function setActiveSvg(selectedSvg) {
         });
     }
 
-var addToCartButtons = document.querySelectorAll('.products-item-button');
-
-addToCartButtons.forEach(function(button) {
-    button.addEventListener('click', function(event) {
-        // Предотвращаем всплытие события
-        event.stopPropagation();
-
-        // Перенаправляем пользователя на страницу корзины
-        window.location.href = '/cart';
-    });
-});
-
 
 
     const blockThree = document.querySelector('.block__three');

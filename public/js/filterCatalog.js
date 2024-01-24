@@ -20,13 +20,6 @@
             });
         });
 
-        var addToCartButtons = document.querySelectorAll('.products-item-button');
-        addToCartButtons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                event.stopPropagation();
-                window.location.href = '/cart';
-            });
-        });
 
         
         const blockThree = document.querySelector('.block__three');
