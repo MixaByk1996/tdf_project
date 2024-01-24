@@ -124,7 +124,7 @@
     </div>
 </div>
 
-    <div class="payment-delivery-container">
+    <div class="payment-delivery-container blur__modal">
         <div class="payment-deliver">
             <input class="payment-input" placeholder="ФИО"/>
             <input class="payment-input" placeholder="Город"/>

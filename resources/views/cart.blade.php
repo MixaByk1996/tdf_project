@@ -123,7 +123,7 @@
         </div>
     </div>
 </div>
-    <div class="cartmain-container">
+    <div class="cartmain-container blur__modal">
         <div class="locationpoint-container">
             <span class="locationpoint-text">Ваш населённый пункт</span>
             <select class="locationpoint-selection">

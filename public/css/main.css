@@ -1575,6 +1575,15 @@ button:hover{
     margin-right: auto;
 }
 
+.catalog-allproducts-block--favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    margin-right: auto;
+}
+
 @media screen and (max-width:1100px) {
     .catalog-allproducts-block{
         flex-direction: column;
@@ -1742,6 +1751,7 @@ button:hover{
     background-color: #EA600A;
     position: relative;
 }
+
 
 
 .modal--cart {
@@ -2051,6 +2061,7 @@ border-radius: 20px;
 
 .products__container--2 {
     display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (max-width:500px) {
@@ -2490,11 +2501,15 @@ border-radius: 20px;
     max-width:178px;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:1450px) {
     .products-item-name{
-        max-width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 }
+
 
 
 .products-item-price{
@@ -2506,7 +2521,22 @@ border-radius: 20px;
     font-weight: 500;
     line-height: 150%;
     margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    margin: 0px;
 }
+
+@media screen and (max-width:1450px) {
+    .products-item-price{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .products-item-button{
     display: flex;
     align-items: center;
@@ -2721,15 +2751,7 @@ border-radius: 20px;
     }
     
 }
-.products-item-price{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 0px;
-}
+
 .products-nameprice-text{
     color: #999;
     font-family: "Montserrat";
@@ -3686,7 +3708,7 @@ border-radius: 20px;
 .data-profile-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     /* justify-content: center; */
     gap: 276px;
 }
@@ -3705,6 +3727,7 @@ border-radius: 20px;
     opacity: 1;
     transform: translateY(20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
 }
 
 .data-profile-orders-container {
@@ -3764,6 +3787,7 @@ border-radius: 20px;
     width: auto;
     gap: 40px;
     padding-bottom: 33px;
+    max-height: 900px;
 
 
 }

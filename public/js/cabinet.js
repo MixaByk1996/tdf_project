@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+
+
+
+
+
+    
     const detailsButtons = document.querySelectorAll('.details-button');
     const orderSummary = document.querySelector('.order-summary-container');
     const profileOrdersContainer = document.querySelector('.data-profile-orders-container');
@@ -45,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function applyInitialStyles() {
         const profileFormContainer = document.querySelector('.data-profileform-container');
         const profileOrdersContainer = document.querySelector('.data-profile-orders-container');
+        const profileFavoritesContainer = document.querySelector('.data-profile-orders-container--izbrannoe');
 
         profileFormContainer.style.opacity = '1';
         profileFormContainer.style.transform = 'translateY(20px)';
@@ -53,17 +64,27 @@ document.addEventListener('DOMContentLoaded', function () {
         profileOrdersContainer.style.opacity = '0';
         profileOrdersContainer.style.transform = 'translateY(20px)';
         profileOrdersContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+
+        profileFavoritesContainer.style.opacity = '0';
+        profileFavoritesContainer.style.transform = 'translateY(20px)';
+        profileFavoritesContainer.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        profileFavoritesContainer.style.display = 'none'; // Скрытие элемента
+
     }
 
     applyInitialStyles();
 
     const profileFormContainer = document.querySelector('.data-profileform-container');
     const profileOrdersContainer = document.querySelector('.data-profile-orders-container');
+
+    const profileFavoritesContainer = document.querySelector('.data-profile-orders-container--izbrannoe');
+
     const detailsButtons = document.querySelectorAll('.details-button');
     const orderSummary = document.querySelector('.order-summary-container');
     const backButton = document.querySelector('.back-button');
     const dataUrlData = document.querySelector('.data-url-data');
     const dataUrlHistory = document.querySelector('.data-url-history');
+    const dataUrlFavorites = document.querySelector('.data-url-favorites');
     const dataUrls = document.querySelectorAll('.data-url, .data-url-active');
 
     function changeActiveElement(newActiveElement) {
@@ -73,13 +94,18 @@ document.addEventListener('DOMContentLoaded', function () {
         newActiveElement.classList.add('data-url-active');
     }
 
-    function toggleVisibility(elementToShow, elementToHide) {
-        elementToHide.style.opacity = '0';
-        elementToHide.style.transform = 'translateY(20px)';
+    function toggleVisibility(elementToShow, ...elementsToHide) {
+        elementsToHide.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+        });
+
         setTimeout(() => {
             elementToShow.style.opacity = '1';
             elementToShow.style.transform = 'translateY(0)';
-            elementToHide.style.display = 'none';
+            elementsToHide.forEach(element => {
+                element.style.display = 'none';
+            });
             elementToShow.style.display = 'block';
         }, 500);
     }
@@ -103,14 +129,18 @@ document.addEventListener('DOMContentLoaded', function () {
         orderSummary.style.display = 'none';
         profileOrdersContainer.style.display = 'block';
     });
-
     dataUrlData.addEventListener('click', function() {
-        toggleVisibility(profileFormContainer, profileOrdersContainer);
+        toggleVisibility(profileFormContainer, profileOrdersContainer, profileFavoritesContainer);
         changeActiveElement(dataUrlData);
     });
 
     dataUrlHistory.addEventListener('click', function() {
-        toggleVisibility(profileOrdersContainer, profileFormContainer);
+        toggleVisibility(profileOrdersContainer, profileFormContainer, profileFavoritesContainer);
         changeActiveElement(dataUrlHistory);
+    });
+
+    dataUrlFavorites.addEventListener('click', function() {
+        toggleVisibility(profileFavoritesContainer, profileFormContainer, profileOrdersContainer);
+        changeActiveElement(dataUrlFavorites);
     });
 });

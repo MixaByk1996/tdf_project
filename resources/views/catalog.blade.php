@@ -147,7 +147,7 @@
         </div>
             </div>
         </div>
-        <div class="catalog-allproducts-block">
+        <div class="catalog-allproducts-block blur__modal">
 
         <button class="catalog-filters-button">Фильтр</button>
 
@@ -346,7 +346,8 @@
                                     <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
                                 </div>
                                 <div >
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                         <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
                                         <button class="products-item-button">В корзину</button>
                                     </div>
@@ -365,7 +366,7 @@
                                     <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
                                 </div>
                                 <div >
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                <div style="margin-top: 20px">
                                         <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
                                         <button class="products-item-button">В корзину</button>
                                     </div>
@@ -384,7 +385,8 @@
                                     <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
                                 </div>
                                 <div >
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                         <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
                                         <button class="products-item-button">В корзину</button>
                                     </div>
@@ -403,7 +405,8 @@
                                     <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
                                 </div>
                                 <div >
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                         <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
                                         <button class="products-item-button">В корзину</button>
                                     </div>
@@ -483,7 +486,8 @@
                             </div>
                         </div>
                             <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>
@@ -504,7 +508,8 @@
                             </div>
                         </div>
                         <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>
@@ -525,7 +530,8 @@
                             </div>
                         </div>
                         <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>
@@ -546,7 +552,8 @@
                             </div>
                         </div>
                         <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>
@@ -567,7 +574,8 @@
                             </div>
                         </div>
                         <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>
@@ -588,7 +596,8 @@
                             </div>
                         </div>
                         <div class="products-item-price-cart--2">
-                                <div style="float: right; margin-right: 20px; margin-top: 20px">
+                                                                <div style="margin-top: 20px">
+
                                     <span class="products-item-price">823.36 ₽</span>
                                     <button class="products-item-button">В корзину</button>
                                 </div>

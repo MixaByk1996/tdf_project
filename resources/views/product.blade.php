@@ -121,7 +121,7 @@
             <span class="products-name-text">CLIP ответная планка, прям. (20/32 мм), 0 мм, сталь, на шурупы, Регулировка по высоте: эксцентрик, комплект для AVENTOS HF, Никелиров.</span>
             <span class="products-articlename-text">Артикул: 175H3100.21MPL+SR S6 NI</span>
         </div>
-        <div class="products-item-container">
+        <div class="products-item-container blur__modal">
             <div class="products-item-product">
                 <div class="products-item-img-container">
                     <img class="products-item-img-production" src="/img/products/5.png"/>

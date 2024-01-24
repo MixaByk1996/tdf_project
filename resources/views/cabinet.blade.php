@@ -125,7 +125,7 @@
             <div class="data-profile-urls">
                 <span class="data-url data-url-data data-url-active">Личные данные</span>
                 <span class="data-url data-url-history">История заказов</span>
-                <a class="data-url" href="/favorite">Избранные</a>
+                <span class="data-url data-url-favorites">Избранные</span>
                 <span class="data-url">Личные сообщения</span>
             </div>
 
@@ -262,6 +262,14 @@
             </div>
 
 
+                        <!-- -------------------------------------------------------------------- -->
+
+
+                        <div class="data-profile-orders-container--izbrannoe">
+                       
+                       @include('favorite')
+
+                   </div>
 
 
         </div>
@@ -270,4 +278,7 @@
 
 
 
+
 @endsection
+
+
