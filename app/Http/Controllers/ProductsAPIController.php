@@ -25,14 +25,15 @@ class ProductsAPIController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $validatedData = $request->validate([
-            'image_data' => 'required|file|mimes:jpeg,jpg,png,gif',
-        ]);
-
-        Storage::disk('public')->putFileAs('/img/uploads/products', new File($validatedData['image_data']), pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension());
-        $image_name = pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension();
+//    {
+//        $validatedData = $request->validate([
+//            'image_data' => 'required|file|mimes:jpeg,jpg,png,gif',
+//        ]);
+//
+//        Storage::disk('public')->putFileAs('/img/uploads/products', new File($validatedData['image_data']), pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension());
+//        $image_name = pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension();
         $product = new Products();
-        $product->image_path =  Storage::url('img/uploads/products/' . $image_name );
+        $product->image_path =  '';//Storage::url('img/uploads/products/' . $image_name );
         $product->name = $request->get('name');
         $product->price = $request->get('price');
         $product->serial_id = $request->get('serial_id');
