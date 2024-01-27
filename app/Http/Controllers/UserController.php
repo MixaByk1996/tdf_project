@@ -10,7 +10,6 @@ class UserController extends Controller
 {
     public function register(Request $request)
     {
-
         $check_user = Users::where('email', '=', $request->get('emailreg'))->where('phone', '=', $request->get('phonereg'))->first();
         if($check_user==null){
             $user=Users::create([
