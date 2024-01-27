@@ -24,4 +24,8 @@ class User extends Authenticatable
         '_method',
         '_token'
     ];
+
+    public function backets(){
+        return $this->hasMany(Backet::class, 'user_id');
+    }
 }

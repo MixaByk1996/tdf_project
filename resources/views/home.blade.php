@@ -32,7 +32,7 @@
 
 
         </div>
-        
+
     </div>
 
 </section>
@@ -62,39 +62,42 @@
         <h1 class="main-catalog-text">Каталог</h1>
         <div class="catalog-main-items">
 
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Подъемные механизмы</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Системы петель</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Системы выдвижения</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Системы направляющих</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Системы зонирования</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Система внутренних разделителей</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Технологии движения</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Конструкции шкафов</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Прочие изделия</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Приспособления для сборки мебели</span>
-            </button>
-            <button class="catalog-main-item">
-                <span class="catalog-main-item-text">Сопутствующие изделия</span>
-            </button>
+            @foreach($systems as $system)
+                <button class="catalog-main-item">
+                    <span class="catalog-main-item-text">{{$system->name}}</span>
+                </button>
+            @endforeach
+
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Системы петель</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Системы выдвижения</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Системы направляющих</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Системы зонирования</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Система внутренних разделителей</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Технологии движения</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Конструкции шкафов</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Прочие изделия</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Приспособления для сборки мебели</span>--}}
+{{--            </button>--}}
+{{--            <button class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">Сопутствующие изделия</span>--}}
+{{--            </button>--}}
 
         </div>
     </div>
@@ -108,7 +111,7 @@
             <button class="button__feedback" id="t1111">Узнать подробности</button>
         </div>
 
-        
+
 
     <div class="main-feedback-container">
         <div class="feedback-container">
@@ -139,7 +142,7 @@
 
     </div>
 
-    
+
     </div>
 
         <div class="feedback-text-container">

@@ -22,7 +22,7 @@ Route::get('/error',
 Route::get('/catalog',
     [App\Http\Controllers\CatalogController::class,'index']
 );
-Route::get('/product',
+Route::get('/product/{id}',
     [App\Http\Controllers\ProductController::class,'index']
 );
 Route::get('/cart',
@@ -43,6 +43,11 @@ Route::get('/payment',
  * Регистрация, авторизация, выход
  *
 */
+
+Route::get('/add-to-favorite/{product_id}', [\App\Http\Controllers\ProductController::class,'addFavorite'])->name('add-favorite');
+Route::get('/add-to-cart/{product_id}', [\App\Http\Controllers\CatalogController::class, 'addToCard'])->name('add-to-card');
+Route::get('/remove-from-card/{product_id}', [\App\Http\Controllers\CatalogController::class, 'removeFromCard'])->name('remove-card');
+
 Route::post('/register',
     [App\Http\Controllers\UserController::class,'register']
 );

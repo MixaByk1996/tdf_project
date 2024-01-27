@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\System;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $systems = System::all();
+        return view('home', ['systems' => $systems]);
     }
 
     public function contacts(){

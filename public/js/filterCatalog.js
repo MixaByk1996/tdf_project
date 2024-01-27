@@ -15,13 +15,15 @@
         }
 
         productItems.forEach(function(item) {
+            var id = item.getElementsByTagName('p')[0].innerHTML;
+            console.log(id)
             item.addEventListener('click', function() {
-                window.location.href = '/product';
+                window.location.href = '/product/' + id;
             });
         });
 
 
-        
+
         const blockThree = document.querySelector('.block__three');
         document.querySelector('.catalog-main-text').style.opacity = 1;
         document.querySelector('.catalog-filters-block').style.opacity = 1;

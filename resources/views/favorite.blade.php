@@ -3,7 +3,7 @@
 
 
 <!-- -------------------------------------- -->
-<!-- 
+<!--
 <div class="show-products-items">
                             <svg  id="svgOne" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
                             fill="#EA600A">
@@ -27,109 +27,37 @@
                         </div> -->
 <div class="catalog-products-block">
         <div class="catalog-products-container">
-            <div class="products-item--1">
-            <div class="products-item-img-container--text--one">
-                    <div >
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
+            @foreach($products as $product)
+                <div class="products-item--1">
+                    <div class="products-item-img-container--text--one">
+                        <div >
+                            <div class="products-item-img">
+                                <img src="/img/products/1.png"/>
+                            </div>
                         </div>
-                    </div>
-                    <div >
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                    </div>
-                    <div >
-                                                    <div style="margin-top: 20px">
-
-                            <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
-                            <button class="products-item-button">В корзину</button>
+                        <div >
+                            <span class="products-item-name">{{$product->product->name}}</span>
                         </div>
+                        <div >
+                            <div style="margin-top: 20px">
 
+                                <span class="products-item-price" style="text-align: center;">{{$product->product->price}} ₽</span>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+
+                                    <button class="products-item-button">В корзину</button>
+                                @endif
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="products-item--1">
-            <div class="products-item-img-container--text--one">
-                    <div >
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                    </div>
-                    <div >
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                    </div>
-                    <div >
-                                                    <div style="margin-top: 20px">
-
-                            <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
-                            <button class="products-item-button">В корзину</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="products-item--1">
-            <div class="products-item-img-container--text--one">
-                    <div >
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                    </div>
-                    <div >
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                    </div>
-                    <div >
-                                                    <div style="margin-top: 20px">
-
-                            <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
-                            <button class="products-item-button">В корзину</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="products-item--1">
-            <div class="products-item-img-container--text--one">
-                    <div >
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                    </div>
-                    <div >
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                    </div>
-                    <div >
-                                                    <div style="margin-top: 20px">
-
-                            <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
-                            <button class="products-item-button">В корзину</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
 
-            <div class="products-item--1">
-            <div class="products-item-img-container--text--one">
-                    <div >
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png"/>
-                        </div>
-                    </div>
-                    <div >
-                        <span class="products-item-name">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                    </div>
-                    <div >
-                        <div style="float: right; margin-right: 20px">
-                            <span class="products-item-price" style="text-align: center;">823.36 ₽</span>
-                            <button class="products-item-button">В корзину</button>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
 
-            
+
             </div>
 
             <div class="products-pagination-container">
@@ -163,7 +91,7 @@
 
 <!-- --------------------------------------------------------- -->
 
-<!-- 
+<!--
 <div class="catalog-products-block block__one">
     <div class="catalog-products-container">
     <div class="products-item--2">
@@ -301,7 +229,7 @@
     </div>
 
 
-    
+
 
     <div class="products-pagination-container">
         <button class="btn-pagination-left">
@@ -328,7 +256,7 @@
     </div>
 
 
-    
+
 </div>
 
  -->
@@ -336,7 +264,7 @@
 
 
     <!-- --------------------------------------------------- -->
-<!-- 
+<!--
 
     <div class="catalog-products-block block__three">
         <div class="catalog-products-container">
@@ -461,12 +389,12 @@
                     </div>
                 </div>
             </div>
-     
-            
+
+
         </div>
 
 
-        
+
 
         <div class="products-pagination-container">
             <button class="btn-pagination-left">
@@ -493,7 +421,7 @@
         </div>
 
 
-        
+
     </div> -->
 
     </div>

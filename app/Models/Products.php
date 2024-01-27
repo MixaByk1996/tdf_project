@@ -36,6 +36,10 @@ class Products extends Model
         return $this->belongsTo(Categories::class);
     }
 
+    public function backets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Backet::class, 'product_id');
+    }
     public function producer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Producer::class);

@@ -11,7 +11,8 @@ class System extends Model
     protected $table = 'system';
     protected $fillable = ['name'];
 
-    public function products(){
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(\Products::class, 'system_id');
     }
 }

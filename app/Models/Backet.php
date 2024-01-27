@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Favorites extends Model
+class Backet extends Model
 {
     use HasFactory;
 
-    protected $table = 'favorites';
+    protected $table = 'cart';
 
-    protected $fillable = [
-        'product_id', 'user_id'
-    ];
+    protected $fillable = ['product_id', 'count', 'user_id'];
 
     public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -24,4 +22,5 @@ class Favorites extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 }

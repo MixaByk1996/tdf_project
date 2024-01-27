@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title-block')Корзина@endsection
 @section('content')
+    @php
+        $sum = 0;
+        $count = 0;
+    @endphp
 <section class="cartmain-section">
 <div class="catalog-mainitems-block">
     <h1 class="catalog-main-text">Корзина</h1>
@@ -9,117 +13,50 @@
         <div class="catalog-main-grides">
             <span class="catalog-main-grides-text">Главная/Корзина</span>
             <div class="show-products-container">
-               
-              
+
+
             </div>
         </div>
-                 
-<div class="cart-block" id="myBtn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
-        <path
-            d="M20.1172 17.875C18.9441 17.875 18.0751 18.8203 18.0751 19.9375C18.0751 21.0977 18.9875 22 20.1172 22C21.2034 22 22.1593 21.0977 22.1593 19.9375C22.1593 18.8203 21.2903 17.875 20.1172 17.875ZM7.60369 17.875C6.43055 17.875 5.56156 18.8203 5.56156 19.9375C5.56156 21.0977 6.474 22 7.60369 22C8.68993 22 9.64583 21.0977 9.64583 19.9375C9.64583 18.8203 8.77683 17.875 7.60369 17.875ZM24.7229 1.93359C24.4622 1.58984 24.0711 1.375 23.5932 1.375H5.25741L5.17051 0.859375C5.08361 0.386719 4.64912 0 4.17117 0H0.999343C0.434497 0 0 0.472656 0 1.03125C0 1.54688 0.434497 2.0625 0.999343 2.0625H3.25873L5.86571 15.6836C5.99606 16.1562 6.43055 16.5 6.95195 16.5H21.2034C21.7683 16.5 22.2462 16.0703 22.2462 15.5117C22.2462 14.9102 21.7683 14.4375 21.2034 14.4375H7.77749L7.38644 12.375H21.2469C21.8552 12.375 22.3766 11.9883 22.5504 11.3867L24.9401 3.17969C25.0705 2.75 24.9836 2.27734 24.7229 1.93359Z"
-            fill="white"></path>
-    </svg>
-    <div class="cart-count-block">
-        <span class="cart-count-text">1</span>
-    </div>
-</div>
+
+        @if(\Illuminate\Support\Facades\Auth::check())
+            <div class="cart-block" id="myBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                    <path
+                        d="M20.1172 17.875C18.9441 17.875 18.0751 18.8203 18.0751 19.9375C18.0751 21.0977 18.9875 22 20.1172 22C21.2034 22 22.1593 21.0977 22.1593 19.9375C22.1593 18.8203 21.2903 17.875 20.1172 17.875ZM7.60369 17.875C6.43055 17.875 5.56156 18.8203 5.56156 19.9375C5.56156 21.0977 6.474 22 7.60369 22C8.68993 22 9.64583 21.0977 9.64583 19.9375C9.64583 18.8203 8.77683 17.875 7.60369 17.875ZM24.7229 1.93359C24.4622 1.58984 24.0711 1.375 23.5932 1.375H5.25741L5.17051 0.859375C5.08361 0.386719 4.64912 0 4.17117 0H0.999343C0.434497 0 0 0.472656 0 1.03125C0 1.54688 0.434497 2.0625 0.999343 2.0625H3.25873L5.86571 15.6836C5.99606 16.1562 6.43055 16.5 6.95195 16.5H21.2034C21.7683 16.5 22.2462 16.0703 22.2462 15.5117C22.2462 14.9102 21.7683 14.4375 21.2034 14.4375H7.77749L7.38644 12.375H21.2469C21.8552 12.375 22.3766 11.9883 22.5504 11.3867L24.9401 3.17969C25.0705 2.75 24.9836 2.27734 24.7229 1.93359Z"
+                        fill="white"></path>
+                </svg>
+                <div class="cart-count-block">
+                    <span class="cart-count-text">1</span>
+                </div>
+            </div>
+        @endif
 
 <div class="close--cart--modal">&times;</div>
 
 
 
-<div id="myModal" class="modal--cart">
+        <div id="myModal" class="modal--cart">
 
 
-    <div class="modal-content--cart">
+            <div class="modal-content--cart">
 
-        <div class="modal-body">
-        
+                <div class="modal-body">
 
 
-<div>
 
-            <div class="products-item--cart">
-
-                <div class="products-item-block--cart">
-                    <div>
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png" />
+                    <div class="products-item__bottom-cart">
+                        <div class="products-item__bottom-cart-text">
+                            <img src="/img/iconTruck.svg" alt="">
+                            <div>Добавьте в корзину товаров на 3 297,48 ₽ для бесплатной доставки по Москве</div>
+                        </div>
+                        <div class="products-item__bottom-cart-summary">
+                            <button class="btn-cart">Перейти в корзину</button>
                         </div>
                     </div>
-                    <div class="products-item-info--cart">
-                    <div class="products-item-material--cart">
-                            <span>BLUM</span>
-                            <div class="cross"></div>
-                        </div>
-                        <span class="products-item-text--cart">CLIP ответная планка, прям. (20/32 мм), 0
-                            мм</span>
-                        <span>Код: 175H3100.21</span>
-                        <span>Тип: CLIP</span>
-                        <div class="products-item-material--cart">
-                            <span> Материал: сталь</span>
-                            <span>1 компл</span>
-                        </div>
-                        <div class="products-item-material--cart">
-                            <span> Количество в наборе:1</span>
-                            <span>823.36 ₽</span>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
+
+
                 </div>
             </div>
-
-
-            <div class="products-item--cart">
-                <div class="products-item-block--cart">
-                    <div>
-                        <div class="products-item-img">
-                            <img src="/img/products/1.png" />
-                        </div>
-                    </div>
-                    <div class="products-item-info--cart">
-                    <div class="products-item-material--cart">
-                            <span>BLUM</span>
-                            <div class="cross"></div>
-                        </div>
-                        <span class="products-item-text--cart">CLIP ответная планка, прям. (20/32 мм), 0
-                            мм</span>
-                        <span>Код: 175H3100.21</span>
-                        <span>Тип: CLIP</span>
-                        <div class="products-item-material--cart">
-                            <span> Материал: сталь</span>
-                            <span>1 компл</span>
-                        </div>
-                        <div class="products-item-material--cart">
-                            <span> Количество в наборе:1</span>
-                            <span>823.36 ₽</span>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-                </div>
-            </div>
-
-</div>
-            <div class="products-item__bottom-cart">
-                <div class="products-item__bottom-cart-text">
-                <img src="/img/iconTruck.svg" alt="">
-                <div>Добавьте в корзину товаров на 3 297,48 ₽ для бесплатной доставки по Москве</div>
-            </div>
-                <div class="products-item__bottom-cart-summary">
-                    <div class="summary--cart">
-                        <span> Сумма(2товара)</span>
-                        <span>1702.52</span>
-                        </div>
-                    <button class="btn-cart">Перейти в корзину</button>
-                </div>
-            </div>
-
-
-        </div>
-        </div>
         </div>
     </div>
 </div>
@@ -142,11 +79,14 @@
                         <button class="cartcheck-remove-btn">Удалить всё</button>
                     </div>
                     <div class="cart-tovars-container">
+                        @foreach($cards as $card)
+                        @php($sum += $card->product->price)
+                        @php($count ++)
                         <div class="cart-tovars-item">
                             <div class="cart-product-container">
-                                <div class="cart-product-item">
-                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">
-                                </div>
+{{--                                <div class="cart-product-item">--}}
+{{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
+{{--                                </div>--}}
                                 <div class="cart-product-imgcontainer">
                                 <img class="cart-product-img" src="/img/products/1.png"/>
                                 <button class="cart-product-deletes-btn--two">
@@ -158,137 +98,75 @@
                             </div>
                                 <div class="cart-product-textcontainer">
                                     <div class="cart-product-textmain-container">
-                                        <span class="cart-product-serialtext">BLUM</span>
-                                        <span class="cart-product-nametext">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
+                                        <span class="cart-product-serialtext">{{$card->product->producer->name}}</span>
+                                        <span class="cart-product-nametext">{{$card->product->name}}</span>
                                     </div>
                                     <div class="cart-product-charactercontainer">
                                         <div class="cart-product-character-item">
                                             <span class="cart-product-character-name">Код: </span>
-                                            <span class="cart-product-character-value">175H3100.21</span>
+                                            <span class="cart-product-character-value">{{$card->product->article}}</span>
                                         </div>
                                         <div class="cart-product-character-item">
                                             <span class="cart-product-character-name">Тип: </span>
-                                            <span class="cart-product-character-value">CLIP</span>
+                                            <span class="cart-product-character-value">{{$card->product->category->name}}</span>
                                         </div>
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Материал: </span>
-                                            <span class="cart-product-character-value">сталь</span>
-                                        </div>
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Количество в наборе: </span>
-                                            <span class="cart-product-character-value">1</span>
-                                        </div>
+{{--                                        <div class="cart-product-character-item">--}}
+{{--                                            <span class="cart-product-character-name">Материал: </span>--}}
+{{--                                            <span class="cart-product-character-value">сталь</span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="cart-product-character-item">--}}
+{{--                                            <span class="cart-product-character-name">Количество в наборе: </span>--}}
+{{--                                            <span class="cart-product-character-value">1</span>--}}
+{{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
                             <div class="cart-product-actions">
                                 <div class="cart-product-deletes-block">
-                                    <button class="cart-product-deletes-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                            <path d="M23 1L1 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                        </svg>
-                                    </button>
-                                    <span class="cart-product-price">823.36 ₽</span>
-                                </div>
-                                <div class="cart-complect-container">
-                                    <div class="complect-container">
-                                        <button class="minus-complect">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="2" viewBox="0 0 13 2" fill="none">
-                                                <path d="M13 0.75C13 1.1875 12.6562 1.5 12.25 1.5H0.75C0.3125 1.5 0 1.1875 0 0.78125C0 0.34375 0.3125 0 0.75 0H12.25C12.6562 0 13 0.34375 13 0.75Z" fill="#2B2B2B"/>
+                                    <form action="{{route("remove-card", $card->product->id)}}" method="get">
+                                        @csrf
+                                        <button type="submit" class="cart-product-deletes-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
+                                                <path d="M23 1L1 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
                                             </svg>
                                         </button>
-                                        <div class="complect-text-container">
-                                            <span class="complect-text">1</span>
-                                            <span class="complect-text">комплект</span>
-                                        </div>
-                                        <button class="plus-complect">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                                <path d="M13 6.46875C13 6.90625 12.6562 7.21875 12.25 7.21875H7.25V12.2188C7.25 12.6562 6.90625 13 6.5 13C6.0625 13 5.75 12.6562 5.75 12.2188V7.21875H0.75C0.3125 7.21875 0 6.90625 0 6.5C0 6.0625 0.3125 5.71875 0.75 5.71875H5.75V0.71875C5.75 0.3125 6.0625 0 6.5 0C6.90625 0 7.25 0.3125 7.25 0.71875V5.71875H12.25C12.6562 5.71875 13 6.0625 13 6.46875Z" fill="#2B2B2B"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-tovars-item">
-                            <div class="cart-product-container">
-                                <div class="cart-product-item">
-                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">
-                                </div>
-                                <div class="cart-product-imgcontainer">
-                                <img class="cart-product-img" src="/img/products/1.png"/>
-                                <button class="cart-product-deletes-btn--two">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                            <path d="M23 1L1 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                        </svg>
-                                    </button>
-                            </div>
-                            <div class="cart-product-textcontainer">
-                                    <div class="cart-product-textmain-container">
-                                        <span class="cart-product-serialtext">BLUM</span>
-                                        <span class="cart-product-nametext">CLIP ответная планка, прям. (20/32 мм), 0 мм</span>
-                                    </div>
-                                    <div class="cart-product-charactercontainer">
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Код: </span>
-                                            <span class="cart-product-character-value">175H3100.21</span>
-                                        </div>
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Тип: </span>
-                                            <span class="cart-product-character-value">CLIP</span>
-                                        </div>
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Материал: </span>
-                                            <span class="cart-product-character-value">сталь</span>
-                                        </div>
-                                        <div class="cart-product-character-item">
-                                            <span class="cart-product-character-name">Количество в наборе: </span>
-                                            <span class="cart-product-character-value">1</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </form>
 
-                            
-                            <div class="cart-product-actions">
-                                <div class="cart-product-deletes-block">
-                                    <button class="cart-product-deletes-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                            <path d="M23 1L1 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
-                                        </svg>
-                                    </button>
-                                    <span class="cart-product-price">823.36 ₽</span>
+                                    <span class="cart-product-price">{{$card->product->price}} ₽</span>
                                 </div>
-                                <div class="cart-complect-container">
-                                    <div class="complect-container">
-                                        <button class="minus-complect">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="2" viewBox="0 0 13 2" fill="none">
-                                                <path d="M13 0.75C13 1.1875 12.6562 1.5 12.25 1.5H0.75C0.3125 1.5 0 1.1875 0 0.78125C0 0.34375 0.3125 0 0.75 0H12.25C12.6562 0 13 0.34375 13 0.75Z" fill="#2B2B2B"/>
-                                            </svg>
-                                        </button>
-                                        <div class="complect-text-container">
-                                            <span class="complect-text">1</span>
-                                            <span class="complect-text">комплект</span>
-                                        </div>
-                                        <button class="plus-complect">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                                <path d="M13 6.46875C13 6.90625 12.6562 7.21875 12.25 7.21875H7.25V12.2188C7.25 12.6562 6.90625 13 6.5 13C6.0625 13 5.75 12.6562 5.75 12.2188V7.21875H0.75C0.3125 7.21875 0 6.90625 0 6.5C0 6.0625 0.3125 5.71875 0.75 5.71875H5.75V0.71875C5.75 0.3125 6.0625 0 6.5 0C6.90625 0 7.25 0.3125 7.25 0.71875V5.71875H12.25C12.6562 5.71875 13 6.0625 13 6.46875Z" fill="#2B2B2B"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+
+{{--                                <div class="cart-complect-container">--}}
+{{--                                    <div class="complect-container">--}}
+{{--                                        <button class="minus-complect">--}}
+{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="2" viewBox="0 0 13 2" fill="none">--}}
+{{--                                                <path d="M13 0.75C13 1.1875 12.6562 1.5 12.25 1.5H0.75C0.3125 1.5 0 1.1875 0 0.78125C0 0.34375 0.3125 0 0.75 0H12.25C12.6562 0 13 0.34375 13 0.75Z" fill="#2B2B2B"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </button>--}}
+{{--                                        <div class="complect-text-container">--}}
+{{--                                            <span class="complect-text">1</span>--}}
+{{--                                            <span class="complect-text">комплект</span>--}}
+{{--                                        </div>--}}
+{{--                                        <button class="plus-complect">--}}
+{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">--}}
+{{--                                                <path d="M13 6.46875C13 6.90625 12.6562 7.21875 12.25 7.21875H7.25V12.2188C7.25 12.6562 6.90625 13 6.5 13C6.0625 13 5.75 12.6562 5.75 12.2188V7.21875H0.75C0.3125 7.21875 0 6.90625 0 6.5C0 6.0625 0.3125 5.71875 0.75 5.71875H5.75V0.71875C5.75 0.3125 6.0625 0 6.5 0C6.90625 0 7.25 0.3125 7.25 0.71875V5.71875H12.25C12.6562 5.71875 13 6.0625 13 6.46875Z" fill="#2B2B2B"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                @endif
                             </div>
                         </div>
+                            @endforeach
+
                     </div>
                 </div>
                 <div class="allsum-products-container">
                     <div class="allsum-prices">
                         <span class="allsumtext">Сумма</span>
                         <!-- <div class="allsumdotted"></div> -->
-                        <span class="allsumtextprice">1702.52 ₽</span>
+                        <span class="allsumtextprice">{{$sum}} ₽</span>
                     </div>
                     <div class="allsum-delivery">
                         <svg xmlns="http://www.w3.org/2000/svg"   class="cross-svg" width="29" height="20" viewBox="0 0 29 20" fill="none">
@@ -309,12 +187,12 @@
                     <div class="comment-final-item">
                         <span class="comment-final-item-text">Товаров</span>
                         <!-- <div class="comment-one-dotted"></div> -->
-                        <span class="comment-final-item-text">2</span>
+                        <span class="comment-final-item-text">{{$count}}</span>
                     </div>
                     <div class="comment-final-item">
                         <span class="comment-final-item-textbold">Итого</span>
                         <!-- <div class="comment-two-dotted"></div> -->
-                        <span class="comment-final-item-textbold-price">1702.52 ₽</span>
+                        <span class="comment-final-item-textbold-price">{{$sum}} ₽</span>
                     </div>
                     <button class="comment-final-btn">Купить</button>
                 </div>
