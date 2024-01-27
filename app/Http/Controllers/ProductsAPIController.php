@@ -64,7 +64,7 @@ class ProductsAPIController extends Controller
         }
         else{
             return response()->json([
-                'message' => 'Продукт не найдена'
+                'message' => 'Продукт не найден'
             ]);
         }
     }
