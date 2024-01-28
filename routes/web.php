@@ -43,7 +43,8 @@ Route::get('/payment',
  * Регистрация, авторизация, выход
  *
 */
-
+Route::post('/update-user', [UserController::class, 'updateUser'])->name('update-user');
+Route::post('/update-password', [UserController::class, 'updatePassword'])->name('update-password');
 Route::get('/add-to-favorite/{product_id}', [\App\Http\Controllers\ProductController::class,'addFavorite'])->name('add-favorite');
 Route::get('/add-to-cart/{product_id}', [\App\Http\Controllers\CatalogController::class, 'addToCard'])->name('add-to-card');
 Route::get('/remove-from-card/{product_id}', [\App\Http\Controllers\CatalogController::class, 'removeFromCard'])->name('remove-card');

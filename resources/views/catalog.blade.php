@@ -104,6 +104,10 @@
 {{--                        </svg>--}}
 {{--                    </button>--}}
                 </div>
+
+{{--                <form action="{{route('catalog')}}" method="post">--}}
+
+
                 <div class="filters-container">
                     <div class="filters-container-typechar">
                         <div class="filters-container-typechar-item">
@@ -115,10 +119,13 @@
                                 </svg>
                             </div>
                             <div class="filters-container-typechar-values">
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">Blum</label>
-                                </div>
+                                @foreach($producers as $producer)
+                                    <div class="filters-container-typechar-list-item">
+                                        <input class="filters-container-typechar-chekbox" name="producer_{{$producer->id}}" type="checkbox" />
+                                        <label class="filter-name-type">{{$producer->name}}</label>
+                                    </div>
+                                @endforeach
+
                             </div>
                         </div>
                         <div class="filters-container-typechar-item">
@@ -130,22 +137,12 @@
                                 </svg>
                             </div>
                             <div class="filters-container-typechar-values">
+                                @foreach($series as $serie) @endforeach
                                 <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">CLIP (4)</label>
+                                    <input class="filters-container-typechar-chekbox" name="serie_{{$serie->id}}" type="checkbox" />
+                                    <label class="filter-name-type">{{$serie->name}}</label>
                                 </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">CLIP top (17)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">CLIP top BLUMOTION (7)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">MODUL (2)</label>
-                                </div>
+
                             </div>
                         </div>
                         <div class="filters-container-typechar-item">
@@ -157,22 +154,12 @@
                                 </svg>
                             </div>
                             <div class="filters-container-typechar-values">
+                                @foreach($categories as $item)
                                 <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">Накладная (13)</label>
+                                    <input class="filters-container-typechar-chekbox" name="category_{{$item->id}}" type="checkbox" />
+                                    <label class="filter-name-type">{{$item->name}}</label>
                                 </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">Полунакладная (17)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">Вкладная (4)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">Угловая (2)</label>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="filters-container-typechar-item">
@@ -184,30 +171,12 @@
                                 </svg>
                             </div>
                             <div class="filters-container-typechar-values">
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">83 ° (6)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">95 ° (4)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">100 ° (19)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">107 ° (21)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">110 ° (12)</label>
-                                </div>
-                                <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" type="checkbox" />
-                                    <label class="filter-name-type">155 ° (3)</label>
-                                </div>
+                                @foreach($angle as $item)
+                                    <div class="filters-container-typechar-list-item">
+                                        <input class="filters-container-typechar-chekbox" name="angle_{{$item->id}}" type="checkbox" />
+                                        <label class="filter-name-type">{{$item->name}}</label>
+                                    </div>
+                                @endforeach
                             </div>
 
 
@@ -238,7 +207,7 @@
 
                     </div>
                     <div class="clear-filters-container">
-                        <button class="set-clearing-filters">Применить</button>
+                        <button  class="set-clearing-filters">Применить</button>
                         <button class="clearing-filters">
                             <span class="clearing-filters-text">Сбросить</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13"
@@ -250,6 +219,7 @@
                         </button>
                     </div>
                 </div>
+{{--                </form>--}}
             </div>
 
 

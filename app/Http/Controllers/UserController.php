@@ -39,6 +39,26 @@ class UserController extends Controller
             return view('cabinet', ['user' => $user]);
         }
     }
+
+    public function updateUser(Request $request){
+        $user = Auth::user();
+        $user->fio = $request->get('fio');
+        $user->city = $request->get('city');
+        $user->inn = $request->get('inn');
+        $user->company = $request->get('company');
+        $user->email = $request->get('email');
+        $user->phone = $request->get('phone');
+        $user->save();
+        return view('cabinet', ['user' => $user]);
+    }
+
+    public function updatePassword(Request $request){
+        $user = Auth::user();
+        $user->password = md5($request->get('password'));
+        $user->save();
+        return view('cabinet', ['user' => $user]);
+    }
+
     public function logout(): \Illuminate\Http\JsonResponse
     {
         Auth::logout();

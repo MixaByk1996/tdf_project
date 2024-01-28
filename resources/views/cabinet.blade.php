@@ -66,15 +66,16 @@
                 <div class="data-profile-white-container">
                     <div class="data-profile-form-container">
                         <p class="data-profile-form-text">Данные профиля</p>
-                        <form class="data-profile-container-alls">
+                        <form class="data-profile-container-alls" action="{{route('update-user')}}" method="post">
+                            @csrf
                             <div class="data-profile-input-container">
-                                <input class="data-profile-input" value="{{$user->fio}}" placeholder="ФИО"/>
-                                <input class="data-profile-input" value="{{$user->city}}" placeholder="Город"/>
-                                <input class="data-profile-input" placeholder="ИНН"/>
-                                <input class="data-profile-input"  placeholder="Название компании" />
+                                <input class="data-profile-input" name="fio" value="{{$user->fio}}" placeholder="ФИО"/>
+                                <input class="data-profile-input" name="city" value="{{$user->city}}" placeholder="Город"/>
+                                <input class="data-profile-input" name="inn" value="{{$user->inn}}" placeholder="ИНН"/>
+                                <input class="data-profile-input" name="company" value="{{$user->company}}" placeholder="Название компании" />
                                 <div class="input-profile-row-container">
-                                    <input class="data-profile-input-small" value="{{$user->phone}}" placeholder="Номер телефона"/>
-                                    <input class="data-profile-input-small" value="{{$user->email}}" placeholder="Email"/>
+                                    <input class="data-profile-input-small" name="phone" value="{{$user->phone}}" placeholder="Номер телефона"/>
+                                    <input class="data-profile-input-small" name="email" value="{{$user->email}}" placeholder="Email"/>
                                 </div>
                             </div>
                             <input type="submit" class="data-profile-input-send" value="Обновить данные"/>
@@ -83,9 +84,10 @@
                 </div>
                 <div class="update-password-container">
                     <p class="update-password-text">Изменение пароля для входа</p>
-                    <form class="update-password-form">
+                    <form class="update-password-form" action="{{route('update-password')}}" method="post">
+                        @csrf
                         <div class="update-password-input-container">
-                            <input type="password" class="update-password-input" placeholder="Пароль"/>
+                            <input type="password" name="password"  class="update-password-input" placeholder="Пароль"/>
                             <input type="password" class="update-password-input" placeholder="Подтверждение пароля"/>
                         </div>
                         <input type="submit" class="update-password-input-send" value="Сменить пароль"/>

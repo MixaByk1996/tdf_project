@@ -27,32 +27,35 @@
                         </div> -->
 <div class="catalog-products-block">
         <div class="catalog-products-container">
-            @foreach($products as $product)
-                <div class="products-item--1">
-                    <div class="products-item-img-container--text--one">
-                        <div >
-                            <div class="products-item-img">
-                                <img src="/img/products/1.png"/>
-                            </div>
-                        </div>
-                        <div >
-                            <span class="products-item-name">{{$product->product->name}}</span>
-                        </div>
-                        <div >
-                            <div style="margin-top: 20px">
+{{--            @if(empty($products))--}}
+{{--                @foreach($products as $product)--}}
+{{--                    <div class="products-item--1">--}}
+{{--                        <div class="products-item-img-container--text--one">--}}
+{{--                            <div >--}}
+{{--                                <div class="products-item-img">--}}
+{{--                                    <img src="/img/products/1.png"/>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div >--}}
+{{--                                <span class="products-item-name">{{$product->product->name}}</span>--}}
+{{--                            </div>--}}
+{{--                            <div >--}}
+{{--                                <div style="margin-top: 20px">--}}
 
-                                <span class="products-item-price" style="text-align: center;">{{$product->product->price}} ₽</span>
-                                @if(\Illuminate\Support\Facades\Auth::check())
+{{--                                    <span class="products-item-price" style="text-align: center;">{{$product->product->price}} ₽</span>--}}
+{{--                                    @if(\Illuminate\Support\Facades\Auth::check())--}}
 
-                                    <button class="products-item-button">В корзину</button>
-                                @endif
+{{--                                        <button class="products-item-button">В корзину</button>--}}
+{{--                                    @endif--}}
 
-                            </div>
+{{--                                </div>--}}
 
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            @endif--}}
+
 
 
 

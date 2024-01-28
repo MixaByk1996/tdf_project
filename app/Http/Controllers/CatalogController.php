@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Angle;
 use App\Models\Backet;
+use App\Models\Categories;
+use App\Models\Producer;
 use App\Models\Products;
+use App\Models\Series;
 use App\Models\System;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+//        dd($request);
         $products = Products::with(['system', 'angle', 'producer'])->get();
         $systems = System::all();
-        return view('catalog', ['products' => $products, 'systems' => $systems]);
+        $producers = Producer::all();
+        $series = Series::all();
+        $categories =Categories::all();
+        $angle = Angle::all();
+        return view('catalog', ['products' => $products, 'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
 
     public function addToCard(string $product_id){

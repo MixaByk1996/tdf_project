@@ -18,6 +18,8 @@ class Users extends Authenticatable
         'email',
         'phone',
         'city',
+        'inn',
+        'company',
         'is_admin',
         'balance',
         'password'
