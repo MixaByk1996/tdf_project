@@ -237,7 +237,7 @@
                                 <div class="products-item-img-container--text--one">
                                     <div >
                                         <div class="products-item-img">
-                                            <img src="/img/products/1.png"/>
+                                            <img src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                         </div>
                                     </div>
                                     <div >
