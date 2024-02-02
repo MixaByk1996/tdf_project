@@ -237,7 +237,7 @@
                                 <div class="products-item-img-container--text--one">
                                     <div >
                                         <div class="products-item-img">
-                                            <img src="http://5.35.94.70/storage/{{$product->image_path}}"/>
+                                            <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                         </div>
                                     </div>
                                     <div >
@@ -304,7 +304,7 @@
                                 <div class="products-item-img-container--text">
                                     <div >
                                         <div class="products-item-img">
-                                            <img src="http://5.35.94.70/storage/{{$product->image_path}}"/>
+                                            <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                         </div>
                                     </div>
                                     <div >
