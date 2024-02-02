@@ -39,8 +39,9 @@
     <a href="#home">Продукты</a>
     <a href="{{route('admin-system')}}">Система</a>
     <a href="{{route('categories.index')}}">Тип</a>
-    <a href="#contact">Производитель</a>
-    <a href="#about">Угол открывания</a>
+    <a href="{{route('producer.index')}}">Производитель</a>
+    <a href="{{route('angle.index')}}">Угол открывания</a>
+    <a href="/" >Назад на сайт</a>
 </div>
 @yield('content')
 </body>

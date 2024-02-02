@@ -77,3 +77,4 @@ Route::post('/add-system', [\App\Http\Controllers\SystemAPIController::class,'st
 
 Route::resource('categories', \App\Http\Controllers\CategoriesAPIController::class);
 Route::resource('producer', \App\Http\Controllers\ProducerAPIController::class);
+Route::resource('angle', \App\Http\Controllers\AngleAPIController::class);

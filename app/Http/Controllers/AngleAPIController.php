@@ -3,28 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Angle;
+use App\Models\Categories;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AngleAPIController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json(Angle::all());
+        $angles = Angle::query()->paginate(5);
+        return view('admin.angle.index', ['angles' => $angles]);
     }
 
+
+    public function create(){
+        return view('admin.angle.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         Angle::query()->create($request->all());
-        return response()->json([
-            'message' => 'Категория добавлена'
-        ], 201);
+        return redirect()->route('angle.index')->with('status', 'Угол успешно добавлен');
     }
 
     /**
@@ -69,12 +73,10 @@ class AngleAPIController extends Controller
      * @param  int  $id
      * @return JsonResponse
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         $category = Angle::find($id);
         $category->delete();
-        return response()->json([
-            'message' => 'Параметр удален'
-        ]);
+        return redirect()->route('angle.index')->with('success','Угол успешно удален');
     }
 }

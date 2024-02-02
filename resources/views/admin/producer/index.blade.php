@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Системы</h2>
+                    <h2>Производители</h2>
                 </div>
                 <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('categories.create') }}"> Добавить</a>
+                    <a class="btn btn-success" href="{{ route('producer.create') }}"> Добавить</a>
                 </div>
             </div>
         </div>
@@ -26,12 +26,12 @@
             </tr>
             </thead>
             <tbody>
-            @foreach ($categories as $item)
+            @foreach ($producers as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
                     <td>
-                        <form action="{{ route('categories.destroy', $item->id) }}" method="Post">
+                        <form action="{{ route('producer.destroy', $item->id) }}" method="Post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Удалить</button>
@@ -41,6 +41,6 @@
             @endforeach
             </tbody>
         </table>
-        {!! $categories->links() !!}
+        {!! $producers->links() !!}
     </div>
 @endsection
