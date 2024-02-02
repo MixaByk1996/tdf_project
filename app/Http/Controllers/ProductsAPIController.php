@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Angle;
+use App\Models\Categories;
+use App\Models\Producer;
 use App\Models\Products;
+use App\Models\Series;
 use App\Models\System;
 use Illuminate\Http\File;
 use Illuminate\Http\JsonResponse;
@@ -11,19 +15,28 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductsAPIController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json(Products::with(['system', 'angle', 'producer'])->get());
+        //return response()->json(Products::with(['system', 'angle', 'producer'])->get());
+        $products = Products::query()->with(['system', 'angle', 'producer'])->paginate(5);
 
+        return view('admin.products.index', ['products' => $products]);
     }
-
+    public function create(){
+        $series = Series::all();
+        $categories = Categories::all();
+        $producers = Producer::all();
+        $angles = Angle::all();
+        $systems = System::all();
+        return view('admin.products.create', compact('series','categories', 'producers', 'angles', 'systems'));
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
 //    {
 //        $validatedData = $request->validate([
@@ -33,7 +46,8 @@ class ProductsAPIController extends Controller
 //        Storage::disk('public')->putFileAs('/img/uploads/products', new File($validatedData['image_data']), pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension());
 //        $image_name = pathinfo($validatedData['image_data']->getClientOriginalName(), PATHINFO_FILENAME) . time() . '.' . $validatedData['image_data']->getClientOriginalExtension();
         $product = new Products();
-        $product->image_path =  '';//Storage::url('img/uploads/products/' . $image_name );
+        $image_path = $request->file('image')->store('image', 'public');
+        $product->image_path =  $image_path;//Storage::url('img/uploads/products/' . $image_name );
         $product->name = $request->get('name');
         $product->price = $request->get('price');
         $product->serial_id = $request->get('serial_id');
@@ -45,9 +59,7 @@ class ProductsAPIController extends Controller
         $product->angle_id = $request->get('angle_id');
         $product->save();
         // Products::query()->create($request->all());
-        return response()->json([
-            'message' => 'Продукт добавлен'
-        ], 201);
+        return redirect()->route('admin-products.index')->with('status', 'Продукт успешно добавлен');
     }
 
     /**
@@ -92,12 +104,10 @@ class ProductsAPIController extends Controller
      * @param  int  $id
      * @return JsonResponse
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         $category = Products::find($id);
         $category->delete();
-        return response()->json([
-            'message' => 'Продукт удалена'
-        ]);
+        return redirect()->route('admin-products.index')->with('success','Продукт успешно удален');
     }
 }

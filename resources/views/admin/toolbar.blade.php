@@ -36,11 +36,12 @@
 </head>
 <body>
 <div class="topnav">
-    <a href="#home">Продукты</a>
+    <a href={{route('admin-products.index')}}>Продукты</a>
     <a href="{{route('admin-system')}}">Система</a>
     <a href="{{route('categories.index')}}">Тип</a>
     <a href="{{route('producer.index')}}">Производитель</a>
     <a href="{{route('angle.index')}}">Угол открывания</a>
+    <a href="{{route('series.index')}}">Серия</a>
     <a href="/" >Назад на сайт</a>
 </div>
 @yield('content')

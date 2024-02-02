@@ -71,7 +71,7 @@ class AngleAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

@@ -2,29 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Angle;
 use App\Models\Series;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SeriesAPIController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json(Series::all());
+        $series = Series::query()->paginate(5);
+        return view('admin.series.index', ['series' => $series]);
     }
 
+    public function create(){
+        return view('admin.series.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         Series::query()->create($request->all());
-        return response()->json([
-            'message' => 'Серия добавлена'
-        ], 201);
+        return redirect()->route('series.index')->with('status', 'Серия успешна добавлена');
     }
 
     /**
@@ -67,14 +70,12 @@ class SeriesAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         $category = Series::find($id);
         $category->delete();
-        return response()->json([
-            'message' => 'Серия удалена'
-        ]);
+        return redirect()->route('series.index')->with('success','Серия успешна удалена');
     }
 }
