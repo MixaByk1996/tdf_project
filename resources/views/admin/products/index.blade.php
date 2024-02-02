@@ -33,7 +33,7 @@
             @foreach ($products as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td><img width="100" height="100" src="http://127.0.0.1:8000/storage/{{ $item->image_path }}"></td>
+                    <td><img width="100" height="100" src="http://5.35.94.70/storage/{{ $item->image_path }}"></td>
                     <td>{{ $item->article ?? 'Отсувствуют данные' }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->price }}</td>
