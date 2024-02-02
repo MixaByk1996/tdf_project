@@ -57,7 +57,7 @@
         <div class="products-item-container blur__modal">
             <div class="products-item-product">
                 <div class="products-item-img-container">
-                    <img class="products-item-img-production" src="/img/products/5.png"/>
+                    <img class="products-item-img-production" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                 </div>
                 <div class="products-item-infromation">
                     <div class="products-item-price">
