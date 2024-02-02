@@ -13,6 +13,9 @@ Route::get('/',
 Route::get('/home',
     [App\Http\Controllers\HomeController::class,'index']
 );
+
+
+
 Route::get('/contacts', [\App\Http\Controllers\HomeController::class, 'contacts']);
 Route::get('/politics', [\App\Http\Controllers\HomeController::class, 'politics']);
 Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about']);
@@ -58,3 +61,19 @@ Route::post('/auth',
 Route::post('/logout',
     [App\Http\Controllers\UserController::class,'logout']
 );
+
+
+/*
+ * Админка
+ */
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin']);
+Route::post('/admin-index', [\App\Http\Controllers\AdminController::class,'index'])->name('admin-index');
+Route::get('/admin-system', [\App\Http\Controllers\SystemAPIController::class,'index'])->name('admin-system');
+Route::delete('/system-delete/{id}', [\App\Http\Controllers\SystemAPIController::class, 'destroy'])->name('system-delete');
+Route::get('/add-system', [\App\Http\Controllers\SystemAPIController::class, 'create'])->name('add-system');
+Route::post('/add-system', [\App\Http\Controllers\SystemAPIController::class,'store'])->name('addd-system');
+
+
+Route::resource('categories', \App\Http\Controllers\CategoriesAPIController::class);
+Route::resource('producer', \App\Http\Controllers\ProducerAPIController::class);

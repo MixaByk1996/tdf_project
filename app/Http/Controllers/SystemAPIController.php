@@ -3,28 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\System;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SystemAPIController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json(System::all());
+        $systems = System::query()->paginate(5);
+        return view('admin.system', ['systems' => $systems]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
         System::query()->create($request->all());
-        return response()->json([
-            'message' => 'Система добавлена'
-        ], 201);
+        return redirect('admin-system');
     }
 
     /**
@@ -44,6 +44,10 @@ class SystemAPIController extends Controller
                 'message' => 'Система не найдена'
             ]);
         }
+    }
+
+    public function create(){
+        return view('admin.add-system');
     }
 
     /**
@@ -67,14 +71,13 @@ class SystemAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|Factory|\Illuminate\Contracts\View\View|JsonResponse
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         $category = System::find($id);
         $category->delete();
-        return response()->json([
-            'message' => 'Система удален'
-        ]);
+        $systems = System::query()->paginate(5);
+        return redirect('admin-system');
     }
 }

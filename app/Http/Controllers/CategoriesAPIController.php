@@ -11,25 +11,28 @@ class CategoriesAPIController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|JsonResponse
      */
-    public function index(): JsonResponse
+    public function index()
     {
-        return response()->json(Categories::all());
+        $categories = Categories::query()->paginate(5);
+        return view('admin.categories.index', ['categories' => $categories]);
     }
 
+
+    public function create(){
+        return view('admin.categories.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         Categories::query()->create($request->all());
-        return response()->json([
-            'message' => 'Категория добавлена'
-        ], 201);
+        return redirect()->route('categories.index')->with('status', 'Категория успешно добавлена');
     }
 
     /**
@@ -72,14 +75,12 @@ class CategoriesAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return JsonResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         $category = Categories::find($id);
         $category->delete();
-        return response()->json([
-            'message' => 'Категория удалена'
-        ]);
+        return redirect()->route('categories.index')->with('success','Категория успешно удалена');
     }
 }
