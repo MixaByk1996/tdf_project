@@ -27,34 +27,37 @@
                         </div> -->
 <div class="catalog-products-block">
         <div class="catalog-products-container">
-{{--            @if(empty($products))--}}
-{{--                @foreach($products as $product)--}}
-{{--                    <div class="products-item--1">--}}
-{{--                        <div class="products-item-img-container--text--one">--}}
-{{--                            <div >--}}
-{{--                                <div class="products-item-img">--}}
-{{--                                    <img src="/img/products/1.png"/>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div >--}}
-{{--                                <span class="products-item-name">{{$product->product->name}}</span>--}}
-{{--                            </div>--}}
-{{--                            <div >--}}
-{{--                                <div style="margin-top: 20px">--}}
+            @if(!empty($products))
+                @foreach($products as $product)
+                    <div class="products-item--1">
+                        <div class="products-item-img-container--text--one">
+                            <div >
+                                <div class="products-item-img">
+                                    <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
+                                </div>
+                            </div>
+                            <div >
+                                <span class="products-item-name">{{$product->name}}</span>
+                            </div>
+                            <div >
+                                <div style="margin-top: 20px">
 
-{{--                                    <span class="products-item-price" style="text-align: center;">{{$product->product->price}} ₽</span>--}}
-{{--                                    @if(\Illuminate\Support\Facades\Auth::check())--}}
+                                    <span class="products-item-price" style="text-align: center;">{{$product->price}} ₽</span>
+                                    @if(\Auth::check())
+                                        <form action="{{route("add-to-card", $product->id)}}" method="get">
+                                            @csrf
+                                            <button type="submit" class="products-item-button">В корзину</button>
+                                        </form>
 
-{{--                                        <button class="products-item-button">В корзину</button>--}}
-{{--                                    @endif--}}
+                                    @endif
 
-{{--                                </div>--}}
+                                </div>
 
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--            @endif--}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
 
 
 
@@ -63,29 +66,29 @@
 
             </div>
 
-            <div class="products-pagination-container">
-            <button class="btn-pagination-left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                    <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>
-                </svg>
-            </button>
-            <ul class="urls-pagination">
-                <li class="urls-pagination-item-active">
-                    <a href="/" class="urls-pagination-item-url-active">1</a>
-                </li>
-                <li class="urls-pagination-item">
-                    <a href="/" class="urls-pagination-item-url">2</a>
-                </li>
-                <li class="urls-pagination-item">
-                    <a href="/" class="urls-pagination-item-url">3</a>
-                </li>
-            </ul>
-            <button class="btn-pagination-right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                    <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>
-                </svg>
-            </button>
-        </div>
+{{--            <div class="products-pagination-container">--}}
+{{--            <button class="btn-pagination-left">--}}
+{{--                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                    <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>--}}
+{{--                </svg>--}}
+{{--            </button>--}}
+{{--            <ul class="urls-pagination">--}}
+{{--                <li class="urls-pagination-item-active">--}}
+{{--                    <a href="/" class="urls-pagination-item-url-active">1</a>--}}
+{{--                </li>--}}
+{{--                <li class="urls-pagination-item">--}}
+{{--                    <a href="/" class="urls-pagination-item-url">2</a>--}}
+{{--                </li>--}}
+{{--                <li class="urls-pagination-item">--}}
+{{--                    <a href="/" class="urls-pagination-item-url">3</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--            <button class="btn-pagination-right">--}}
+{{--                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                    <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>--}}
+{{--                </svg>--}}
+{{--            </button>--}}
+{{--        </div>--}}
         </div>
 
 

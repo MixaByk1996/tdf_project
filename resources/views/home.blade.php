@@ -63,7 +63,7 @@
         <div class="catalog-main-items">
 
             @foreach($systems as $system)
-                <button class="catalog-main-item">
+                <button type="button" onclick="window.location='{{route('with-system', ['id' => $system->id])}}'" class="catalog-main-item">
                     <span class="catalog-main-item-text">{{$system->name}}</span>
                 </button>
             @endforeach
@@ -117,15 +117,16 @@
         <div class="feedback-container">
             <div class="feedback-container-form">
                 <h1 class="feedback-main-text" id="t1">Оставить обращение</h1>
-                <form class="feedback-form">
-                    <input type="text" class="feedback-form-input" placeholder="ФИО" />
-                    <input type="text" class="feedback-form-input" placeholder="Email" />
+                <form action="{{route('send-notification')}}" method="post" class="feedback-form">
+                    @csrf
+                    <input type="text" class="feedback-form-input" name="fio" placeholder="ФИО" />
+                    <input type="text" class="feedback-form-input" name="email" placeholder="Email" />
                     <div class="feedback-form-input-container">
-                        <input type="text" class="feedback-form-input-cont" placeholder="Номер телефона" />
-                        <input type="text" class="feedback-form-input-cont" placeholder="ИНН" />
+                        <input type="text" class="feedback-form-input-cont" name="phone" placeholder="Номер телефона" />
+                        <input type="text" class="feedback-form-input-cont" name="inn" placeholder="ИНН" />
                     </div>
                     <div class="textarea-container">
-                        <textarea class="feedback-form-textarea" rows="5"
+                        <textarea class="feedback-form-textarea" name="description" rows="5"
                             placeholder="Описание заказа или вопроса..."></textarea>
                     </div>
                     <div class="personal-data-checkes">
@@ -134,7 +135,7 @@
                             <label for="persondat" class="personal-data-label">Даю согласие на обработку персональных
                                 данных.</label>
                         </div>
-                        <button class="btn-feedback">Отправить</button>
+                        <button type="submit" class="btn-feedback">Отправить</button>
                     </div>
                 </form>
             </div>

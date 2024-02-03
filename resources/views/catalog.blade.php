@@ -33,7 +33,7 @@
                         </div>
                         <div class="count-tovars-container">
                             <span class="count-tovars-text">Количество:</span>
-                            <span class="count-tovars-cnt">16</span>
+                            <span class="count-tovars-cnt">{{$count}}</span>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                     <ul class="filters-type-list">
                         @foreach($systems as $system)
                             <li class="filters-type-list-item">
-                                <a href="" class="filters-type-list-item-url">{{$system->name}}</a>
+                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>
                             </li>
                         @endforeach
 
@@ -107,7 +107,8 @@
 
 {{--                <form action="{{route('catalog')}}" method="post">--}}
 
-
+                <form action="{{route('filter-name')}}" method="post" enctype="multipart/form-data">
+                    @csrf
                 <div class="filters-container">
                     <div class="filters-container-typechar">
                         <div class="filters-container-typechar-item">
@@ -207,18 +208,19 @@
 
                     </div>
                     <div class="clear-filters-container">
-                        <button  class="set-clearing-filters">Применить</button>
-                        <button class="clearing-filters">
-                            <span class="clearing-filters-text">Сбросить</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13"
-                                fill="none">
-                                <path
-                                    d="M10.3451 11.1654C10.5638 11.4388 10.5365 11.849 10.263 12.0951C10.1263 12.2044 9.98958 12.2318 9.85286 12.2318C9.66146 12.2318 9.47005 12.1771 9.33333 12.013L5.25911 7.14583L1.15755 12.013C1.02083 12.1771 0.829427 12.2318 0.638021 12.2318C0.501302 12.2318 0.364583 12.2044 0.227865 12.0951C-0.0455729 11.849 -0.0729167 11.4388 0.145833 11.1654L4.38411 6.10677L0.145833 1.07552C-0.0729167 0.802083 -0.0455729 0.391927 0.227865 0.145833C0.501302 -0.0729167 0.911458 -0.0455729 1.15755 0.227865L5.25911 5.09505L9.33333 0.227865C9.57943 -0.0455729 9.98958 -0.0729167 10.263 0.145833C10.5365 0.391927 10.5638 0.802083 10.3451 1.07552L6.10677 6.10677L10.3451 11.1654Z"
-                                    fill="#EA600A" />
-                            </svg>
-                        </button>
+                        <button type="submit"  class="set-clearing-filters">Применить</button>
+{{--                        <button class="clearing-filters">--}}
+{{--                            <span class="clearing-filters-text">Сбросить</span>--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13"--}}
+{{--                                fill="none">--}}
+{{--                                <path--}}
+{{--                                    d="M10.3451 11.1654C10.5638 11.4388 10.5365 11.849 10.263 12.0951C10.1263 12.2044 9.98958 12.2318 9.85286 12.2318C9.66146 12.2318 9.47005 12.1771 9.33333 12.013L5.25911 7.14583L1.15755 12.013C1.02083 12.1771 0.829427 12.2318 0.638021 12.2318C0.501302 12.2318 0.364583 12.2044 0.227865 12.0951C-0.0455729 11.849 -0.0729167 11.4388 0.145833 11.1654L4.38411 6.10677L0.145833 1.07552C-0.0729167 0.802083 -0.0455729 0.391927 0.227865 0.145833C0.501302 -0.0729167 0.911458 -0.0455729 1.15755 0.227865L5.25911 5.09505L9.33333 0.227865C9.57943 -0.0455729 9.98958 -0.0729167 10.263 0.145833C10.5365 0.391927 10.5638 0.802083 10.3451 1.07552L6.10677 6.10677L10.3451 11.1654Z"--}}
+{{--                                    fill="#EA600A" />--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
                     </div>
                 </div>
+                </form>
 {{--                </form>--}}
             </div>
 
@@ -264,30 +266,30 @@
 
                         </div>
 
-                        <div class="products-pagination-container">
-                        <button class="btn-pagination-left">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>
-                            </svg>
-                        </button>
-                        <ul class="urls-pagination">
-                            <li class="urls-pagination-item-active">
-                                <a href="/" class="urls-pagination-item-url-active">1</a>
-                            </li>
-                            <li class="urls-pagination-item">
-                                <a href="/" class="urls-pagination-item-url">2</a>
-                            </li>
-                            <li class="urls-pagination-item">
-                                <a href="/" class="urls-pagination-item-url">3</a>
-                            </li>
-                        </ul>
-                        <button class="btn-pagination-right">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>
-                            </svg>
-                        </button>
-                    </div>
-                    </div>
+{{--                        <div class="products-pagination-container">--}}
+{{--                        <button class="btn-pagination-left">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                                <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
+{{--                        <ul class="urls-pagination">--}}
+{{--                            <li class="urls-pagination-item-active">--}}
+{{--                                <a href="/" class="urls-pagination-item-url-active">1</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="urls-pagination-item">--}}
+{{--                                <a href="/" class="urls-pagination-item-url">2</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="urls-pagination-item">--}}
+{{--                                <a href="/" class="urls-pagination-item-url">3</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <button class="btn-pagination-right">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                                <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
+{{--                    </div>--}}
 
 
 
@@ -330,29 +332,29 @@
 
 
 
-                <div class="products-pagination-container">
-                    <button class="btn-pagination-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                            <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>
-                        </svg>
-                    </button>
-                    <ul class="urls-pagination">
-                        <li class="urls-pagination-item-active">
-                            <a href="/" class="urls-pagination-item-url-active">1</a>
-                        </li>
-                        <li class="urls-pagination-item">
-                            <a href="/" class="urls-pagination-item-url">2</a>
-                        </li>
-                        <li class="urls-pagination-item">
-                            <a href="/" class="urls-pagination-item-url">3</a>
-                        </li>
-                    </ul>
-                    <button class="btn-pagination-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                            <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>
-                        </svg>
-                    </button>
-                </div>
+{{--                <div class="products-pagination-container">--}}
+{{--                    <button class="btn-pagination-left">--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                            <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                    <ul class="urls-pagination">--}}
+{{--                        <li class="urls-pagination-item-active">--}}
+{{--                            <a href="/" class="urls-pagination-item-url-active">1</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="urls-pagination-item">--}}
+{{--                            <a href="/" class="urls-pagination-item-url">2</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="urls-pagination-item">--}}
+{{--                            <a href="/" class="urls-pagination-item-url">3</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                    <button class="btn-pagination-right">--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                            <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
 
 
 
@@ -398,29 +400,29 @@
 
 
 
-                    <div class="products-pagination-container">
-                        <button class="btn-pagination-left">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>
-                            </svg>
-                        </button>
-                        <ul class="urls-pagination">
-                            <li class="urls-pagination-item-active">
-                                <a href="/" class="urls-pagination-item-url-active">1</a>
-                            </li>
-                            <li class="urls-pagination-item">
-                                <a href="/" class="urls-pagination-item-url">2</a>
-                            </li>
-                            <li class="urls-pagination-item">
-                                <a href="/" class="urls-pagination-item-url">3</a>
-                            </li>
-                        </ul>
-                        <button class="btn-pagination-right">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>
-                            </svg>
-                        </button>
-                    </div>
+{{--                    <div class="products-pagination-container">--}}
+{{--                        <button class="btn-pagination-left">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                                <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
+{{--                        <ul class="urls-pagination">--}}
+{{--                            <li class="urls-pagination-item-active">--}}
+{{--                                <a href="/" class="urls-pagination-item-url-active">1</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="urls-pagination-item">--}}
+{{--                                <a href="/" class="urls-pagination-item-url">2</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="urls-pagination-item">--}}
+{{--                                <a href="/" class="urls-pagination-item-url">3</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <button class="btn-pagination-right">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
+{{--                                <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
 
 
 

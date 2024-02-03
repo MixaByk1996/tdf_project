@@ -11,7 +11,13 @@ class FavoriteController extends Controller
 {
     public function index(){
 
-        $products = Favorites::query()->where('user_id', Auth::user()->id)->get();
-        return view('favorite');
+        $favorites = Favorites::query()->where('user_id', Auth::user()->id)->get()->toArray();
+        $products_id = array_column($favorites, 'product_id');
+        $products = Products::with(['system', 'angle', 'producer']);
+        if(!empty($products_id)){
+            $products = $products->whereIn('id', $products_id);
+        }
+
+        return view('favorite', ['products' => $products->get()]);
     }
 }

@@ -2,11 +2,12 @@
     <div class="appeal-main-container">
         <div class="appeal-container-first">
             <h1 class="feedback-main-text-appeal">Есть вопрос или предложение?</h1>
-            <form class="feedback-form">
-                <input type="text" class="feedback-form-input" placeholder="Ваше имя"/>
-                <input type="text" class="feedback-form-input" placeholder="Номер телефона"/>
+            <form action="{{route('send-questions')}}" class="feedback-form" method="POST">
+                @csrf
+                <input type="text" class="feedback-form-input" name="name" placeholder="Ваше имя"/>
+                <input type="text" class="feedback-form-input" name="phone" placeholder="Номер телефона"/>
                 <div class="textarea-container">
-                    <textarea class="feedback-form-textarea" rows="5" placeholder="Описание заказа или вопроса..."></textarea>
+                    <textarea class="feedback-form-textarea" rows="5" name="description" placeholder="Описание заказа или вопроса..."></textarea>
                 </div>
                 <div class="personal-data-checkes">
                     <div class="personal-data-check-container">
@@ -15,7 +16,7 @@
                             <label for="appealdat" class="personal-data-labelon">Даю согласие на обработку персональных данных.</label>
                         </div>
                     </div>
-                    <button class="btn-feedback">Отправить</button>
+                    <button type="submit" class="btn-feedback">Отправить</button>
                 </div>
             </form>
         </div>

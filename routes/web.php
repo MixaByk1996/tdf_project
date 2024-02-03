@@ -14,8 +14,9 @@ Route::get('/home',
     [App\Http\Controllers\HomeController::class,'index']
 );
 
-
-
+Route::post('/filter', [\App\Http\Controllers\Controller::class, 'filters'])->name('filter-name');
+Route::post('/send-questions', [\App\Http\Controllers\Controller::class, 'sendQuestions'])->name('send-questions');
+Route::post('/send-notification', [\App\Http\Controllers\Controller::class, 'sendNotification'])->name('send-notification');
 Route::get('/contacts', [\App\Http\Controllers\HomeController::class, 'contacts']);
 Route::get('/politics', [\App\Http\Controllers\HomeController::class, 'politics']);
 Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about']);
@@ -25,6 +26,11 @@ Route::get('/error',
 Route::get('/catalog',
     [App\Http\Controllers\CatalogController::class,'index']
 );
+
+Route::get('/catalog/{id}',
+    [App\Http\Controllers\CatalogController::class,'withCategories']
+)->name('with-system');
+
 Route::get('/product/{id}',
     [App\Http\Controllers\ProductController::class,'index']
 );

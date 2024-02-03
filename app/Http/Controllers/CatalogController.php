@@ -22,9 +22,21 @@ class CatalogController extends Controller
         $series = Series::all();
         $categories =Categories::all();
         $angle = Angle::all();
-        return view('catalog', ['products' => $products, 'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        $count = count($products);
+        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
 
+
+    public function withCategories($id){
+        $products = Products::with(['system', 'angle', 'producer'])->where('system_id', $id)->get();
+        $systems = System::all();
+        $producers = Producer::all();
+        $series = Series::all();
+        $categories =Categories::all();
+        $angle = Angle::all();
+        $count = count($products);
+        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+    }
     public function addToCard(string $product_id){
         $backet = new Backet();
         $backet->product_id = $product_id;
