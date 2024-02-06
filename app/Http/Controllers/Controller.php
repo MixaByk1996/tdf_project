@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ExcelImport;
 use App\Mail\SendNotification;
 use App\Mail\SendQuestion;
 use App\Models\Angle;
@@ -16,6 +17,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Controller extends BaseController
 {
@@ -76,6 +79,34 @@ class Controller extends BaseController
 
 
     public function run_script(Request $request){
+        $data = \App\Models\Excel::all();
+        foreach ($data as $item){
+            if($item->id != 1){
+                $product = new Products();
+                $filename = explode('\\',$item->photo_url)[5];
+                $product->image_path =  "image/$filename";
+                $product->name = $item->name;
+                $product->price = 13;
+                $product->serial_id = 1;
+                $product->description = $item->description;
+                $product->article = $item->article;
+                $product->system_id = 1;
+                $product->producer_id = 1;
+                $product->category_id = 1;
+                $product->angle_id = 1;
+                $product->save();
+            }
+        }
+        return response()->json([
+            'message' => 'ok'
+        ]);
 
+    }
+
+    public function importExcel(Request $request): \Illuminate\Http\JsonResponse
+    {
+        Excel::import(new ExcelImport(), storage_path('app/public/excel.xlsx'));
+        $data = \App\Models\Excel::all();
+        return response()->json($data);
     }
 }

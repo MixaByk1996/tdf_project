@@ -18,7 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('/import-excel', [App\Http\Controllers\Controller::class,'importExcel']);
+Route::get('/export-excel', [App\Http\Controllers\Controller::class,'run_script']);
 Route::post('/admin-login', [\App\Http\Controllers\UserAPIController::class, 'auth']);
 
 Route::apiResource('series-api', \App\Http\Controllers\SeriesAPIController::class);

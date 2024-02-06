@@ -16,7 +16,7 @@ class CatalogController extends Controller
 {
     public function index(Request $request){
 //        dd($request);
-        $products = Products::with(['system', 'angle', 'producer'])->get();
+        $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
         $systems = System::all();
         $producers = Producer::all();
         $series = Series::all();
@@ -28,7 +28,7 @@ class CatalogController extends Controller
 
 
     public function withCategories($id){
-        $products = Products::with(['system', 'angle', 'producer'])->where('system_id', $id)->get();
+        $products = Products::with(['system', 'angle', 'producer'])->where('system_id', $id)->paginate(10);
         $systems = System::all();
         $producers = Producer::all();
         $series = Series::all();
@@ -43,7 +43,7 @@ class CatalogController extends Controller
         $backet->count = 1;
         $backet->user_id = Auth::user()->id;
         $backet->save();
-        $products = Products::with(['system', 'angle', 'producer'])->get();
+        $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
         $systems = System::all();
         return view('catalog', ['products' => $products, 'systems' => $systems]);
     }

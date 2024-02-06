@@ -9,7 +9,7 @@
                 <h1 class="furniture-set-firsttext">Мебельная фурнитура</h1>
                 <span class="furniture-set-lasttext">Инновация в каждой детали</span>
             </div>
-            <a href="/catalog" class="show-catalog-main">Смотреть каталог</a>
+            <a href="/catalog/1" class="show-catalog-main">Смотреть каталог</a>
         </div>
         <div class="furniture-set-items">
             <div class="furniture-set-item">

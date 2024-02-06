@@ -266,9 +266,10 @@
 
                         </div>
 
-                        <div class="products-pagination-container">
-                        {{$products->links()}}
-                        </div>
+                {{--                    <div class="products-pagination-container">--}}
+                {{--                        --}}
+                {{--                    </div>--}}
+                {{$products->links('pagination::bootstrap-4')}}
 {{--                    </div>--}}
 
 
@@ -309,9 +310,10 @@
                     @endforeach
                 </div>
 
-     <div class="products-pagination-container">
-         {{$products->links()}}
-     </div>
+     {{--                    <div class="products-pagination-container">--}}
+     {{--                        --}}
+     {{--                    </div>--}}
+     {{$products->links('pagination::bootstrap-4')}}
 
 
 {{--                <div class="products-pagination-container">--}}
@@ -379,10 +381,10 @@
 
                     </div>
 
-                    <div class="products-pagination-container">
-                        {{$products->links()}}
-                    </div>
-
+{{--                    <div class="products-pagination-container">--}}
+{{--                        --}}
+{{--                    </div>--}}
+                    {{$products->links('pagination::bootstrap-4')}}
 
 {{--                    <div class="products-pagination-container">--}}
 {{--                        <button class="btn-pagination-left">--}}
