@@ -73,4 +73,9 @@ class Controller extends BaseController
         return view('catalog', ['products' => $products->get(), 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
 
     }
+
+
+    public function run_script(Request $request){
+
+    }
 }
