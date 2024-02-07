@@ -72,8 +72,8 @@ class Controller extends BaseController
         $series = Series::all();
         $categories =Categories::all();
         $angle = Angle::all();
-        $count = count($products->get());
-        return view('catalog', ['products' => $products->get(), 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        $count = count($products->paginate(10));
+        return view('catalog', ['products' => $products->paginate(10), 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
 
     }
 
