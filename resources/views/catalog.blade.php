@@ -239,7 +239,7 @@
                                 <div class="products-item-img-container--text--one">
                                     <div >
                                         <div class="products-item-img">
-                                            <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
+                                            <img width="120" height="120" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                         </div>
                                     </div>
                                     <div >
@@ -269,8 +269,13 @@
                 {{--                    <div class="products-pagination-container">--}}
                 {{--                        --}}
                 {{--                    </div>--}}
-                {{$products->links('pagination::bootstrap-4')}}
-{{--                    </div>--}}
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ $products->links('pagination::tailwind') }}
+                    </div>
+                </div>
+
+                {{--                    </div>--}}</div>
 
 
 
@@ -287,7 +292,7 @@
                                 <div class="products-item-img-container--text">
                                     <div >
                                         <div class="products-item-img">
-                                            <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
+                                            <img width="120" height="120" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                         </div>
                                     </div>
                                     <div >
@@ -313,7 +318,11 @@
      {{--                    <div class="products-pagination-container">--}}
      {{--                        --}}
      {{--                    </div>--}}
-     {{$products->links('pagination::bootstrap-4')}}
+     <div class="row">
+         <div class="col-md-12">
+             {{ $products->links('pagination::tailwind') }}
+         </div>
+     </div>
 
 
 {{--                <div class="products-pagination-container">--}}
@@ -384,7 +393,11 @@
 {{--                    <div class="products-pagination-container">--}}
 {{--                        --}}
 {{--                    </div>--}}
-                    {{$products->links('pagination::bootstrap-4')}}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ $products->links('pagination::tailwind') }}
+                        </div>
+                    </div>
 
 {{--                    <div class="products-pagination-container">--}}
 {{--                        <button class="btn-pagination-left">--}}
@@ -412,7 +425,7 @@
 
 
 
-                </div>
+
 
                 </div>
 
