@@ -39,9 +39,6 @@
                 <a href="/catalog" class="header-menu-item-url">Каталог</a>
             </li>
             <li class="header-menu-item">
-                <a href="#t1" class="header-menu-item-url">Оставить заявку</a>
-            </li>
-            <li class="header-menu-item">
                 <a href="{{url('contacts')}}" class="header-menu-item-url">Контакты</a>
             </li>
         </ul>

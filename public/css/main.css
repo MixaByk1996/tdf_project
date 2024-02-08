@@ -559,7 +559,7 @@ width: 100%;
     display: flex;
     flex-direction: column;
     gap: 63px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 }
 .main-catalog-text{
@@ -571,6 +571,7 @@ width: 100%;
     line-height: 105.9%;
     margin: 0px;
     padding-left: 20px;
+    text-align: center;
 }
 
 
@@ -592,7 +593,13 @@ width: 100%;
 }
 
 
-
+.aboutUS-descr {
+    color:white;
+    max-width: 850px;
+    text-align: center;
+    margin-left: 10px;
+    padding-right: 10px;
+}
 
 
 .catalog-main-item{

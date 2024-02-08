@@ -61,7 +61,7 @@
     <div class="main-catalog-container">
         <h1 class="main-catalog-text">Каталог</h1>
         <div class="catalog-main-items">
-
+            
             @foreach($systems as $system)
                 <button type="button" onclick="window.location='{{route('with-system', ['id' => $system->id])}}'" class="catalog-main-item">
                     <span class="catalog-main-item-text">{{$system->name}}</span>
