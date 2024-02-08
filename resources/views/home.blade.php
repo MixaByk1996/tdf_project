@@ -61,7 +61,7 @@
     <div class="main-catalog-container">
         <h1 class="main-catalog-text">Каталог</h1>
         <div class="catalog-main-items">
-            
+
             @foreach($systems as $system)
                 <button type="button" onclick="window.location='{{route('with-system', ['id' => $system->id])}}'" class="catalog-main-item">
                     <span class="catalog-main-item-text">{{$system->name}}</span>
@@ -151,8 +151,7 @@
                 качественной фурнитуры. Разнообразие ассортимента, надежность и профессиональное обслуживание - это то,
                 что делает нас вашим надежным партнером в мире мебельной фурнитуры. Создавайте уникальные интерьеры с
                 нами!</span>
-            <span class="feedback-text-last">Ключевые слова: мебельная фурнитура, ручки для мебели, замки, петли,
-                мебельные ноги, качественная фурнитура, профессиональные решения.</span>
+           
         </div>
     </div>
 </section>
