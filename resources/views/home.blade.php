@@ -63,9 +63,16 @@
         <div class="catalog-main-items">
 
             @foreach($systems as $system)
+                @if(in_array($system->id, [1,2,3,4,5,6,7,8]) )
                 <button type="button" onclick="window.location='{{route('with-system', ['id' => $system->id])}}'" class="catalog-main-item">
                     <span class="catalog-main-item-text">{{$system->name}}</span>
                 </button>
+                @else
+                    <button type="button" onclick="window.location='{{route('catalog')}}'" class="catalog-main-item">
+                        <span class="catalog-main-item-text">{{$system->name}}</span>
+                    </button>
+                @endif
+
             @endforeach
 
 {{--            <button class="catalog-main-item">--}}

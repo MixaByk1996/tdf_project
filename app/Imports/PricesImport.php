@@ -31,13 +31,9 @@ class PricesImport implements ToModel
             $angle_id = $angle->id;
         }
 
-        $system_id = 1;
-        if(count(explode(',', $row[2])) > 2){
-            $systemstr = trim(strtolower(explode(',', $row[2])[1]));
-        }
-         else{
-             $systemstr = '';
-         }
+
+        $systemstr = trim(strtolower(explode(' ', $row[2])[0])) . ' ' . trim(strtolower(explode(' ', $row[2])[1] ?? ''));
+
 
 
         $data_t = System::query()->where('name', $systemstr)->first();

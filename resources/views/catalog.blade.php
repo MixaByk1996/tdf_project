@@ -46,7 +46,7 @@
                                 fill="white"></path>
                         </svg>
                         <div class="cart-count-block">
-                            <span class="cart-count-text">1</span>
+                            <span class="cart-count-text">{{count($cards) ?? 0}}</span>
                         </div>
                     </div>
 {{--                @endif--}}

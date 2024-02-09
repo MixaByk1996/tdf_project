@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $systems = System::query()->paginate(8);
+        $systems = System::query()->paginate(11);
         return view('home', ['systems' => $systems]);
     }
 
