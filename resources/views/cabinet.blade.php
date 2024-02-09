@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="cart-product-character-item">
                                         <span class="cart-product-character-name">Тип: </span>
-                                        <span class="cart-product-character-value">{{$card->product->category->name}}</span>
+                                        <span class="cart-product-character-value">{{$card->product->category->name  ??  'Не указан'}}</span>
                                     </div>
                                     {{--                                        <div class="cart-product-character-item">--}}
                                     {{--                                            <span class="cart-product-character-name">Материал: </span>--}}
