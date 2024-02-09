@@ -37,7 +37,7 @@ class ProductController extends Controller
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
         $product = Products::query()->where('id', $id)->first();
-        return view('product', ['product' => $product, 'cards' => $cards]);
+        return redirect()->back();//view('product', ['product' => $product, 'cards' => $cards]);
 
     }
 

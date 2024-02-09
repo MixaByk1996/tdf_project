@@ -98,11 +98,23 @@ class CatalogController extends Controller
         $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
         $count = count($products);
         $systems = System::all();
-        return view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return redirect()->back();//view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
     public function removeFromCard(string $product_id){
         $backet = Backet::query()->where('product_id', $product_id)->where('user_id', Auth::user()->id)->first()->delete();
         $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
         return view('cart', ['cards'=> $cards]);
+    }
+
+
+    public function removeFromModal(Request $request, string $product_id): \Illuminate\Http\RedirectResponse
+    {
+        if(Auth::check()){
+            Backet::query()->where('user_id', Auth::user()->id)->where('product_id', $product_id)->delete();
+        }
+        else{
+            TempBacket::query()->where('ip', $request->ip())->where('product_id', $product_id)->delete();
+        }
+        return redirect()->back();
     }
 }

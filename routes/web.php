@@ -58,6 +58,10 @@ Route::get('/add-to-favorite/{product_id}', [\App\Http\Controllers\ProductContro
 Route::get('/add-to-cart/{product_id}', [\App\Http\Controllers\CatalogController::class, 'addToCard'])->name('add-to-card');
 Route::get('/remove-from-card/{product_id}', [\App\Http\Controllers\CatalogController::class, 'removeFromCard'])->name('remove-card');
 
+
+
+Route::get('/remove-from-modal/{product_id}', [\App\Http\Controllers\CatalogController::class, 'removeFromModal'])->name('remove-modal');
+
 Route::post('/register',
     [App\Http\Controllers\UserController::class,'register']
 );
