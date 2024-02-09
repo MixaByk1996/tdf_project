@@ -5,11 +5,11 @@
     <div class="products-section-container">
         <div class="products-item-menu-cart-container">
             <div class="products__title--container">
-            <span class="products-item-menu-cart-container-text">Главная/Каталог</span>
-            <div style="font-size:20px">< Вернутся</div>
+            <span class="products-item-menu-cart-container-text"><a href="/">Главная</a>/<a href="{{route('catalog')}}">Каталог</a></span>
+            <div style="font-size:20px"><a href="{{ URL::previous() }}">< Вернутся</a></div>
            </div>
 
-            @if(\Illuminate\Support\Facades\Auth::check())
+{{--            @if(\Illuminate\Support\Facades\Auth::check())--}}
                 <div class="cart-block" id="myBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
                         <path
@@ -20,7 +20,7 @@
                         <span class="cart-count-text">1</span>
                     </div>
                 </div>
-            @endif
+{{--            @endif--}}
 
 <div class="close--cart--modal">&times;</div>
 
@@ -67,14 +67,14 @@
                     <div class="product-item-character-container">
                         <div class="product-item-character-item">
                             <span class="product-item-character-nametext">Производитель:</span>
-                            <span class="product-item-character-valuetext">{{$product->producer->name}}</span>
+                            <span class="product-item-character-valuetext">{{$product->producer->name ?? 'Не указан'}}</span>
                         </div>
                         <div class="product-item-character-item">
                             <span class="product-item-character-nametext">Описание:</span>
                             <span class="product-item-character-valuetext">{{$product->description}}</span>
                         </div>
                     </div>
-                    @if(\Illuminate\Support\Facades\Auth::check())
+
                     <div class="cart-complect-container">
 {{--                        <div class="complect-container">--}}
 {{--                            <button class="minus-complect">--}}
@@ -94,16 +94,16 @@
 {{--                                </svg>--}}
 {{--                            </button>--}}
 {{--                        </div>--}}
-                        @if(\Auth::check())
+{{--                        @if(\Auth::check())--}}
                             <form action="{{route("add-to-card", $product->id)}}" method="get">
                                 @csrf
                                 <button type="submit" class="product-btncart">В корзину</button>
                             </form>
 
-                        @endif
+{{--                        @endif--}}
 
                     </div>
-                    @endif
+
                 </div>
             </div>
             @if(\Auth::check())

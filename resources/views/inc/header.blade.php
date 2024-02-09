@@ -1,10 +1,12 @@
 <header class="header">
+    <input type="hidden" id="is_user_check" name="is_user_check" value="{{\Illuminate\Support\Facades\Auth::check() ? 1 : 0}}">
     <div class="header-container">
         <a href="/">
             <img src="/img/logoheader.svg" />
         </a>
-        <form class="search-form">
-            <input class="search-form-input" type="text" placeholder="Поиск..." />
+        <form class="search-form" action="{{route('search')}}" method="post">
+            @csrf
+            <input class="search-form-input" type="text" name="text" placeholder="Поиск..." />
             <button class="search-form-btn" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                     <path

@@ -16,9 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function(event) {
             // Предотвращаем всплытие события
             event.stopPropagation();
-
+            var is_user_check = document.getElementById('is_user_check');
+            console.log(is_user_check.value);
             // Перенаправляем пользователя на страницу корзины
-            window.location.href = '/cart';
+            if(is_user_check === 1){
+                window.location.href = '/cart';
+            }
+            else {
+                document.getElementById("auth-modal").setAttribute("class","auth-modal-frame");
+            }
+            //
         });
     });
 
@@ -55,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     span.style.display = 'none';
                 }
             }, 100);
-           
+
             setTimeout(function() {
                 modal.style.display = "none";
                 modal.style.visibility = 'hidden';

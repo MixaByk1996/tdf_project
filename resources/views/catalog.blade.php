@@ -8,13 +8,13 @@
 
             <div class="catalog-allblocks">
                 <div class="catalog-main-grides">
-                    <span class="catalog-main-grides-text">Главная / Каталог / Системы петель / Blum</span>
+                    <span class="catalog-main-grides-text"><a href="/">Главная</a>/<a href="{{route('with-system', ['id' => 1])}}">Каталог</a></span>
                     <div class="show-products-container">
                     <div class="show-products-items">
                             <svg  id="svgOne" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
                             fill="#EA600A">
                                 <path
-                                    d="M14 0H2C0.875 0 0 0.90625 0 2V12C0 13.125 0.875 14 2 14H14C15.0938 14 16 13.125 16 12V2C16 0.90625 15.0938 0 14 0ZM2 2H7V6H2V2ZM2 12V8H7V12H2ZM14 12H9V8H14V12ZM14 6H9V2H14V6Z"
+                                    d="M14 0H2C00H2C0.875 0 0 0.90625 0 2V12C0 13.125 0.875 14 2 14H14C15.0938 14 16 13.125 16 12V2C16 0.90625 15.0938 0 14 0ZM2 2H7V6H2V2ZM2 12V8H7V12H2ZM14 12H9V8H14V12ZM14 6H9V2H14V6Z"
                                      />
                             </svg>
                             <svg  id="svgTwo" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
@@ -33,12 +33,12 @@
                         </div>
                         <div class="count-tovars-container">
                             <span class="count-tovars-text">Количество:</span>
-                            <span class="count-tovars-cnt">{{$count}}</span>
+                            <span class="count-tovars-cnt">{{$count ?? 1}}</span>
                         </div>
                     </div>
                 </div>
 
-                @if(\Illuminate\Support\Facades\Auth::check())
+{{--                @if(\Illuminate\Support\Facades\Auth::check())--}}
                     <div class="cart-block" id="myBtn" onclick="{{url('cart')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
                             <path
@@ -49,7 +49,7 @@
                             <span class="cart-count-text">1</span>
                         </div>
                     </div>
-                @endif
+{{--                @endif--}}
 
 <div class="close--cart--modal">&times;</div>
 
@@ -249,13 +249,13 @@
                                         <div style="margin-top: 20px">
 
                                             <span class="products-item-price" style="text-align: center;">{{$product->price}} ₽</span>
-                                            @if(\Auth::check())
+{{--                                            @if(\Auth::check())--}}
                                                 <form action="{{route("add-to-card", $product->id)}}" method="get">
                                                    @csrf
                                                     <button type="submit" class="products-item-button">В корзину</button>
                                                 </form>
 
-                                            @endif
+{{--                                            @endif--}}
 
                                         </div>
 
@@ -288,6 +288,7 @@
                 <div class="catalog-products-container">
                     @foreach($products as $product)
                         <div class="products-item--2">
+                            <p id="product_id" hidden>{{$product->id}}</p>
                             <div class="products__container--2">
                                 <div class="products-item-img-container--text">
                                     <div >
@@ -303,9 +304,9 @@
                                     <div style="margin-top: 20px">
 
                                         <span class="products-item-price">{{$product->price}} ₽</span>
-                                        @if(\Illuminate\Support\Facades\Auth::check())
+{{--                                        @if(\Illuminate\Support\Facades\Auth::check())--}}
                                             <button class="products-item-button">В корзину</button>
-                                        @endif
+{{--                                        @endif--}}
 
                                     </div>
 
@@ -315,39 +316,13 @@
                     @endforeach
                 </div>
 
-     {{--                    <div class="products-pagination-container">--}}
-     {{--                        --}}
-     {{--                    </div>--}}
+
      <div class="row">
          <div class="col-md-12">
              {{ $products->links('pagination::tailwind') }}
          </div>
      </div>
 
-
-{{--                <div class="products-pagination-container">--}}
-{{--                    <button class="btn-pagination-left">--}}
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
-{{--                            <path d="M7.82759 17.6101L0.365287 9.84313C0.104368 9.58763 5.47987e-07 9.28104 5.59155e-07 9.02555C5.72557e-07 8.71896 0.104368 8.41237 0.313104 8.15687L7.82759 0.389879C8.29724 -0.121107 9.08 -0.121107 9.60184 0.338781C10.1237 0.798669 10.1237 1.56515 9.65402 2.07613L2.97448 9.02555L9.65402 15.9239C10.1237 16.4349 10.1237 17.2013 9.60184 17.6612C9.08 18.1211 8.29724 18.1211 7.82759 17.6101Z" fill="white"/>--}}
-{{--                        </svg>--}}
-{{--                    </button>--}}
-{{--                    <ul class="urls-pagination">--}}
-{{--                        <li class="urls-pagination-item-active">--}}
-{{--                            <a href="/" class="urls-pagination-item-url-active">1</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="urls-pagination-item">--}}
-{{--                            <a href="/" class="urls-pagination-item-url">2</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="urls-pagination-item">--}}
-{{--                            <a href="/" class="urls-pagination-item-url">3</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                    <button class="btn-pagination-right">--}}
-{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">--}}
-{{--                            <path d="M2.17241 17.6101L9.63471 9.84313C9.89563 9.58763 10 9.28104 10 9.02555C10 8.71896 9.89563 8.41237 9.6869 8.15687L2.17241 0.389879C1.70276 -0.121107 0.919999 -0.121107 0.39816 0.338781C-0.123679 0.798669 -0.123679 1.56515 0.345976 2.07613L7.02552 9.02555L0.345977 15.9239C-0.123678 16.4349 -0.123678 17.2013 0.398161 17.6612C0.92 18.1211 1.70276 18.1211 2.17241 17.6101Z" fill="white"/>--}}
-{{--                        </svg>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
 
 
 
@@ -364,10 +339,11 @@
                     <div class="catalog-products-container">
                         @foreach($products as $product)
                             <div class="products-item--3">
+                                <p id="product_id" hidden>{{$product->id}}</p>
                                 <div style="display: flex; justify-content: space-between;">
                                     <div style="display:flex; flex-direction: column; align-items: flex-start; gap: 10px">
                                         <div>
-                                            {{$product->producer->name}}
+                                            {{$product->producer->name ?? ''}}
                                         </div>
                                         <span style="color:#5D5D5D; font-size:20px; font-weight: 600">{{$product->name}}</span>
                                         <div>Код: {{$product->article}}</div>
@@ -376,9 +352,9 @@
                                     <div >
                                         <div style="float: right; margin-right: 20px">
                                             <span class="products-item-price">{{$product->price}} ₽</span>
-                                            @if(\Illuminate\Support\Facades\Auth::check())
+{{--                                            @if(\Illuminate\Support\Facades\Auth::check())--}}
                                                 <button class="products-item-button">В корзину</button>
-                                            @endif
+{{--                                            @endif--}}
 
                                         </div>
 

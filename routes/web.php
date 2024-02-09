@@ -25,7 +25,7 @@ Route::get('/error',
 );
 Route::get('/catalog',
     [App\Http\Controllers\CatalogController::class,'index']
-);
+)->name('catalog');
 
 Route::get('/catalog/{id}',
     [App\Http\Controllers\CatalogController::class,'withCategories']
@@ -68,6 +68,7 @@ Route::post('/logout',
     [App\Http\Controllers\UserController::class,'logout']
 );
 
+Route::post('/search',[\App\Http\Controllers\CatalogController::class,'search'])->name('search');
 
 /*
  * Админка

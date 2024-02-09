@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Backet;
+use App\Models\TempBacket;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,8 +36,19 @@ class UserController extends Controller
             return redirect('home');
         }
         else{
+
             Auth::loginUsingId($check_authuser->id);
             $user = Auth::user();
+            $ip = $request->ip();
+            $temp = TempBacket::query()->where('ip', $ip)->get();
+            foreach ($temp as $item){
+                $backet = new Backet();
+                $backet->product_id = $item->product_id;
+                $backet->count = 1;
+                $backet->user_id = Auth::user()->id;
+                $backet->save();
+                $item->delete();
+            }
             return view('cabinet', ['user' => $user]);
         }
     }
