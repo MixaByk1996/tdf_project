@@ -62,7 +62,7 @@ class CatalogController extends Controller
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
         $products = Products::with(['system','category', 'angle', 'producer'])->where('system_id', $id)->paginate(10);
-        $systems = System::query()->whereIn('id', [9,10,11])->get();
+        $systems = System::query()->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11])->get();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
