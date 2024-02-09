@@ -55,7 +55,7 @@ class PricesImport implements ToModel
         $temp_angle_arr = explode(" ", $temp_angle_str);
         $res = '';
         foreach ($temp_angle_arr as $it){
-            if(str_contains('°', trim($it))){
+            if(str_contains( trim($it), '°',)){
                 $res = $it;
                 break;
             }
