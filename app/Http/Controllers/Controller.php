@@ -76,7 +76,7 @@ class Controller extends BaseController
             $products = $products->whereIn('angle_id', $angles_id);
         }
 
-        $systems = System::query()->whereIn('id', [9,10,11])->get();
+        $systems = System::query()->whereIn('id', [1,2,3,4,5,6,7,8])->get();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
