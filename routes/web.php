@@ -14,7 +14,7 @@ Route::get('/home',
     [App\Http\Controllers\HomeController::class,'index']
 );
 
-Route::get('/filter', [\App\Http\Controllers\Controller::class, 'filters'])->name('filter-name');
+Route::post('/filter', [\App\Http\Controllers\Controller::class, 'filters'])->name('filter-name');
 Route::post('/send-questions', [\App\Http\Controllers\Controller::class, 'sendQuestions'])->name('send-questions');
 Route::post('/send-notification', [\App\Http\Controllers\Controller::class, 'sendNotification'])->name('send-notification');
 Route::get('/contacts', [\App\Http\Controllers\HomeController::class, 'contacts']);
