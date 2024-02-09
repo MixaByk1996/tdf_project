@@ -84,7 +84,7 @@
                                                                                         </button>
                                                                                     </form>
 
-                                                                                    <span class="cart-product-price">{{$card->product->price}} ₽</span>
+                                                                                    <span class="cart-product-price">{{$card->product->price}} EUR</span>
                                                                                 </div>
 
                                                                             </div>
@@ -95,7 +95,7 @@
                         <div class="products-item__bottom-cart">
                             <div class="products-item__bottom-cart-text">
                                 <img src="/img/iconTruck.svg" alt="">
-                                <div>Добавьте в корзину товаров на 3 297,48 ₽ для бесплатной доставки по Москве</div>
+                                <div>Добавьте в корзину товаров на 3 297,48 EUR для бесплатной доставки по Москве</div>
                             </div>
                             <div class="products-item__bottom-cart-summary">
                                 <button class="btn-cart">Перейти в корзину</button>
@@ -119,7 +119,7 @@
                 <div class="products-item-infromation">
                     <div class="products-item-price">
                         <span class="products-nameprice-text">Розничная цена:</span>
-                        <span class="products-price-text">{{$product->price}} ₽</span>
+                        <span class="products-price-text">{{$product->price}} EUR</span>
                     </div>
                     <div class="product-item-character-container">
                         <div class="product-item-character-item">

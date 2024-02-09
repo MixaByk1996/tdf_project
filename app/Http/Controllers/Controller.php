@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\ExcelImport;
+use App\Imports\PricesImport;
 use App\Mail\SendNotification;
 use App\Mail\SendQuestion;
 use App\Models\Angle;
@@ -116,6 +117,13 @@ class Controller extends BaseController
     {
         Excel::import(new ExcelImport(), storage_path('app/public/excel.xlsx'));
         $data = \App\Models\Excel::all();
+        return response()->json($data);
+    }
+
+    public function importPrices(Request $request): \Illuminate\Http\JsonResponse
+    {
+        Excel::import(new PricesImport(),storage_path('app/public/prices.xlsx'));
+        $data = Products::all();
         return response()->json($data);
     }
 }

@@ -82,7 +82,7 @@
                                             </div>
                                             <div class="cart-product-textcontainer">
                                                 <div class="cart-product-textmain-container">
-                                                    <span class="cart-product-serialtext">{{$card->product->producer->name}}</span>
+                                                    <span class="cart-product-serialtext">{{$card->product->producer->name ?? ""}}</span>
                                                     <span class="cart-product-nametext">{{$card->product->name}}</span>
                                                 </div>
                                                 <div class="cart-product-charactercontainer">
@@ -117,7 +117,7 @@
                                                     </button>
                                                 </form>
 
-                                                <span class="cart-product-price">{{$card->product->price}} ₽</span>
+                                                <span class="cart-product-price">{{$card->product->price}} EUR</span>
                                             </div>
 
                                         </div>
@@ -131,7 +131,7 @@
                             <div class="products-item__bottom-cart">
                                 <div class="products-item__bottom-cart-text">
                                     <img src="/img/iconTruck.svg" alt="">
-                                    <div>Добавьте в корзину товаров на 3 297,48 ₽ для бесплатной доставки по Москве</div>
+                                    <div>Добавьте в корзину товаров на 3 297,48 EUR для бесплатной доставки по Москве</div>
                                 </div>
                                 <div class="products-item__bottom-cart-summary">
                                     <button class="btn-cart">Перейти в корзину</button>
@@ -150,15 +150,15 @@
 
 
             <div class="catalog-filters-block hidden-filter">
-                <div class="filters-catalogs">
-                    <ul class="filters-type-list">
-                        @foreach($systems as $system)
-                            <li class="filters-type-list-item">
-                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>
-                            </li>
-                        @endforeach
+{{--                <div class="filters-catalogs">--}}
+{{--                    <ul class="filters-type-list">--}}
+{{--                        @foreach($systems as $system)--}}
+{{--                            <li class="filters-type-list-item">--}}
+{{--                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
 
-                    </ul>
+{{--                    </ul>--}}
 {{--                    <button class="viewall-filters-type">--}}
 {{--                        <span class="viewall-filters-type-text">Показать всё</span>--}}
 {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">--}}
@@ -167,7 +167,8 @@
 {{--                                fill="#EA600A" />--}}
 {{--                        </svg>--}}
 {{--                    </button>--}}
-                </div>
+{{--                </div>--}}
+
 
 {{--                <form action="{{route('catalog')}}" method="post">--}}
 
@@ -175,6 +176,7 @@
                     @csrf
                 <div class="filters-container">
                     <div class="filters-container-typechar">
+                        @if($systems)
                         <div class="filters-container-typechar-item">
                             <div class="filters-container-typechar-name">
                                 <span class="filters-container-typechar-text">Производитель</span>
@@ -193,6 +195,8 @@
 
                             </div>
                         </div>
+                        @endif
+                        @if($series)
                         <div class="filters-container-typechar-item">
                             <div class="filters-container-typechar-name">
                                 <span class="filters-container-typechar-text">Серия</span>
@@ -210,6 +214,8 @@
 
                             </div>
                         </div>
+                            @endif
+                            @if($categories)
                         <div class="filters-container-typechar-item">
                             <div class="filters-container-typechar-name">
                                 <span class="filters-container-typechar-text">Тип</span>
@@ -227,6 +233,8 @@
                                 @endforeach
                             </div>
                         </div>
+                            @endif
+                            @if($angle)
                         <div class="filters-container-typechar-item">
                             <div class="filters-container-typechar-name">
                                 <span class="filters-container-typechar-text">Угол открывания</span>
@@ -246,6 +254,7 @@
 
 
                         </div>
+                            @endif
 
 
                         <div class="filters-container-typechar-item">
@@ -320,7 +329,7 @@
                                     <div >
                                         <div style="margin-top: 20px">
 
-                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} ₽</span>
+                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
 {{--                                            @if(\Auth::check())--}}
                                                 <form action="{{route("add-to-card", $product->id)}}" method="get">
                                                    @csrf
@@ -380,12 +389,19 @@
                                     </div>
                                 </div>
                                 <div class="products-item-price-cart--2">
-                                    <div style="margin-top: 20px">
+                                    <div >
+                                        <div style="margin-top: 20px">
 
-                                        <span class="products-item-price">{{$product->price}} ₽</span>
-{{--                                        @if(\Illuminate\Support\Facades\Auth::check())--}}
-                                            <button class="products-item-button">В корзину</button>
-{{--                                        @endif--}}
+                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
+                                            {{--                                            @if(\Auth::check())--}}
+                                            <form action="{{route("add-to-card", $product->id)}}" method="get">
+                                                @csrf
+                                                <button type="submit" class="products-item-button">В корзину</button>
+                                            </form>
+
+                                            {{--                                            @endif--}}
+
+                                        </div>
 
                                     </div>
 
@@ -436,11 +452,16 @@
                                     </div>
 
                                     <div >
-                                        <div style="float: right; margin-right: 20px">
-                                            <span class="products-item-price">{{$product->price}} ₽</span>
-{{--                                            @if(\Illuminate\Support\Facades\Auth::check())--}}
-                                                <button class="products-item-button">В корзину</button>
-{{--                                            @endif--}}
+                                        <div style="margin-top: 20px">
+
+                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
+                                            {{--                                            @if(\Auth::check())--}}
+                                            <form action="{{route("add-to-card", $product->id)}}" method="get">
+                                                @csrf
+                                                <button type="submit" class="products-item-button">В корзину</button>
+                                            </form>
+
+                                            {{--                                            @endif--}}
 
                                         </div>
 

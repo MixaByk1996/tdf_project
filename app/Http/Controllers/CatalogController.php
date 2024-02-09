@@ -54,7 +54,7 @@ class CatalogController extends Controller
     }
 
 
-    public function withCategories($id){
+    public function withCategories(Request $request, $id){
         if(Auth::check()){
             $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
         }
