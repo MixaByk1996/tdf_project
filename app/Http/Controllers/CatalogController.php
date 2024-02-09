@@ -17,7 +17,7 @@ class CatalogController extends Controller
 {
     public function index(Request $request){
 //        dd($request);
-        $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
+        $products = Products::with(['system', 'category', 'angle', 'producer'])->paginate(10);
 
         if(Auth::check()){
             $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
@@ -25,7 +25,7 @@ class CatalogController extends Controller
         else{
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
-        $systems = System::all();
+        $systems = System::query()->whereIn('id', [9,10,11])->get();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
@@ -43,8 +43,8 @@ class CatalogController extends Controller
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
         $text = $request->get('text');
-        $products = Products::with(['system', 'angle', 'producer'])->where('name', 'like', '%' . $text . '%' )->where('description', 'like', '%' . $text . '%' )->paginate(10);
-        $systems = System::all();
+        $products = Products::with(['system', 'category','angle', 'producer'])->where('name', 'like', '%' . $text . '%' )->where('description', 'like', '%' . $text . '%' )->paginate(10);
+        $systems = System::query()->whereIn('id', [9,10,11])->get();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
@@ -61,8 +61,8 @@ class CatalogController extends Controller
         else{
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
-        $products = Products::with(['system', 'angle', 'producer'])->where('system_id', $id)->paginate(10);
-        $systems = System::all();
+        $products = Products::with(['system','category', 'angle', 'producer'])->where('system_id', $id)->paginate(10);
+        $systems = System::query()->whereIn('id', [9,10,11])->get();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();

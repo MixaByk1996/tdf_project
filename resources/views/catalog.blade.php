@@ -150,15 +150,15 @@
 
 
             <div class="catalog-filters-block hidden-filter">
-{{--                <div class="filters-catalogs">--}}
-{{--                    <ul class="filters-type-list">--}}
-{{--                        @foreach($systems as $system)--}}
-{{--                            <li class="filters-type-list-item">--}}
-{{--                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>--}}
-{{--                            </li>--}}
-{{--                        @endforeach--}}
+                <div class="filters-catalogs">
+                    <ul class="filters-type-list">
+                        @foreach($systems as $system)
+                            <li class="filters-type-list-item">
+                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>
+                            </li>
+                        @endforeach
 
-{{--                    </ul>--}}
+                    </ul>
 {{--                    <button class="viewall-filters-type">--}}
 {{--                        <span class="viewall-filters-type-text">Показать всё</span>--}}
 {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">--}}
@@ -167,7 +167,7 @@
 {{--                                fill="#EA600A" />--}}
 {{--                        </svg>--}}
 {{--                    </button>--}}
-{{--                </div>--}}
+                </div>
 
 
 {{--                <form action="{{route('catalog')}}" method="post">--}}
