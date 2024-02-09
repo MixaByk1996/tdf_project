@@ -3156,13 +3156,16 @@ border-radius: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    max-height: 600px;
+    overflow-y: auto;
 }
 .cart-tovars-item{
     display: flex;
     flex-direction: row;
     padding-top: 16px;
     gap: 125px;
-    padding-bottom: 34px;
+    /* padding-bottom: 34px; */
     justify-content: space-between;
     width: -webkit-fill-available;
     border: 1px solid #D1D1D1;

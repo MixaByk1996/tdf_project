@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById("myBtn");
     var span = document.getElementsByClassName("close--cart--modal")[0];
     var modalContent = document.getElementsByClassName("modal-content--cart")[0];
+    var btn__cart = document.getElementsByClassName("btn-cart");
 
     modal.style.opacity = 0;
     modal.style.visibility = 'hidden';
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if(is_user_check === 1){
                 window.location.href = '/cart';
             }
-
             else {
                 document.getElementById("auth-modal").setAttribute("class","auth-modal-frame");
             }
@@ -94,8 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.addEventListener('click', function(event) {
-        if (!modal.contains(event.target) && event.target !== btn) {
+        if (modal.style.opacity === "1" && !modal.contains(event.target) && event.target !== btn) {
             toggleModal();
         }
     });
+    
+
+    for (var i = 0; i < btn__cart.length; i++) {
+        btn__cart[i].addEventListener('click', function(event) {
+            toggleModal();
+        });
+    }
 });
