@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var span = document.getElementsByClassName("close--cart--modal")[0];
     var modalContent = document.getElementsByClassName("modal-content--cart")[0];
 
-    // Исходные стили модального окна
     modal.style.opacity = 0;
     modal.style.visibility = 'hidden';
     modal.style.transition = 'opacity 0.5s, visibility 0.5s';
@@ -14,30 +13,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addToCartButtons.forEach(function(button) {
         button.addEventListener('click', function(event) {
-            // Предотвращаем всплытие события
             event.stopPropagation();
             var is_user_check = document.getElementById('is_user_check');
             console.log(is_user_check.value);
-            // Перенаправляем пользователя на страницу корзины
             if(is_user_check === 1){
                 window.location.href = '/cart';
             }
             else {
                 document.getElementById("auth-modal").setAttribute("class","auth-modal-frame");
             }
-            //
         });
     });
 
     function applyBlur() {
-        var content = document.querySelector('.blur__modal'); // Или другой селектор для вашего основного контента
-    if (content) {
-        content.style.filter = 'blur(8px)';
-    }
+        var content = document.querySelector('.blur__modal'); 
+        if (content) {
+            content.style.filter = 'blur(8px)';
+        }
     }
 
     function removeBlur() {
-        var content = document.querySelector('.blur__modal'); // Тот же селектор, что и выше
+        var content = document.querySelector('.blur__modal'); 
         if (content) {
             content.style.filter = 'none';
         }
@@ -49,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function() {
                 modal.style.opacity = 1;
                 modal.style.visibility = 'visible';
-                applyBlur(); // Применяем размытие
+                applyBlur(); 
                 if (window.innerWidth < 750) {
                     span.style.display = 'flex';
                 }
@@ -57,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             modal.style.opacity = 0;
             setTimeout(function() {
-                removeBlur(); // Удаляем размытие
+                removeBlur(); 
                 if (window.innerWidth < 750) {
                     span.style.display = 'none';
                 }
@@ -70,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Переключение модального окна при клике на кнопку btn
     btn.onclick = function(event) {
         event.stopPropagation();
         toggleModal();
@@ -83,22 +78,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-
-
-    // Закрытие модального окна при клике на кнопку закрытия
     span.onclick = function() {
         toggleModal();
     }
 
-    // Закрытие модального окна при клике вне его содержимого
     window.onclick = function(event) {
         if (event.target == modal) {
             toggleModal();
         }
     }
 
-    // Предотвращение закрытия модального окна при клике внутри его содержимого
     modalContent.onclick = function(event) {
         event.stopPropagation();
     }
+
+    document.addEventListener('click', function(event) {
+        if (!modal.contains(event.target) && event.target !== btn) {
+            toggleModal();
+        }
+    });
 });

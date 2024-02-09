@@ -1285,30 +1285,30 @@ width: 100%;
     padding: 0px;
     margin: 0px;
 }
-.header-menu-item-url{
+/* .header-menu-item-url{
     color: #FFF;
     font-family: "Montserrat";
-    font-size: 17px;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 122.5%;
     text-decoration: none;
-}
+} */
 a:hover{
     color: #7f8082;
 }
 
 button:hover{
     background: #cb5912;
-    color: white;
+    color: rgb(242, 242, 242);
 }
 .header-menu-item-url {
     color: #FFF;
     font-family: "Montserrat";
-    font-size: 17px;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 122.5%;
+    font-weight: 500;
+    line-height: 40px;
     text-decoration: none;
 }
 
@@ -3794,7 +3794,7 @@ border-radius: 20px;
     width: auto;
     gap: 40px;
     padding-bottom: 33px;
-    max-height: 900px;
+    /* max-height: 900px; */
 
 
 }
@@ -3976,7 +3976,7 @@ border-radius: 20px;
     align-items: center;
     justify-content: center;
     gap: 25px;
-    padding-top: 30px;
+    padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -4968,7 +4968,7 @@ width: 100%;
 }
 .register-auth-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -4986,6 +4986,11 @@ width: 100%;
     width: auto;
     height: auto;
     cursor: pointer;
+
+    font-size: 25px;
+    font-weight: 500;
+    color:white
+
 }
 .auth-btn-shows{
     display: flex;
@@ -5000,7 +5005,25 @@ width: 100%;
     width: auto;
     height: auto;
     cursor: pointer;
+
+    
+    font-size: 25px;
+    font-weight: 500;
+    color:white
 }
+
+.logout-btn-shows:hover {
+    color: grey
+}
+
+.register-btn-shows:hover {
+    color: grey
+}
+
+.auth-btn-shows:hover {
+    color: grey
+}
+
 .auth-modal-frame {
     display: flex;
     z-index: 1000;
@@ -5154,14 +5177,19 @@ width: 100%;
     background-color: transparent;
     outline: none;
     border: none;
+
+
+    font-size: 25px;
+    font-weight: 500;
+    color: white
 }
 .profile-url{
     color: #FFF;
     font-family: "Montserrat";
-    font-size: 17px;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 122.5%;
+    font-weight: 500;
+    line-height: 40px;
     cursor: pointer;
     text-decoration: none;
 }

@@ -87,6 +87,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const dataUrlFavorites = document.querySelector('.data-url-favorites');
     const dataUrls = document.querySelectorAll('.data-url, .data-url-active');
 
+
+    // dataUrls.forEach(url => {
+    //     url.addEventListener('click', function() {
+    //         // Проверяем, открыт ли элемент с классом 'data-profile-orders-container'
+    //         if (profileOrdersContainer.style.display !== 'none') {
+    //             // Если открыт, скрываем его
+    //             profileOrdersContainer.style.display = 'none';
+    //         }
+    //     });
+    // });
+
     function changeActiveElement(newActiveElement) {
         dataUrls.forEach(element => {
             element.classList.remove('data-url-active');
@@ -129,18 +140,29 @@ document.addEventListener('DOMContentLoaded', function () {
         orderSummary.style.display = 'none';
         profileOrdersContainer.style.display = 'block';
     });
+
+    
     dataUrlData.addEventListener('click', function() {
         toggleVisibility(profileFormContainer, profileOrdersContainer, profileFavoritesContainer);
         changeActiveElement(dataUrlData);
+
+        orderSummary.style.display = 'none';
+        profileOrdersContainer.style.display = 'block';
     });
 
     dataUrlHistory.addEventListener('click', function() {
         toggleVisibility(profileOrdersContainer, profileFormContainer, profileFavoritesContainer);
         changeActiveElement(dataUrlHistory);
+
+        orderSummary.style.display = 'none';
+        profileOrdersContainer.style.display = 'block';
     });
 
     dataUrlFavorites.addEventListener('click', function() {
         toggleVisibility(profileFavoritesContainer, profileFormContainer, profileOrdersContainer);
         changeActiveElement(dataUrlFavorites);
+
+        orderSummary.style.display = 'none';
+        profileOrdersContainer.style.display = 'block';
     });
 });
