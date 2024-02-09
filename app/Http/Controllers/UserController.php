@@ -49,7 +49,13 @@ class UserController extends Controller
                 $backet->save();
                 $item->delete();
             }
-            return view('cabinet', ['user' => $user]);
+            if(Auth::check()){
+                $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+            }
+            else{
+                $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+            }
+            return view('cabinet', ['user' => $user, 'cards' => $cards]);
         }
     }
 

@@ -6,16 +6,19 @@ use App\Imports\ExcelImport;
 use App\Mail\SendNotification;
 use App\Mail\SendQuestion;
 use App\Models\Angle;
+use App\Models\Backet;
 use App\Models\Categories;
 use App\Models\Producer;
 use App\Models\Products;
 use App\Models\Series;
 use App\Models\System;
+use App\Models\TempBacket;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -37,6 +40,12 @@ class Controller extends BaseController
     }
 
     public function filters(Request  $request){
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
         $series_id = [];
         $producers_id = [];
         $categories_id= [];
@@ -73,7 +82,7 @@ class Controller extends BaseController
         $categories =Categories::all();
         $angle = Angle::all();
         $count = count($products->paginate(10));
-        return view('catalog', ['products' => $products->paginate(10), 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return view('catalog', ['products' => $products->paginate(10), 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
 
     }
 

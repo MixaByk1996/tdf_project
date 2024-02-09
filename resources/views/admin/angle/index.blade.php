@@ -41,6 +41,6 @@
             @endforeach
             </tbody>
         </table>
-        {!! $angles->links() !!}
+        {!! $angles->links('pagination::tailwind') !!}
     </div>
 @endsection

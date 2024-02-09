@@ -18,17 +18,30 @@ class CatalogController extends Controller
     public function index(Request $request){
 //        dd($request);
         $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
+
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
         $systems = System::all();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
         $angle = Angle::all();
         $count = count($products);
-        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
 
 
     public function search(Request $request){
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
         $text = $request->get('text');
         $products = Products::with(['system', 'angle', 'producer'])->where('name', 'like', '%' . $text . '%' )->where('description', 'like', '%' . $text . '%' )->paginate(10);
         $systems = System::all();
@@ -37,11 +50,17 @@ class CatalogController extends Controller
         $categories =Categories::all();
         $angle = Angle::all();
         $count = count($products);
-        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
 
 
     public function withCategories($id){
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
         $products = Products::with(['system', 'angle', 'producer'])->where('system_id', $id)->paginate(10);
         $systems = System::all();
         $producers = Producer::all();
@@ -49,7 +68,7 @@ class CatalogController extends Controller
         $categories =Categories::all();
         $angle = Angle::all();
         $count = count($products);
-        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
     public function addToCard(Request $request, string $product_id){
         if (Auth::check()){
@@ -70,11 +89,16 @@ class CatalogController extends Controller
         $series = Series::all();
         $categories =Categories::all();
         $angle = Angle::all();
-
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
         $products = Products::with(['system', 'angle', 'producer'])->paginate(10);
         $count = count($products);
         $systems = System::all();
-        return view('catalog', ['products' => $products, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
+        return view('catalog', ['products' => $products, 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
     }
     public function removeFromCard(string $product_id){
         $backet = Backet::query()->where('product_id', $product_id)->where('user_id', Auth::user()->id)->first()->delete();

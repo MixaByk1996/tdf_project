@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if(is_user_check === 1){
                 window.location.href = '/cart';
             }
+
             else {
                 document.getElementById("auth-modal").setAttribute("class","auth-modal-frame");
             }
