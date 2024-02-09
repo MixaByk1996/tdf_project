@@ -55,7 +55,7 @@ class PricesImport implements ToModel
         $temp_angle_arr = explode(" ", $temp_angle_str);
         $res = '';
         foreach ($temp_angle_arr as $it){
-            if(str_contains('°', $it)){
+            if(str_contains('°', trim($it))){
                 $res = $it;
                 break;
             }
@@ -74,7 +74,7 @@ class PricesImport implements ToModel
         }
 
         return new Products([
-            'name' => $row[0] ?? 'Не указаны данные',
+            'name' => $row[2] ?? 'Не указаны данные',
             'price' => $row[6] ?? '0',
             'photo_url' => $row[1],
             'image_path' => 'image/LEumoBOXxcev1dXsnbt8qplYKGVsINPe5S2gsYba.png',
