@@ -608,7 +608,7 @@ width: 100%;
     align-items: center;
     justify-content: center;
     width: 335px;
-    height: 145px;
+    min-height: 150px;
     border-radius: 30px;
     background-color: #686868;
     border: none;
@@ -618,7 +618,6 @@ width: 100%;
 @media screen  and (max-width:800px){
     .catalog-main-item{
         width: 189px;
-        height: 79px;
     }
     
 }
@@ -626,7 +625,6 @@ width: 100%;
 @media screen  and (max-width:500px){
     .catalog-main-item{
         width: 90%;
-        height: 79px;
     }
     
 }
@@ -2506,6 +2504,8 @@ border-radius: 20px;
     line-height: 120%;
     margin-top: 5px;
     max-width:178px;
+
+    word-break: break-all;
 }
 
 @media screen and (max-width:1450px) {
@@ -4131,7 +4131,14 @@ width: 100%;
     margin: 20px;
     border-radius: 20px;
     /* height: 242px; */
-    width: 100%;
+    width: 97%;
+  }
+
+  @media screen and (min-width:1500px) {
+    .order-card {
+        width: 95%;
+
+    }
   }
 
   @media screen and (max-width:600px) {
@@ -4949,10 +4956,7 @@ width: 100%;
     content: " ";
     background-image: url(/img/checkbox.png);
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: block; 
     background-color: transparent;
     font-size: 10px;
     height: 22px;
@@ -4961,6 +4965,8 @@ width: 100%;
     cursor: pointer;
     left: 45px;
     bottom: 41px;
+    top: auto;
+    right: auto; 
 }
 
 @media screen and (max-width: 700px) {
