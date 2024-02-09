@@ -61,10 +61,6 @@
                                                     <span class="cart-product-character-name">Код: </span>
                                                     <span class="cart-product-character-value">{{$card->product->article}}</span>
                                                 </div>
-                                                <div class="cart-product-character-item">
-                                                    <span class="cart-product-character-name">Тип: </span>
-                                                    <span class="cart-product-character-value">{{$card->product->category->name}}</span>
-                                                </div>
                                                 {{--                                        <div class="cart-product-character-item">--}}
                                                 {{--                                            <span class="cart-product-character-name">Материал: </span>--}}
                                                 {{--                                            <span class="cart-product-character-value">сталь</span>--}}
