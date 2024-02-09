@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.stopPropagation();
             var is_user_check = document.getElementById('is_user_check');
             console.log(is_user_check.value);
-            if(is_user_check === 1){
+            if(is_user_check.value === 1){
                 window.location.href = '/cart';
             }
             else {
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function applyBlur() {
-        var content = document.querySelector('.blur__modal'); 
+        var content = document.querySelector('.blur__modal');
         if (content) {
             content.style.filter = 'blur(8px)';
         }
     }
 
     function removeBlur() {
-        var content = document.querySelector('.blur__modal'); 
+        var content = document.querySelector('.blur__modal');
         if (content) {
             content.style.filter = 'none';
         }
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function() {
                 modal.style.opacity = 1;
                 modal.style.visibility = 'visible';
-                applyBlur(); 
+                applyBlur();
                 if (window.innerWidth < 750) {
                     span.style.display = 'flex';
                 }
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             modal.style.opacity = 0;
             setTimeout(function() {
-                removeBlur(); 
+                removeBlur();
                 if (window.innerWidth < 750) {
                     span.style.display = 'none';
                 }
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleModal();
         }
     });
-    
+
 
     for (var i = 0; i < btn__cart.length; i++) {
         btn__cart[i].addEventListener('click', function(event) {
