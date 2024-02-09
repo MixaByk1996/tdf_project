@@ -80,7 +80,7 @@ class PricesImport implements ToModel
             'image_path' => 'image/LEumoBOXxcev1dXsnbt8qplYKGVsINPe5S2gsYba.png',
             'serial_id' => 1,
             'description' => 'Не указано описание',
-            'article' => $row[4],
+            'article' => $row[1],
             'system_id' => $system_id,
             'producer_id' => 1,
             'category_id' => 2,
