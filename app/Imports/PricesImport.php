@@ -79,7 +79,7 @@ class PricesImport implements ToModel
             'article' => $row[1],
             'system_id' => $system_id,
             'producer_id' => 1,
-            'category_id' => 2,
+            'category_id' => 1,
             'angle_id' => $angle_id,
         ]);
     }
