@@ -12,6 +12,7 @@ use App\Models\Categories;
 use App\Models\Producer;
 use App\Models\Products;
 use App\Models\Series;
+use App\Models\Svg;
 use App\Models\System;
 use App\Models\TempBacket;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class Controller extends BaseController
         $producers_id = [];
         $categories_id= [];
         $angles_id = [];
+        $systems_id = [];
         foreach ($request->all() as $key => $value) {
             if(str_contains($key, 'producer')){
                 $producers_id[] = intval(explode("_", $key)[1]);
@@ -63,6 +65,8 @@ class Controller extends BaseController
             }
             if(str_contains($key, 'angle')){
                 $angles_id[] = intval(explode("_", $key)[1]);
+            } if(str_contains($key, 'system')){
+                $systems_id[] = intval(explode("_", $key)[1]);
             }
         }
         $products = Products::with(['system', 'angle', 'producer']);
@@ -74,6 +78,8 @@ class Controller extends BaseController
             $products = $products->whereIn('category_id', $categories_id);
         }if(!empty($angles_id)){
             $products = $products->whereIn('angle_id', $angles_id);
+        }if(!empty($systems_id)){
+            $products = $products->whereIn('system_id', $systems_id);
         }
 
         $systems = System::query()->whereIn('id', [1,2,3,4,5,6,7,8])->get();
@@ -83,7 +89,6 @@ class Controller extends BaseController
         $angle = Angle::all();
         $count = count($products->paginate(10));
         return view('catalog', ['products' => $products->paginate(10), 'cards' => $cards, 'count' => $count,  'systems' => $systems, 'producers' => $producers, 'series' => $series, 'categories' => $categories, 'angle' => $angle]);
-
     }
 
 
@@ -124,5 +129,37 @@ class Controller extends BaseController
         Excel::import(new PricesImport(),storage_path('app/public/prices.xlsx'));
         $data = Products::all();
         return response()->json($data);
+    }
+
+    public function set_svg(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $name = $request->get('name');
+        $data = Svg::all();
+        if(count($data) > 0){
+            $item = $data->where('id',1)->first();
+            $item->name = $name;
+            $item->save();
+        }
+        else{
+            Svg::query()->create([
+                'name' => $name
+            ]);
+        }
+        return response()->json([
+            'message' => 'ok'
+        ]);
+    }
+
+
+
+    public function get_svg(Request $request){
+        $name = 'svgOne';
+        $data = Svg::query()->where('id', 1)->first();
+        if($data){
+            $name = $data->name;
+        }
+        return response()->json([
+            'name' => $name
+        ]);
     }
 }

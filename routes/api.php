@@ -29,3 +29,6 @@ Route::apiResource('producer-api', \App\Http\Controllers\ProducerAPIController::
 Route::apiResource('product-api', \App\Http\Controllers\ProductsAPIController::class);
 Route::apiResource('categories-api', \App\Http\Controllers\CategoriesAPIController::class);
 Route::apiResource('angle-api', \App\Http\Controllers\AngleAPIController::class);
+
+Route::post('/set-svg', [\App\Http\Controllers\Controller::class,'set_svg']);
+Route::get('/get-svg', [\App\Http\Controllers\Controller::class,'get_svg']);

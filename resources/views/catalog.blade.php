@@ -151,14 +151,14 @@
 
             <div class="catalog-filters-block hidden-filter">
                 <div class="filters-catalogs">
-                    <ul class="filters-type-list">
-                        @foreach($systems as $system)
-                            <li class="filters-type-list-item">
-                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>
-                            </li>
-                        @endforeach
+{{--                    <ul class="filters-type-list">--}}
+{{--                        @foreach($systems as $system)--}}
+{{--                            <li class="filters-type-list-item">--}}
+{{--                                <a href="{{route('with-system', ['id' => $system->id])}}" class="filters-type-list-item-url">{{$system->name}}</a>--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
 
-                    </ul>
+{{--                    </ul>--}}
 {{--                    <button class="viewall-filters-type">--}}
 {{--                        <span class="viewall-filters-type-text">Показать всё</span>--}}
 {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">--}}
@@ -172,11 +172,34 @@
 
 {{--                <form action="{{route('catalog')}}" method="post">--}}
 
-                <form action="{{route('filter-name')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('filter-name')}}" method="get" enctype="multipart/form-data">
                     @csrf
                 <div class="filters-container">
                     <div class="filters-container-typechar">
+
                         @if($systems)
+                            <div class="filters-container-typechar-item">
+                                <div class="filters-container-typechar-name">
+                                    <span class="filters-container-typechar-text">Система</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
+                                         fill="none">
+                                        <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
+                                    </svg>
+                                </div>
+                                <div class="filters-container-typechar-values">
+                                    @foreach($systems as $item)
+                                        <div class="filters-container-typechar-list-item">
+                                            <input class="filters-container-typechar-chekbox" name="system_{{$item->id}}" {{isset($_GET["system_$item->id"]) ? 'checked' : ''}}  type="checkbox" />
+                                            <label class="filter-name-type">{{$item->name}}</label>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        @endif
+
+
+                        @if($producers)
                         <div class="filters-container-typechar-item">
                             <div class="filters-container-typechar-name">
                                 <span class="filters-container-typechar-text">Производитель</span>
@@ -188,7 +211,7 @@
                             <div class="filters-container-typechar-values">
                                 @foreach($producers as $producer)
                                     <div class="filters-container-typechar-list-item">
-                                        <input class="filters-container-typechar-chekbox" name="producer_{{$producer->id}}" type="checkbox" />
+                                        <input class="filters-container-typechar-chekbox" name="producer_{{$producer->id}}" {{isset($_GET["producer_$producer->id"]) ? 'checked' : ''}}  type="checkbox" />
                                         <label class="filter-name-type">{{$producer->name}}</label>
                                     </div>
                                 @endforeach
@@ -208,7 +231,7 @@
                             <div class="filters-container-typechar-values">
                                 @foreach($series as $serie) @endforeach
                                 <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" name="serie_{{$serie->id}}" type="checkbox" />
+                                    <input class="filters-container-typechar-chekbox" {{isset($_GET["serie_$serie->id"]) ? 'checked' : ''}} name="serie_{{$serie->id}}" type="checkbox" />
                                     <label class="filter-name-type">{{$serie->name}}</label>
                                 </div>
 
@@ -227,7 +250,7 @@
                             <div class="filters-container-typechar-values">
                                 @foreach($categories as $item)
                                 <div class="filters-container-typechar-list-item">
-                                    <input class="filters-container-typechar-chekbox" name="category_{{$item->id}}" type="checkbox" />
+                                    <input class="filters-container-typechar-chekbox" {{isset($_GET["category_$item->id"]) ? 'checked' : ''}} name="category_{{$item->id}}" type="checkbox" />
                                     <label class="filter-name-type">{{$item->name}}</label>
                                 </div>
                                 @endforeach
@@ -246,7 +269,7 @@
                             <div class="filters-container-typechar-values">
                                 @foreach($angle as $item)
                                     <div class="filters-container-typechar-list-item">
-                                        <input class="filters-container-typechar-chekbox" name="angle_{{$item->id}}" type="checkbox" />
+                                        <input class="filters-container-typechar-chekbox" {{isset($_GET["angle_$item->id"]) ? 'checked' : ''}} name="angle_{{$item->id}}" type="checkbox" />
                                         <label class="filter-name-type">{{$item->name}}</label>
                                     </div>
                                 @endforeach
@@ -282,15 +305,15 @@
                     </div>
                     <div class="clear-filters-container">
                         <button type="submit"  class="set-clearing-filters">Применить</button>
-{{--                        <button class="clearing-filters">--}}
-{{--                            <span class="clearing-filters-text">Сбросить</span>--}}
-{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13"--}}
-{{--                                fill="none">--}}
-{{--                                <path--}}
-{{--                                    d="M10.3451 11.1654C10.5638 11.4388 10.5365 11.849 10.263 12.0951C10.1263 12.2044 9.98958 12.2318 9.85286 12.2318C9.66146 12.2318 9.47005 12.1771 9.33333 12.013L5.25911 7.14583L1.15755 12.013C1.02083 12.1771 0.829427 12.2318 0.638021 12.2318C0.501302 12.2318 0.364583 12.2044 0.227865 12.0951C-0.0455729 11.849 -0.0729167 11.4388 0.145833 11.1654L4.38411 6.10677L0.145833 1.07552C-0.0729167 0.802083 -0.0455729 0.391927 0.227865 0.145833C0.501302 -0.0729167 0.911458 -0.0455729 1.15755 0.227865L5.25911 5.09505L9.33333 0.227865C9.57943 -0.0455729 9.98958 -0.0729167 10.263 0.145833C10.5365 0.391927 10.5638 0.802083 10.3451 1.07552L6.10677 6.10677L10.3451 11.1654Z"--}}
-{{--                                    fill="#EA600A" />--}}
-{{--                            </svg>--}}
-{{--                        </button>--}}
+                        <button id="clear_filter_button" class="clearing-filters" >
+                            <span class="clearing-filters-text">Сбросить</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13"
+                                fill="none">
+                                <path
+                                    d="M10.3451 11.1654C10.5638 11.4388 10.5365 11.849 10.263 12.0951C10.1263 12.2044 9.98958 12.2318 9.85286 12.2318C9.66146 12.2318 9.47005 12.1771 9.33333 12.013L5.25911 7.14583L1.15755 12.013C1.02083 12.1771 0.829427 12.2318 0.638021 12.2318C0.501302 12.2318 0.364583 12.2044 0.227865 12.0951C-0.0455729 11.849 -0.0729167 11.4388 0.145833 11.1654L4.38411 6.10677L0.145833 1.07552C-0.0729167 0.802083 -0.0455729 0.391927 0.227865 0.145833C0.501302 -0.0729167 0.911458 -0.0455729 1.15755 0.227865L5.25911 5.09505L9.33333 0.227865C9.57943 -0.0455729 9.98958 -0.0729167 10.263 0.145833C10.5365 0.391927 10.5638 0.802083 10.3451 1.07552L6.10677 6.10677L10.3451 11.1654Z"
+                                    fill="#EA600A" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 </form>
@@ -519,7 +542,6 @@
 
 <script src="./js/catalog.js" ></script>
 <script src="./js/filterCatalog.js" ></script>
-
 
 
 

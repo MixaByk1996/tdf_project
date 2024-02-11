@@ -26,3 +26,12 @@ window.onload = function () {
 
     filterButton.addEventListener('click', toggleFilter);
 }
+
+
+// let buttons_to_card = window.document.getElementsByClassName('products-item-button');
+// for (let i = 0; i < buttons_to_card.length; i++) {
+//     let item = buttons_to_card[i];
+//     item.addEventListener('click', function (e){
+//         e.preventDefault();
+//     })
+// }

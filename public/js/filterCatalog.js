@@ -1,61 +1,129 @@
-      document.addEventListener('DOMContentLoaded', function() {
-        const blockOne = document.querySelector('.block__one');
-        const blockTwo = document.querySelector('.block__two');
+      document.addEventListener('DOMContentLoaded', async function () {
+          const blockOne = document.querySelector('.block__one');
+          const blockTwo = document.querySelector('.block__two');
 
-        var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
-        const svgOne = document.getElementById('svgOne');
-        const svgTwo = document.getElementById('svgTwo');
-        const svgThree = document.getElementById('svgThree');
+          var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
+          const svgOne = document.getElementById('svgOne');
+          const svgTwo = document.getElementById('svgTwo');
+          const svgThree = document.getElementById('svgThree');
 
-        function setActiveSvg(selectedSvg) {
-            const svgs = [svgOne, svgTwo, svgThree];
-            svgs.forEach(svg => {
-                svg.setAttribute('fill', svg === selectedSvg ? '#EA600A' : 'white');
-            });
-        }
-
-        productItems.forEach(function(item) {
-            var id = item.getElementsByTagName('p')[0].innerHTML;
-            console.log(id)
-            item.addEventListener('click', function() {
-                window.location.href = '/product/' + id;
-            });
-        });
+          let response =  fetch('/api/get-svg', {
+              method: 'GET',
+              headers: {
+                  'Content-Type': 'application/json;charset=utf-8'
+              },
+          })
 
 
 
-        const blockThree = document.querySelector('.block__three');
-        document.querySelector('.catalog-main-text').style.opacity = 1;
-        document.querySelector('.catalog-filters-block').style.opacity = 1;
-        document.querySelector('.catalog-filters-block').transform = "translateY(0)";
+          function setActiveSvg(selectedSvg) {
+              const svgs = [svgOne, svgTwo, svgThree];
+              svgs.forEach(svg => {
+                  svg.setAttribute('fill', svg === selectedSvg ? '#EA600A' : 'white');
+              });
+          }
 
-        blockOne.style.opacity = 1;
-        blockTwo.style.opacity = 1;
-        blockThree.style.opacity = 1;
+          productItems.forEach(function (item) {
+              var id = item.getElementsByTagName('p')[0].innerHTML;
+              console.log(id)
+              item.addEventListener('click', function () {
+                  window.location.href = '/product/' + id;
+              });
+          });
 
-        blockOne.style.transform = "translateY(0)";
-        blockTwo.style.transform = "translateY(0)";
-        blockThree.style.transform = "translateY(0)";
+          function set_svg(name) {
+              let response = fetch('/api/set-svg', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json;charset=utf-8'
+                  },
+                  body: JSON.stringify({
+                      name: name
+                  })
+              });
+          }
 
-        svgOne.addEventListener('click', function() {
-            setActiveSvg(svgOne);
-            blockOne.style.display = 'none';
-            blockTwo.style.display = 'flex';
-            blockThree.style.display = 'none';
-        });
 
-        svgTwo.addEventListener('click', function() {
-            setActiveSvg(svgTwo);
-            blockOne.style.display = 'flex';
-            blockTwo.style.display = 'none';
-            blockThree.style.display = 'none';
-        });
 
-        svgThree.addEventListener('click', function() {
-            setActiveSvg(svgThree);
-            blockOne.style.display = 'none';
-            blockTwo.style.display = 'none';
-            blockThree.style.display = 'flex';
-        });
-    });
+          let clear_button = document.getElementById('clear_filter_button');
+          clear_button.addEventListener('click', function (e) {
+              e.preventDefault();
+              let items = document.getElementsByClassName('filters-container-typechar-chekbox');
+              for (let i = 0; i < items.length; i++) {
+                  items[i].checked = false;
+              }
+          })
+
+          const blockThree = document.querySelector('.block__three');
+
+
+
+
+          document.querySelector('.catalog-main-text').style.opacity = 1;
+          document.querySelector('.catalog-filters-block').style.opacity = 1;
+          document.querySelector('.catalog-filters-block').transform = "translateY(0)";
+
+          blockOne.style.opacity = 1;
+          blockTwo.style.opacity = 1;
+          blockThree.style.opacity = 1;
+
+          blockOne.style.transform = "translateY(0)";
+          blockTwo.style.transform = "translateY(0)";
+          blockThree.style.transform = "translateY(0)";
+
+          // let response = await fetch('/api/set-status/' + id, {
+          //     method: 'POST',
+          //     headers: {
+          //         'Content-Type': 'application/json;charset=utf-8'
+          //     },
+          //     body: JSON.stringify({
+          //         is_active : status
+          //     })
+          // });
+
+          svgOne.addEventListener('click', function () {
+              setActiveSvg(svgOne);
+              set_svg('svgOne');
+              blockOne.style.display = 'none';
+              blockTwo.style.display = 'flex';
+              blockThree.style.display = 'none';
+          });
+
+          svgTwo.addEventListener('click', function () {
+              setActiveSvg(svgTwo);
+              set_svg('svgTwo');
+              blockOne.style.display = 'flex';
+              blockTwo.style.display = 'none';
+              blockThree.style.display = 'none';
+          });
+
+          svgThree.addEventListener('click', function () {
+              setActiveSvg(svgThree);
+              set_svg('svgThree');
+              blockOne.style.display = 'none';
+              blockTwo.style.display = 'none';
+              blockThree.style.display = 'flex';
+          });
+
+          let data = (await response).json();
+          let name_svg = '';
+          data.then(name => {
+              console.log(name.name)
+              if(name.name === 'svgOne'){
+                  blockOne.style.display = 'none';
+                  blockTwo.style.display = 'flex';
+                  blockThree.style.display = 'none';
+              }else if (name.name === 'svgTwo'){
+                  blockOne.style.display = 'flex';
+                  blockTwo.style.display = 'none';
+                  blockThree.style.display = 'none';
+              }else if(name.name === 'svgThree'){
+                  blockOne.style.display = 'none';
+                  blockTwo.style.display = 'none';
+                  blockThree.style.display = 'flex';
+              }
+          } );
+
+
+      });
 
