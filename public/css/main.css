@@ -4777,6 +4777,15 @@ width: 100%;
     }
 }
 
+@media screen and (max-width:500px) {
+    .register-form{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 
 .register-form-main-text{
     color: #FFF;
@@ -4790,6 +4799,12 @@ width: 100%;
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+@media screen and (max-width:500px) {
+    .register-form-container{
+        gap: 15px;
+    }
 }
 .register-input-container{
     display: flex;
@@ -4826,6 +4841,14 @@ width: 100%;
     
 }
 
+@media screen and (max-width:500px) {
+    .register-input{
+        height: 40px;
+    }
+    
+}
+
+
 
 
 .register-input::placeholder{
@@ -4856,6 +4879,12 @@ width: 100%;
     font-weight: 400;
     line-height: 122.5%;
 
+}
+
+@media screen and (max-width:500px) {
+    .register-input-small{
+        height: 40px;
+    }
 }
 .register-input::placeholder{
     color: #5D5D5D;
@@ -4894,6 +4923,14 @@ width: 100%;
     }
     
 }
+
+@media screen and (max-width:500px) {
+    .register-submit-container{
+        gap: 20px;
+
+    }
+    
+}
 .register-submit-btn{
     display: flex;
     outline: none;
@@ -4929,6 +4966,8 @@ width: 100%;
     align-items: center;
     justify-content: center;
     gap: 11px;
+    height: 30px;
+    max-height: 30px;
 }
 .register-politics-label{
     max-width: 188px;
@@ -4937,7 +4976,8 @@ width: 100%;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 122.5%
+    line-height: 122.5%;
+    max-height: 30px;
 }
 .register-politics-checkbox{
     display: flex;
@@ -4959,14 +4999,11 @@ width: 100%;
     display: block; 
     background-color: transparent;
     font-size: 10px;
-    height: 22px;
+    height: 10px;
     width: 22px;
-    position: absolute;
+    /* position: absolute; */
     cursor: pointer;
-    left: 45px;
-    bottom: 41px;
-    top: auto;
-    right: auto; 
+    transform: translate(-150%, -200%);
 }
 
 @media screen and (max-width: 700px) {
