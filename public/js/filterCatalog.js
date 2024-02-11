@@ -47,7 +47,7 @@
 
           let clear_button = document.getElementById('clear_filter_button');
           clear_button.addEventListener('click', function (e) {
-              e.preventDefault();
+
               let items = document.getElementsByClassName('filters-container-typechar-chekbox');
               for (let i = 0; i < items.length; i++) {
                   items[i].checked = false;
