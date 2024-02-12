@@ -1574,7 +1574,7 @@ button:hover{
 .catalog-allproducts-block{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     gap: 109px;
     justify-content: center;
     margin-right: auto;
