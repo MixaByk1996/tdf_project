@@ -14,7 +14,54 @@
               },
           })
 
+          var producer_svg = document.getElementById('producer_svg');
+          let producer_click = false;
+          producer_svg.addEventListener('click', function (){
+              producer_click = !producer_click;
+              let producer_click_val = document.getElementById('producer_div');
+              producer_click_val.style = producer_click ? 'display : none' : 'display : flex';
+          })
 
+          var serie_svg = document.getElementById('serie_svg');
+          let serie_click = false;
+          serie_svg.addEventListener('click', function (){
+              serie_click = !serie_click;
+              let serie_val = document.getElementById('serie_div');
+              serie_val.style = serie_click ? 'display : none' : 'display : flex';
+          })
+
+          var category_svg = document.getElementById('category_svg');
+          let category_click = false;
+          category_svg.addEventListener('click', function (){
+              category_click = !category_click;
+              let category_val = document.getElementById('category_div');
+              category_val.style = category_click ? 'display : none' : 'display : flex';
+          })
+
+
+          var system_svg = document.getElementById('system_svg');
+          let system_click = false;
+          system_svg.addEventListener('click', function (){
+              system_click = !system_click;
+              let system_val = document.getElementById('system_div');
+              system_val.style = system_click ? 'display : none' : 'display : flex';
+          })
+
+          var angle_svg = document.getElementById('angle_svg');
+          let angle_click = false;
+          angle_svg.addEventListener('click', function (){
+              angle_click = !angle_click;
+              let angle_val = document.getElementById('angle_div');
+              angle_val.style = angle_click ? 'display : none' : 'display : flex';
+          })
+
+          var beo_svg = document.getElementById('beo_svg');
+          let beo_click = false;
+          beo_svg.addEventListener('click', function (){
+              beo_click = !beo_click;
+              let beo_val = document.getElementById('beo_div');
+              beo_val.style = beo_click ? 'display : none' : 'display : flex';
+          })
 
           function setActiveSvg(selectedSvg) {
               const svgs = [svgOne, svgTwo, svgThree];

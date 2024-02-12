@@ -179,14 +179,14 @@
 
                         @if($systems)
                             <div class="filters-container-typechar-item">
-                                <div class="filters-container-typechar-name">
+                                <div class="filters-container-typechar-name" id="system_svg">
                                     <span class="filters-container-typechar-text">Система</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
+                                    <svg id="system_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                          fill="none">
                                         <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                     </svg>
                                 </div>
-                                <div class="filters-container-typechar-values">
+                                <div id="system_div" class="filters-container-typechar-values" >
                                     @foreach($systems as $item)
                                         <div class="filters-container-typechar-list-item">
                                             <input class="filters-container-typechar-chekbox" name="system_{{$item->id}}" {{isset($_GET["system_$item->id"]) ? 'checked' : ''}}  type="checkbox" />
@@ -201,16 +201,16 @@
 
                         @if($producers)
                         <div class="filters-container-typechar-item">
-                            <div class="filters-container-typechar-name">
+                            <div class="filters-container-typechar-name" id="producer_svg">
                                 <span class="filters-container-typechar-text">Производитель</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                     fill="none">
                                     <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                 </svg>
                             </div>
-                            <div class="filters-container-typechar-values">
+                            <div class="filters-container-typechar-values" id="producer_div">
                                 @foreach($producers as $producer)
-                                    <div class="filters-container-typechar-list-item">
+                                    <div class="filters-container-typechar-list-item" >
                                         <input class="filters-container-typechar-chekbox" name="producer_{{$producer->id}}" {{isset($_GET["producer_$producer->id"]) ? 'checked' : ''}}  type="checkbox" />
                                         <label class="filter-name-type">{{$producer->name}}</label>
                                     </div>
@@ -221,14 +221,14 @@
                         @endif
                         @if($series)
                         <div class="filters-container-typechar-item">
-                            <div class="filters-container-typechar-name">
+                            <div class="filters-container-typechar-name" id="serie_svg">
                                 <span class="filters-container-typechar-text">Серия</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                     fill="none">
                                     <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                 </svg>
                             </div>
-                            <div class="filters-container-typechar-values">
+                            <div class="filters-container-typechar-values" id="serie_div">
                                 @foreach($series as $serie)
                                 <div class="filters-container-typechar-list-item">
                                     <input class="filters-container-typechar-chekbox" {{isset($_GET["serie_$serie->id"]) ? 'checked' : ''}} name="serie_{{$serie->id}}" type="checkbox" />
@@ -241,14 +241,14 @@
                             @endif
                             @if($categories)
                         <div class="filters-container-typechar-item">
-                            <div class="filters-container-typechar-name">
+                            <div class="filters-container-typechar-name" id="category_svg">
                                 <span class="filters-container-typechar-text">Тип</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                     fill="none">
                                     <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                 </svg>
                             </div>
-                            <div class="filters-container-typechar-values">
+                            <div class="filters-container-typechar-values" id="category_div">
                                 @foreach($categories as $item)
                                 <div class="filters-container-typechar-list-item">
                                     <input class="filters-container-typechar-chekbox" {{isset($_GET["category_$item->id"]) ? 'checked' : ''}} name="category_{{$item->id}}" type="checkbox" />
@@ -260,14 +260,14 @@
                             @endif
                             @if($angle)
                         <div class="filters-container-typechar-item">
-                            <div class="filters-container-typechar-name">
+                            <div class="filters-container-typechar-name" id="angle_svg">
                                 <span class="filters-container-typechar-text">Угол открывания</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                     fill="none">
                                     <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                 </svg>
                             </div>
-                            <div class="filters-container-typechar-values">
+                            <div class="filters-container-typechar-values" id="angle_div">
                                 @foreach($angle as $item)
                                     <div class="filters-container-typechar-list-item">
                                         <input class="filters-container-typechar-chekbox" {{isset($_GET["angle_$item->id"]) ? 'checked' : ''}} name="angle_{{$item->id}}" type="checkbox" />
@@ -282,14 +282,14 @@
 
 
                         <div class="filters-container-typechar-item">
-                            <div class="filters-container-typechar-name">
+                            <div class="filters-container-typechar-name" id="beo_svg">
                                 <span class="filters-container-typechar-text">Наличия товара</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="6" viewBox="0 0 16 6"
                                     fill="none">
                                     <path d="M1 5L8 1L15 5" stroke="#5D5D5D" />
                                 </svg>
                             </div>
-                            <div class="filters-container-typechar-values">
+                            <div class="filters-container-typechar-values" id="beo_div">
                                 <div class="filters-container-typechar-list-item">
                                     <input class="filters-container-typechar-chekbox" type="checkbox" />
                                     <label class="filter-name-type">Есть в наличии</label>
