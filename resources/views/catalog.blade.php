@@ -332,7 +332,7 @@
                     <div class="catalog-products-container">
                         @if($count == 0)
                             <div>
-                                <h1 style="color: white">
+                                <h1 style="color: white; text-align:center">
                                     Нам не удалось найти товар по вашему запросу. Попробуйте другой запрос или оставьте заявку, чтобы наш менеджер вам помог
                                 </h1>
                             </div>

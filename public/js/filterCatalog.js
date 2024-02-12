@@ -1,8 +1,6 @@
       document.addEventListener('DOMContentLoaded', async function () {
           const blockOne = document.querySelector('.block__one');
           const blockTwo = document.querySelector('.block__two');
-
-          var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
           const svgOne = document.getElementById('svgOne');
           const svgTwo = document.getElementById('svgTwo');
           const svgThree = document.getElementById('svgThree');
@@ -14,55 +12,36 @@
               },
           })
 
-          var producer_svg = document.getElementById('producer_svg');
-          let producer_click = false;
-          producer_svg.addEventListener('click', function (){
-              producer_click = !producer_click;
-              let producer_click_val = document.getElementById('producer_div');
-              producer_click_val.style = producer_click ? 'display : none' : 'display : flex';
-          })
 
-          var serie_svg = document.getElementById('serie_svg');
-          let serie_click = false;
-          serie_svg.addEventListener('click', function (){
-              serie_click = !serie_click;
-              let serie_val = document.getElementById('serie_div');
-              serie_val.style = serie_click ? 'display : none' : 'display : flex';
-          })
-
-          var category_svg = document.getElementById('category_svg');
-          let category_click = false;
-          category_svg.addEventListener('click', function (){
-              category_click = !category_click;
-              let category_val = document.getElementById('category_div');
-              category_val.style = category_click ? 'display : none' : 'display : flex';
-          })
+          var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
 
 
-          var system_svg = document.getElementById('system_svg');
-          let system_click = false;
-          system_svg.addEventListener('click', function (){
-              system_click = !system_click;
-              let system_val = document.getElementById('system_div');
-              system_val.style = system_click ? 'display : none' : 'display : flex';
-          })
+        function toggleDisplay(elementId, initialState) {
+            const element = document.getElementById(elementId);
+            let state = initialState;
+            return function() {
+                state = !state;
+                element.style.display = state ? 'none' : 'flex';
+            };
+        }
 
-          var angle_svg = document.getElementById('angle_svg');
-          let angle_click = false;
-          angle_svg.addEventListener('click', function (){
-              angle_click = !angle_click;
-              let angle_val = document.getElementById('angle_div');
-              angle_val.style = angle_click ? 'display : none' : 'display : flex';
-          })
+        const toggles = [
+            { svgId: 'producer_svg', divId: 'producer_div' },
+            { svgId: 'serie_svg', divId: 'serie_div' },
+            { svgId: 'category_svg', divId: 'category_div' },
+            { svgId: 'system_svg', divId: 'system_div' },
+            { svgId: 'angle_svg', divId: 'angle_div' },
+            { svgId: 'beo_svg', divId: 'beo_div' }
+        ];
+        
+        toggles.forEach(({ svgId, divId }) => {
+            const svgElement = document.getElementById(svgId);
+            if (svgElement) { 
+                svgElement.addEventListener('click', toggleDisplay(divId, true));
+            }
+        });
 
-          var beo_svg = document.getElementById('beo_svg');
-          let beo_click = false;
-          beo_svg.addEventListener('click', function (){
-              beo_click = !beo_click;
-              let beo_val = document.getElementById('beo_div');
-              beo_val.style = beo_click ? 'display : none' : 'display : flex';
-          })
-
+    
           function setActiveSvg(selectedSvg) {
               const svgs = [svgOne, svgTwo, svgThree];
               svgs.forEach(svg => {

@@ -2243,6 +2243,7 @@ border-radius: 20px;
     height: auto;
     border-radius: 30px;
     background: #D9D9D9;
+    cursor: pointer;
 }
 .filters-container-typechar-text{
     color: #2B2B2B;
@@ -2269,12 +2270,18 @@ border-radius: 20px;
     padding-bottom: 17px;
     padding-left: 28px;
     padding-right: 28px;
-    width: -webkit-fill-available;
+    width: 324px;
     border-radius: 30px;
     background: #FFF;
 }
+
+.animated-element {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* Начальное значение прозрачности */
+}
+
 .filters-container-typechar-values{
-    display: flex;
+    display: none;
     flex-direction: column;
     background: #D9D9D9;
     border-top-left-radius: 0px;
@@ -3155,17 +3162,19 @@ border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     padding: 20px;
     max-height: 600px;
     overflow-y: auto;
 }
+
+
 .cart-tovars-item{
     display: flex;
     flex-direction: row;
     padding-top: 16px;
     gap: 125px;
-    /* padding-bottom: 34px; */
+    padding-bottom: 34px;
     justify-content: space-between;
     width: -webkit-fill-available;
     border: 1px solid #D1D1D1;
@@ -3240,6 +3249,7 @@ border-radius: 20px;
 }
 .cart-product-img{
     display: flex;
+    max-width: 200px;
 }
 .cart-product-textcontainer{
     display: flex;
@@ -5229,6 +5239,7 @@ width: 100%;
     font-weight: 500;
     color: white
 }
+
 .profile-url{
     color: #FFF;
     font-family: "Montserrat";
