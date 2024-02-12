@@ -2698,9 +2698,10 @@ border-radius: 20px;
 .products-item-product{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     margin-bottom: auto;
+    width: 100%;
     gap: 60px;
 }
 
