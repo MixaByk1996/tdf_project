@@ -376,7 +376,7 @@
                 {{--                    </div>--}}
                 <div class="row">
                     <div class="col-md-12">
-                        {{ $products->links('pagination::tailwind') }}
+                        {{ $products->onEachSide(3)->links('pagination::tailwind') }}
                     </div>
                 </div>
 
@@ -438,7 +438,7 @@
 
      <div class="row">
          <div class="col-md-12">
-             {{ $products->links('pagination::tailwind') }}
+             {{ $products->onEachSide(3)->links('pagination::tailwind') }}
          </div>
      </div>
 
@@ -502,7 +502,7 @@
 {{--                    </div>--}}
                     <div class="row">
                         <div class="col-md-12">
-                            {{ $products->links('pagination::tailwind') }}
+                            {{ $products->onEachSide(3)->links('pagination::tailwind') }}
                         </div>
                     </div>
 
