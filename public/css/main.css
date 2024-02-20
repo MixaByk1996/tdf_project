@@ -624,9 +624,14 @@ width: 100%;
 
 @media screen  and (max-width:500px){
     .catalog-main-item{
-        width: 90%;
+        width: 189px;
     }
+}
 
+@media screen  and (max-width:420){
+    .catalog-main-item{
+        width: 155px;
+    }
 }
 
 .catalog-main-item:hover{
@@ -1562,7 +1567,26 @@ button:hover{
     }
 }
 
+
+@media (max-width: 800px) {
+    .furniture-set-items {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .furniture-set-item {
+        flex: 0 0 auto;
+        width: 100%; /* Убедитесь, что элементы слайдера подходят под размер экрана */
+        scroll-snap-align: start;
+    }
+
+}
+
+
+
 .catalog-main-grides-text{
+    display: flex;
+    gap: 5px;
     color: #FFF;
     font-family: "Montserrat";
     font-size: 16px;
@@ -2712,6 +2736,7 @@ border-radius: 20px;
 }
 .products-item-img-production{
     display: flex;
+    object-fit: contain;
 
 }
 
@@ -2833,6 +2858,7 @@ border-radius: 20px;
 @media screen and (max-width:650px) {
     .product-item-character-container{
         max-width: 100%;
+        font-size: 13px;
     }
 
 }

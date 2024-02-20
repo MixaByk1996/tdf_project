@@ -11,6 +11,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="/js/filterFavorite.js"></script>
     <script src="/js/catalog.js"></script>
+    <script src="/js/slider.js"></script>
+
     <script src="/js/filterCatalog.js"></script>
     <script src="/js/modalCart.js"></script>
     <script src="/js/cabinet.js"></script>
