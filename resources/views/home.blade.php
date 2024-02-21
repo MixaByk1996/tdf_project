@@ -24,33 +24,21 @@
                 можем предложить вам только лучшее.</span>
         </div>
 
-
-        <!-- <img src="/img/leftArrow.svg" alt="" width="50px" height="50px" style="fill:#fff"> -->
-
         <div class="furniture-set-item">
             <span class="furniture-set-item-maintext">Широкий ассортимент:</span>
             <span class="furniture-set-item-text">Всё, что нужно для вашей мебели. Эксклюзивные ручки и ручки-купе,
                 мебельные ноги, петли, замки, и многое другое - у нас есть всё, чтобы придать вашей мебели
                 индивидуальность и стиль.</span>
-
-                
         </div>
-
-
-        <!-- <img src="/img/rightArrow.svg" alt="" width="50px" height="50px" style="fill:#fff"> -->
-
-
 
 
         
         <div class="furniture-set-item">
-            <span class="furniture-set-item-maintext">Удобство покупки:</span>
+            <span class="furniture-set-item-maintext ">Удобство покупки:</span>
             <span class="furniture-set-item-text">Мы стремимся сделать покупки у нас максимально удобными. Закажите
                 фурнитуру онлайн, и мы доставим её прямо к вам домой.</span>
         </div>
     </div>
-
-
 
 
 
