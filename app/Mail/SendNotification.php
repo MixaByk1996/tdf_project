@@ -34,7 +34,7 @@ class SendNotification extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(): SendNotification
     {
         return $this->view('send-notification')->with([
             'name' => $this->name,
