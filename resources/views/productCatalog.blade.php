@@ -1,6 +1,8 @@
 <div style="max-width:70%">
 
 <div class="catalog-main-grides">
+<h1 class="catalog-main-text hidden500After" style="opacity:1">Каталог</h1>
+
                     <span class="catalog-main-grides-text"><a href="/">Главная</a>/<a
                             href="{{route('with-system', ['id' => 1])}}">Каталог</a></span>
                     <div class="show-products-container">
@@ -26,6 +28,21 @@
                             <span class="count-tovars-cnt">{{$count ?? 1}}</span>
                         </div>
                     </div>
+
+                    <button class="catalog-filters-button" style="margin-bottom: 15px">Фильтр</button>
+
+                    <!-- <div class="cart-block hidden500After" id="myBtn" onclick="{{url('cart')}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                        <path
+                            d="M20.1172 17.875C18.9441 17.875 18.0751 18.8203 18.0751 19.9375C18.0751 21.0977 18.9875 22 20.1172 22C21.2034 22 22.1593 21.0977 22.1593 19.9375C22.1593 18.8203 21.2903 17.875 20.1172 17.875ZM7.60369 17.875C6.43055 17.875 5.56156 18.8203 5.56156 19.9375C5.56156 21.0977 6.474 22 7.60369 22C8.68993 22 9.64583 21.0977 9.64583 19.9375C9.64583 18.8203 8.77683 17.875 7.60369 17.875ZM24.7229 1.93359C24.4622 1.58984 24.0711 1.375 23.5932 1.375H5.25741L5.17051 0.859375C5.08361 0.386719 4.64912 0 4.17117 0H0.999343C0.434497 0 0 0.472656 0 1.03125C0 1.54688 0.434497 2.0625 0.999343 2.0625H3.25873L5.86571 15.6836C5.99606 16.1562 6.43055 16.5 6.95195 16.5H21.2034C21.7683 16.5 22.2462 16.0703 22.2462 15.5117C22.2462 14.9102 21.7683 14.4375 21.2034 14.4375H7.77749L7.38644 12.375H21.2469C21.8552 12.375 22.3766 11.9883 22.5504 11.3867L24.9401 3.17969C25.0705 2.75 24.9836 2.27734 24.7229 1.93359Z"
+                            fill="white"></path>
+                    </svg>
+                    <div class="cart-count-block">
+                        <span class="cart-count-text">{{count($cards) ?? 0}}</span>
+                    </div>
+                </div> -->
+
+
                 </div>
                 
 <div class="catalog-products-block block__two">
@@ -92,7 +109,7 @@
 
 
 <div class="catalog-products-block block__one">
-    <div class="catalog-products-container">
+    <div class="catalog-products-container__">
         @if($count == 0)
             <div>
                 <h3 style="color: white">
@@ -157,7 +174,7 @@
 
 
     <div class="catalog-products-block block__three">
-        <div class="catalog-products-container">
+        <div class="catalog-products-container__">
             @if($count == 0)
                 <div>
                     <h3 style="color: white">
@@ -168,12 +185,12 @@
             @foreach($products as $product)
                 <div class="products-item--3">
                     <p id="product_id" hidden>{{$product->id}}</p>
-                    <div style="display: flex; justify-content: space-between;">
+                    <div class="pruducts__containets__3">
                         <div style="display:flex; flex-direction: column; align-items: flex-start; gap: 10px">
                             <div>
                                 {{$product->producer->name ?? ''}}
                             </div>
-                            <span style="color:#5D5D5D; font-size:20px; font-weight: 600">{{$product->name}}</span>
+                            <span class="products-item-name__3">{{$product->name}}</span>
                             <div>Код: {{$product->article}}</div>
                         </div>
 
