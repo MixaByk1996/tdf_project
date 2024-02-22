@@ -347,6 +347,7 @@ width: 100%;
 .furniture-set-items{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     gap: 131px;
     overflow-x: hidden;
 
