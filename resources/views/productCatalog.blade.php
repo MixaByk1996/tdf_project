@@ -45,7 +45,7 @@
 
                 </div>
                 
-<div class="catalog-products-block block__two ">
+<div class="catalog-products-block block__two  ">
 
 
         <div class="catalog-products-container">
