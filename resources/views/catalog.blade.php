@@ -107,7 +107,7 @@
                                         </div>
                                         <div class="cart-product-actions">
                                             <div class="cart-product-deletes-block">
-                                                <form action="{{route("remove-modal", $card->product->id)}}" method="get">
+                                                <form action="{{route('remove-modal', $card->product->id)}}" method="get">
                                                     @csrf
                                                     <button type="submit" class="cart-product-deletes-btn">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
