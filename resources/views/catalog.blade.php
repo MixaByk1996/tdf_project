@@ -3,19 +3,18 @@
 @section('content')
 <section class="catalog-section">
     <div class="catalog-main-container">
-        <div class="catalog-mainitems-block">
-
-            <div class="catalog-allblocks">
-
-            </div>
-        </div>
+   
         <div class="catalog-allproducts-block blur__modal">
 
 
+    
+
+
+                            </div>
 
             <div class="catalog-filters-block hidden-filter">
 
-            <h1 class="catalog-main-text hidden500Before">Каталог</h1>
+            <h1 class="catalog-main-text hidden1300Before">Каталог</h1>
 
                @include('catalogFilter')
             </div>
@@ -26,7 +25,7 @@
             @include('productCatalog')
 
 
-            <div>
+            <div class="hidden1300Before">
             @include('cartProduct')
             </div>
 

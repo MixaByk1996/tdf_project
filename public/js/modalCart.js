@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById("myModal");
     var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("myBtn2");
+
     var span = document.getElementsByClassName("close--cart--modal")[0];
     var modalContent = document.getElementsByClassName("modal-content--cart")[0];
     var btn__cart = document.getElementsByClassName("btn-cart");
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modal.style.opacity = 1;
                 modal.style.visibility = 'visible';
                 applyBlur();
-                if (window.innerWidth < 750) {
+                if (window.innerWidth < 1300) {
                     span.style.display = 'flex';
                 }
             }, 10);
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.opacity = 0;
             setTimeout(function() {
                 removeBlur();
-                if (window.innerWidth < 750) {
+                if (window.innerWidth < 1300) {
                     span.style.display = 'none';
                 }
             }, 100);
@@ -71,8 +73,20 @@ document.addEventListener('DOMContentLoaded', function () {
         event.stopPropagation();
         toggleModal();
 
-        if (window.innerWidth > 750) {
+        if (window.innerWidth > 1300) {
             var rect = btn.getBoundingClientRect();
+            modal.style.top = rect.top + "px";
+            var modalWidth = modal.offsetWidth;
+            modal.style.left = (rect.left - modalWidth) + "px";
+        }
+    };
+
+    btn2.onclick = function(event) {
+        event.stopPropagation();
+        toggleModal();
+
+        if (window.innerWidth > 1300) {
+            var rect = btn2.getBoundingClientRect();
             modal.style.top = rect.top + "px";
             var modalWidth = modal.offsetWidth;
             modal.style.left = (rect.left - modalWidth) + "px";
@@ -95,6 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', function(event) {
         if (modal.style.opacity === "1" && !modal.contains(event.target) && event.target !== btn) {
+            toggleModal();
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (modal.style.opacity === "1" && !modal.contains(event.target) && event.target !== btn2) {
             toggleModal();
         }
     });
