@@ -6,7 +6,7 @@
         <div class="catalog-mainitems-block">
 
             <div class="catalog-allblocks">
-         
+
             </div>
         </div>
         <div class="catalog-allproducts-block blur__modal">
@@ -22,7 +22,7 @@
 
 
 
-            
+
             @include('productCatalog')
 
 
@@ -34,7 +34,7 @@
         </div>
 
 
-        
+
         <div class="close--cart--modal">&times;</div>
 
 

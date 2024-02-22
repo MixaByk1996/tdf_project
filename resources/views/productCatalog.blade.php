@@ -1,7 +1,7 @@
 <div style="max-width:70%">
 
     <div class="catalog-main-grides">
-       
+
             <h1 class="catalog-main-text hidden500After" style="opacity:1">Каталог</h1>
 
             <span class="catalog-main-grides-text"><a href="/">Главная</a>/<a
@@ -76,7 +76,7 @@
 
                             <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
                             {{-- @if(\Auth::check())--}}
-                            <form action="{{route(" add-to-card", $product->id)}}" method="get">
+                            <form action="{{route("add-to-card", $product->id)}}" method="get">
                                 @csrf
                                 <button type="submit" class="products-item-button">В корзину</button>
                             </form>
@@ -97,7 +97,7 @@
             {{-- </div>--}}
         <div class="row">
             <div class="col-md-12">
-                {{ $products->onEachSide(3)->links('pagination::simple-tailwind') }}
+                {{ $products->onEachSide(3)->links('pagination::tailwind') }}
             </div>
         </div>
 
@@ -142,7 +142,7 @@
 
                             <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
                             {{-- @if(\Auth::check())--}}
-                            <form action="{{route(" add-to-card", $product->id)}}" method="get">
+                            <form action="{{route("add-to-card", $product->id)}}" method="get">
                                 @csrf
                                 <button type="submit" class="products-item-button">В корзину</button>
                             </form>
@@ -162,7 +162,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            {{ $products->onEachSide(3)->links('pagination::simple-tailwind') }}
+            {{ $products->onEachSide(3)->links('pagination::tailwind') }}
         </div>
     </div>
 
@@ -205,7 +205,7 @@
 
                         <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
                         {{-- @if(\Auth::check())--}}
-                        <form action="{{route(" add-to-card", $product->id)}}" method="get">
+                        <form action="{{route("add-to-card", $product->id)}}" method="get">
                             @csrf
                             <button type="submit" class="products-item-button">В корзину</button>
                         </form>
@@ -224,7 +224,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            {{ $products->onEachSide(3)->links('pagination::simple-tailwind') }}
+            {{ $products->onEachSide(3)->links('pagination::tailwind') }}
         </div>
     </div>
 
