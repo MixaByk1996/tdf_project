@@ -372,7 +372,7 @@ width: 100%;
     @media screen and (max-width:500px) {
         .furniture-set-items{
             flex-wrap: nowrap;
-            padding-right: 100px;
+            padding-right: 120px;
             max-width: 480px;
             overflow: hidden;
             gap: 35px;
@@ -433,8 +433,8 @@ width: 100%;
     @media screen and (max-width:405px) {
         .furniture-set-items{
             max-width: 395px;
-            gap: 1px;
-            padding-right: 57px;
+            /* gap: 20px; */
+            padding-right: 60px;
         }
         
 
@@ -548,7 +548,7 @@ width: 100%;
 
 @media screen and (max-width:500px){
     .furniture-set-item-text{
-        width: 300px;
+        width: 258px;
         font-size: 13px;
 
 
