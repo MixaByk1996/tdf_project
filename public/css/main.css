@@ -1751,6 +1751,12 @@ button:hover{
     line-height: 100%;
     text-align: center;
 }
+
+.catalog-main-grides-text a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .catalog-allproducts-block{
     display: flex;
     flex-direction: row;

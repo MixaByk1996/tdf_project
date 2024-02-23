@@ -5,6 +5,12 @@
           const svgTwo = document.getElementById('svgTwo');
           const svgThree = document.getElementById('svgThree');
 
+
+          blockOne.style.display = 'none'; 
+          blockTwo.style.display = 'flex';
+          blockThree.style.display = 'none';
+      
+
           let response =  fetch('/api/get-svg', {
               method: 'GET',
               headers: {
