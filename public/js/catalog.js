@@ -23,7 +23,11 @@ window.onload = function () {
             console.log(1);
         }
     }
-
+    $('body').on('change', '.pagination', function () {
+        var url = $(this).find(":selected").attr('data-url');
+        console.log(url);
+        window.location.href = url;
+    });
     filterButton.addEventListener('click', toggleFilter);
 }
 

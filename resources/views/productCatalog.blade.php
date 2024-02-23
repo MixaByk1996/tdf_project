@@ -29,7 +29,7 @@
                 <span class="count-tovars-cnt">{{$count ?? 1}}</span>
             </div>
 
-            
+
         </div>
 
         <button class="catalog-filters-button" style="margin-bottom: 15px">Фильтр</button>
@@ -99,12 +99,11 @@
             {{-- </div>--}}
         <div class="row">
             <div class="col-md-12">
-                {{ $products->onEachSide(3)->links('pagination::tailwind') }}
+                {{ $products->onEachSide(3)->links('pagination::custom_pagination') }}
             </div>
         </div>
 
-        {{--
-    </div>--}}
+        {{--</div>--}}
 </div>
 
 
@@ -164,7 +163,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            {{ $products->onEachSide(3)->links('pagination::tailwind') }}
+            {{ $products->onEachSide(3)->links('pagination::custom_pagination') }}
         </div>
     </div>
 
@@ -226,7 +225,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            {{ $products->onEachSide(3)->links('pagination::tailwind') }}
+            {{ $products->onEachSide(3)->links('pagination::custom_pagination') }}
         </div>
     </div>
 
@@ -239,3 +238,4 @@
 </div>
 
 </div>
+

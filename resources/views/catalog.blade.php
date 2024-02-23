@@ -3,11 +3,11 @@
 @section('content')
 <section class="catalog-section">
     <div class="catalog-main-container">
-   
+
         <div class="catalog-allproducts-block blur__modal">
 
 
-    
+
 
 
                             </div>
@@ -135,3 +135,4 @@
 
 
 @endsection
+
