@@ -18,19 +18,13 @@
 
         <div class="furniture-set-items">
 
-            <div class="furniture-set-item">
-                <span class="furniture-set-item-maintext ">Удобство покупки:</span>
-                <span class="furniture-set-item-text">Мы стремимся сделать покупки у нас максимально удобными. Закажите
-                    фурнитуру онлайн, и мы доставим её прямо к вам домой.</span>
-            </div>
-
-            <div class="furniture-set-item">
+        
+        <div class="furniture-set-item">
                 <span class="furniture-set-item-maintext">Качество без компромиссов:</span>
                 <span class="furniture-set-item-text">Только лучшие производители мебельной фурнитуры: продукция,
                     которая прослужит многие годы. А также строгий контроль качества товаров, и мы гордимся тем, что
                     можем предложить вам только лучшее.</span>
             </div>
-
 
             <div class="furniture-set-item">
                 <span class="furniture-set-item-maintext">Широкий ассортимент:</span>
@@ -38,6 +32,14 @@
                     мебельные ноги, петли, замки, и многое другое - у нас есть всё, чтобы придать вашей мебели
                     индивидуальность и стиль.</span>
             </div>
+
+            <div class="furniture-set-item">
+                <span class="furniture-set-item-maintext ">Удобство покупки:</span>
+                <span class="furniture-set-item-text">Мы стремимся сделать покупки у нас максимально удобными. Закажите
+                    фурнитуру онлайн, и мы доставим её прямо к вам домой.</span>
+            </div>
+
+
 
 
 

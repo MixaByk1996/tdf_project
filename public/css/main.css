@@ -489,7 +489,7 @@ width: 100%;
 
 
     .active {
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
 
     .noactive--text {
@@ -543,7 +543,7 @@ width: 100%;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    width: 345px;
+    width: 422px;
     text-align: start;
 }
 
