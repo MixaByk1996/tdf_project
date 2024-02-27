@@ -15,7 +15,7 @@ class CategoriesAPIController extends Controller
      */
     public function index()
     {
-        $categories = Categories::query()->paginate(5);
+        $categories = Categories::query()->paginate(75);
         return view('admin.categories.index', ['categories' => $categories]);
     }
 

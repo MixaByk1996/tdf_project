@@ -11,7 +11,7 @@ class AngleAPIController extends Controller
 {
     public function index()
     {
-        $angles = Angle::query()->paginate(5);
+        $angles = Angle::query()->paginate(75);
         return view('admin.angle.index', ['angles' => $angles]);
     }
 
