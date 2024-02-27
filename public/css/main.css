@@ -1466,8 +1466,24 @@ a:hover{
 
 .clearing-filters-text:hover {
     color: white;
-    cursor: pointer;
 }
+
+
+
+
+
+.clearing-filters:hover,
+.clearing-filters:hover .clearing-filters-text {
+    cursor: pointer;
+    stroke: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+
+
+}
+
+
+
 
 button:hover{
     /* background: #cb5912; */
