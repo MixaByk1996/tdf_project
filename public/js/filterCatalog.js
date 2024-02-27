@@ -22,31 +22,31 @@
           var productItems = document.querySelectorAll('.products-item--1, .products-item--2, .products-item--3');
 
 
-        function toggleDisplay(elementId, initialState) {
-            const element = document.getElementById(elementId);
-            let state = initialState;
-            return function() {
-                state = !state;
-                element.style.display = state ? 'none' : 'flex';
-            };
-        }
+        // function toggleDisplay(elementId, initialState) {
+        //     const element = document.getElementById(elementId);
+        //     let state = initialState;
+        //     return function() {
+        //         state = !state;
+        //         element.style.display = state ? 'none' : 'flex';
+        //     };
+        // }
 
-        const toggles = [
-            { svgId: 'producer_svg', divId: 'producer_div' },
-            { svgId: 'serie_svg', divId: 'serie_div' },
-            { svgId: 'category_svg', divId: 'category_div' },
-            { svgId: 'system_svg', divId: 'system_div' },
-            { svgId: 'angle_svg', divId: 'angle_div' },
-            { svgId: 'beo_svg', divId: 'beo_div' }
-        ];
+        // const toggles = [
+        //     { svgId: 'producer_svg', divId: 'producer_div' },
+        //     { svgId: 'serie_svg', divId: 'serie_div' },
+        //     { svgId: 'category_svg', divId: 'category_div' },
+        //     { svgId: 'system_svg', divId: 'system_div' },
+        //     { svgId: 'angle_svg', divId: 'angle_div' },
+        //     { svgId: 'beo_svg', divId: 'beo_div' }
+        // ];
         
-        toggles.forEach(({ svgId, divId }) => {
-            const svgElement = document.getElementById(svgId);
-            if (svgElement) { 
-                svgElement.addEventListener('click', toggleDisplay(divId, true));
-            }
-        });
-
+        // toggles.forEach(({ svgId, divId }) => {
+        //     const svgElement = document.getElementById(svgId);
+        //     if (svgElement) { 
+        //         svgElement.addEventListener('click', toggleDisplay(divId, true));
+        //         console.log('2')
+        //     }
+        // });
     
           function setActiveSvg(selectedSvg) {
               const svgs = [svgOne, svgTwo, svgThree];

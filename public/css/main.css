@@ -20,7 +20,7 @@ body {
 
 @keyframes slideDown {
     from {
-        transform: translateY(-100%);
+        transform: translateY(0%);
         opacity: 0;
     }
     to {
@@ -357,7 +357,7 @@ width: 100%;
 
 }
 
-@media screen and (max-width:1450px) {
+@media screen and (max-width:1650px) {
     .furniture-set-items{
         /* flex-direction: column; */
         flex-wrap: wrap;
@@ -1464,8 +1464,13 @@ a:hover{
     color: #7f8082;
 }
 
+.clearing-filters-text:hover {
+    color: white;
+    cursor: pointer;
+}
+
 button:hover{
-    background: #cb5912;
+    /* background: #cb5912; */
     color: rgb(242, 242, 242);
 }
 .header-menu-item-url {
@@ -2618,6 +2623,9 @@ border-radius: 20px;
     align-items: center;
     justify-content: center;
 }
+
+
+
 .clearing-filters-text{
     color: #EA600A;
     font-family: "Montserrat";
