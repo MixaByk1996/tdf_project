@@ -238,4 +238,5 @@
 </div>
 
 </div>
-
+<script src="./js/catalog.js"></script>
+<script src="./js/filterCatalog.js"></script>
