@@ -23,7 +23,7 @@
             </div>
 
             <div style="display: flex; flex-direction: column; gap:10px; text-align:center; color: white">
-            <div class="politic-text>
+            <div class="politic-text">
             ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ <br>
 ГРИГОЛИЯ АРТЕМ АЛЕКСЕЕВИЧ
             </div>
