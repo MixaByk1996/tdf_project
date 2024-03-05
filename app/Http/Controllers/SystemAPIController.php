@@ -11,7 +11,7 @@ class SystemAPIController extends Controller
 {
     public function index()
     {
-        $systems = System::query()->paginate(5);
+        $systems = System::query()->paginate(75);
         return view('admin.system', ['systems' => $systems]);
     }
 

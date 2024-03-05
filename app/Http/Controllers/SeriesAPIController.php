@@ -11,7 +11,7 @@ class SeriesAPIController extends Controller
 {
     public function index()
     {
-        $series = Series::query()->paginate(5);
+        $series = Series::query()->paginate(75);
         return view('admin.series.index', ['series' => $series]);
     }
 

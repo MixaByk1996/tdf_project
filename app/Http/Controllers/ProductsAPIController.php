@@ -15,10 +15,18 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductsAPIController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         //return response()->json(Products::with(['system', 'angle', 'producer'])->get());
-        $products = Products::query()->with(['system', 'angle', 'producer'])->paginate(5);
+        $products = Products::query()->with(['system', 'angle', 'producer'])->paginate(75);
+
+        return view('admin.products.index', ['products' => $products]);
+    }
+
+    public function productsSearch(Request $request)
+    {
+        //return response()->json(Products::with(['system', 'angle', 'producer'])->get());
+        $products = Products::query()->with(['system', 'angle', 'producer'])->where('article',$request->get('search'))->paginate(75);
 
         return view('admin.products.index', ['products' => $products]);
     }

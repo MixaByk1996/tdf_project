@@ -11,6 +11,21 @@
                     <a class="btn btn-success" href="{{ route('admin-products.create') }}"> Добавить</a>
                 </div>
             </div>
+            <form action="{{route('products-search')}}" method="post">
+                @csrf
+                <div class="col-lg-12 margin-tb">
+                    <div class="pull-left">
+                        <h2>Введите артикул для поиска</h2>
+                    </div>
+                    <div class="pull-left">
+                        <input type="text" name="search" id="search" required placeholder="Введите артикул">
+                    </div>
+                    <div class="pull-right mb-2">
+                        <input type="submit" class="btn btn-success" value="Найти">
+                    </div>
+                </div>
+            </form>
+
         </div>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
