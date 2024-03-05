@@ -34,7 +34,7 @@
                 <span class="appeal-text-manager">Позвоните нам прямо сейчас!</span>
                 <span class="appeal-text-manager">Наш менеджер проконсультирует Вас бесплатно прямо по телефону.</span>
             </div>
-            <a href="tel:+79999999999" class="phone-appeal">+7 123 456 789</a>
+            <a href="tel:+78123093630" class="phone-appeal">+7812 309-36-30</a>
         </div>
     </div>
 </section>

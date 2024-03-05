@@ -5,8 +5,8 @@
                 <div class="logo-footer-container">
                     <img src="/img/logofooter.svg" />
                     <div class="footer-contacts-information">
-                        <a href="mailto:info@TDFurnitur.ru" class="footer-contacts-text">info@TDFurnitur.ru</a>
-                        <a href="tel:+7123456789" class="footer-contacts-text">+7 123 456 789</a>
+                        <a href="mailto:info@TDFurnitur.com" class="footer-contacts-text">info@TDFurnitur.com</a>
+                        <a href="tel:+78123093630" class="footer-contacts-text">+7812 309-36-30</a>
                     </div>
                 </div>
                 <div class="footer-contacts">
@@ -22,12 +22,19 @@
                 </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap:10px; text-align:center">
+            <div style="display: flex; flex-direction: column; gap:10px; text-align:center; color: white">
+            <div>
+            ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ <br>
+ГРИГОЛИЯ АРТЕМ АЛЕКСЕЕВИЧ
+            </div>
 
-                <a href="https://drive.google.com/file/d/1JJmG3y3DDsv5YngJG4_CBPEqPZELFGTp/view?usp=sharing"
+            <p>ИНН 780444145907<br> ОГРН 323784700222448 </p>
+
+
+                <a href="https://drive.google.com/file/d/1HDmq8oKH6nQ2C7bn5QcIZ0KKiI3NLphb/view?usp=sharing"
                     class="politic-text">Политика конфиденциальности</a>
-                <a href="https://drive.google.com/file/d/16SkkggL5l9L3vV21I43JGJJRncAiR7Ju/view?usp=sharing"
-                    class="politic-text">Возврат товаров</a>
+                <a href="https://drive.google.com/file/d/1LDcjA7HlHVn3PA8AjikkTf8MLWP853wD/view?usp=share_link"
+                    class="politic-text">Правила доставки и возврата</a>
             </div>
 
 

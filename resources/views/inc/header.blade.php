@@ -17,7 +17,7 @@
         </form>
         <div class="menu-container">
             <a href="tel:+7123456789" class="contact-item-url">+ 7 123 456 789</a>
-            <a href="mailto:info@TDFurnitur.ru" class="contact-item-url">info@TDFurnitur.ru</a>
+            <a href="mailto:info@TDFurnitur.com" class="contact-item-url">info@TDFurnitur.com</a>
         </div>
 
         <div class="burger-menu-icon">
