@@ -28,7 +28,7 @@
 ГРИГОЛИЯ АРТЕМ АЛЕКСЕЕВИЧ
             </div>
 
-            <p>ИНН 780444145907<br> ОГРН 323784700222448 </p>
+            <p style="color: white">ИНН 780444145907<br> ОГРН 323784700222448 </p>
 
 
                 <a href="https://drive.google.com/file/d/1HDmq8oKH6nQ2C7bn5QcIZ0KKiI3NLphb/view?usp=sharing"
