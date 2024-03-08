@@ -43,12 +43,18 @@
             <li class="header-menu-item">
                 <a href="{{url('contacts')}}" class="header-menu-item-url">Контакты</a>
             </li>
+
+            @if (!Auth::guest())
+            <a class="profile-url" href="/cabinet">Профиль</a>
+            @else
+            @endif
+
         </ul>
 
 
     <div class="register-auth-container">
         @if (!Auth::guest())
-        <a class="profile-url" href="/cabinet">Профиль</a>
+        <!-- <a class="profile-url" href="/cabinet">Профиль</a> -->
         <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
             Выйти
         </div>

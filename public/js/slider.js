@@ -41,6 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const updateActiveItemAndRearrange = (clickedIndex) => {
+
+        if (clickedIndex === activeIndex) {
+            return;
+        }
+        
         // Если клик был по неактивному элементу, перемещаем его перед активным
         if (clickedIndex !== activeIndex) {
             // Убираем стили с предыдущего активного элемента
@@ -59,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 itemsContainer.style.transform = 'scale(1)';
             }, 250);
         }
-    
+
+     
         // Вычисляем и обновляем активный элемент как предыдущий от текущего
         const newIndex = (activeIndex - 1 + items.length) % items.length;
         // items[activeIndex].classList.remove('active');
@@ -68,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // items[activeIndex].classList.add('active');
         applyStylesToSpans(items[activeIndex], false); // убираем стили с нового активного элемента
     };
+
+
     
 
     itemsContainer.addEventListener('click', function(event) {
