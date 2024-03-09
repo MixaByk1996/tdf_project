@@ -53,7 +53,7 @@ class ValidatorRegisterAuth{
       return "";
     }
     else{
-      return "Вы не выбрали политику конфиденциальности";
+      return "";
     }
   }
   static RemoveNONE(vals){
@@ -304,4 +304,3 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-  
