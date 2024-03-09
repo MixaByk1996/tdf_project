@@ -19,6 +19,10 @@
 
     <script src="/js/filterCatalog.js"></script>
     <script src="/js/modalCart.js"></script>
+    <script src="/js/modalCart2.js"></script>
+    <script src="/js/modalCart3.js"></script>
+    <script src="/js/modalCart4.js"></script>
+
     <script src="/js/cabinet.js"></script>
     <script src="/js/home.js"></script>
     <script src="/js/burgerMenu.js"></script>

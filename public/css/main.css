@@ -5642,3 +5642,11 @@ width: 100%;
     text-align: center;
     max-width: 547px;
 }
+
+
+.cart__close__btn {
+    width: 100%;
+    text-align: end;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
