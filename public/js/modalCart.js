@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.stopPropagation();
             var is_user_check = document.getElementById('is_user_check');
             console.log(is_user_check.value);
-            if(is_user_check.value === 1){
+            if(is_user_check.value == '1'){
                 window.location.href = '/cart';
             }
             else {

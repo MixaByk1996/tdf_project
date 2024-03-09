@@ -94,3 +94,5 @@ Route::resource('angle', \App\Http\Controllers\AngleAPIController::class);
 Route::resource('admin-products', ProductsAPIController::class);
 Route::post('products-search', [ProductsAPIController::class, 'productsSearch'])->name('products-search');
 Route::resource('series', \App\Http\Controllers\SeriesAPIController::class);
+
+Route::get('to-pay', [\App\Http\Controllers\Controller::class, 'toPlay'])->name('to-pay');

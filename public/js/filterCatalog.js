@@ -4,12 +4,12 @@
           const svgOne = document.getElementById('svgOne');
           const svgTwo = document.getElementById('svgTwo');
           const svgThree = document.getElementById('svgThree');
+          const blockThree = document.querySelector('.block__three');
 
-
-          blockOne.style.display = 'none'; 
+          blockOne.style.display = 'none';
           blockTwo.style.display = 'flex';
           blockThree.style.display = 'none';
-      
+
 
           let response =  fetch('/api/get-svg', {
               method: 'GET',
@@ -39,15 +39,15 @@
         //     { svgId: 'angle_svg', divId: 'angle_div' },
         //     { svgId: 'beo_svg', divId: 'beo_div' }
         // ];
-        
+
         // toggles.forEach(({ svgId, divId }) => {
         //     const svgElement = document.getElementById(svgId);
-        //     if (svgElement) { 
+        //     if (svgElement) {
         //         svgElement.addEventListener('click', toggleDisplay(divId, true));
         //         console.log('2')
         //     }
         // });
-    
+
           function setActiveSvg(selectedSvg) {
               const svgs = [svgOne, svgTwo, svgThree];
               svgs.forEach(svg => {
@@ -86,7 +86,7 @@
               }
           })
 
-          const blockThree = document.querySelector('.block__three');
+
 
 
 

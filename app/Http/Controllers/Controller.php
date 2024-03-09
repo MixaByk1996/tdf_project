@@ -162,4 +162,23 @@ class Controller extends BaseController
             'name' => $name
         ]);
     }
+
+    public function toPlay(Request $request){
+        static $rates;
+        $email = Auth::user()->email;
+        if ($rates === null) {
+            $rates = json_decode(file_get_contents('https://www.cbr-xml-daily.ru/daily_json.js'));
+        }
+        $price = 0;
+        $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        foreach ($cards as $card){
+            $price += $card->product->price;
+        }
+        $price_ru = $price * $rates->Valute->EUR->Value;
+        $fio = Auth::user()->fio;
+        $phone = Auth::user()->phone;
+        $description = 'Заказ из TDF';
+        $number = rand(10, 1000);
+        return view('pay_page',['amount' => $price_ru, 'order' => $number, 'description' => $description, 'name' => $fio, 'email' => $email, 'phone' => $phone]);
+    }
 }

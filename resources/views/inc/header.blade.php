@@ -1,5 +1,5 @@
 <header class="header">
-    <input type="hidden" id="is_user_check" name="is_user_check" value="{{\Illuminate\Support\Facades\Auth::check() ? 1 : 0}}">
+    <input type="hidden" id="is_user_check" name="is_user_check" value="{{\Illuminate\Support\Facades\Auth::user() != null ? 1 : 0}}">
     <div class="header-container">
         <a href="/">
             <img src="/img/logoheader.svg" />
