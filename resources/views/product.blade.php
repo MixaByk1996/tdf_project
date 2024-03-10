@@ -112,7 +112,7 @@
         </div>
     </div>
     <div class="products-item__bottom-cart-summary">
-        <button class="btn-cart">Перейти в корзину</button>
+        <button class="btn-cart btn-cart2">Перейти в корзину</button>
     </div>
 </div>
 

@@ -7,15 +7,16 @@
     @endphp
 <section class="cartmain-section">
 <div class="catalog-mainitems-block">
+    <div class="catalog-mainitems-container">
     <h1 class="catalog-main-text">Корзина</h1>
-
+    <span class="catalog-main-grides-text">Главная / Корзина</span>
+</div>
     <div class="catalog-allblocks">
         <div class="catalog-main-grides">
-            <span class="catalog-main-grides-text">Главная/Корзина</span>
-            <div class="show-products-container">
+            <!-- <div class="show-products-container">
 
 
-            </div>
+            </div> -->
         </div>
 
         @if(\Illuminate\Support\Facades\Auth::check())
