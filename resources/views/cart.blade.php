@@ -47,7 +47,7 @@
                     <div class="cart-tovars-container">
                         @foreach($cards as $card)
 
-                            <div class="cart-tovars-item">
+                            <div class="cart-tovars-item--two">
                                 <div class="cart-product-container">
                                     {{--                                <div class="cart-product-item">--}}
                                     {{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
@@ -144,13 +144,14 @@
                         @foreach($cards as $card)
                         @php($sum += $card->product->price)
                         @php($count ++)
-                        <div class="cart-tovars-item">
+                        <div class="cart-tovars-item--two">
                             <div class="cart-product-container">
-{{--                                <div class="cart-product-item">--}}
-{{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
-{{--                                </div>--}}
                                 <div class="cart-product-imgcontainer">
+                                    <div class="cart-product-item--2">
+                                <input class="cartcheck-chekbox" type="checkbox" checked="checked">
+
                                 <img class="cart-product-img" src="http://5.35.94.70/storage/{{$card->product->image_path}}"/>
+                                </div>
                                 <button class="cart-product-deletes-btn--two">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
@@ -183,6 +184,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="cart-product-actions">
                                 <div class="cart-product-deletes-block">
                                     <form action="{{route("remove-card", $card->product->id)}}" method="get">
@@ -221,6 +223,8 @@
                             </div>
                         </div>
                             @endforeach
+
+                            
 
                     </div>
                 </div>
