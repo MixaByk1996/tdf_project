@@ -47,7 +47,7 @@
                     <div class="cart-tovars-container">
                         @foreach($cards as $card)
 
-                            <div class="cart-tovars-item--two">
+                            <div class="cart-tovars-item">
                                 <div class="cart-product-container">
                                     {{--                                <div class="cart-product-item">--}}
                                     {{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
