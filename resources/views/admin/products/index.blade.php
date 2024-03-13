@@ -39,8 +39,14 @@
                 <th>Фото</th>
                 <th>Артикул</th>
                 <th>Наименование</th>
+                <th>Модель</th>
                 <th>Цена</th>
+                <th>Валюта</th>
                 <th>Производитель</th>
+                <th>Опт ТДФ</th>
+                <th>ТД розница</th>
+                <th>Вес</th>
+                <th>Штрихкод</th>
                 <th >Action</th>
             </tr>
             </thead>
@@ -51,8 +57,14 @@
                     <td><img width="100" height="100" src="http://5.35.94.70/storage/{{ $item->image_path }}"></td>
                     <td>{{ $item->article ?? 'Отсувствуют данные' }}</td>
                     <td>{{ $item->name }}</td>
+                    <td>{{ $item->model }}</td>
                     <td>{{ $item->price }}</td>
+                    <td>{{ $item->currency }}</td>
                     <td>{{ $item->producer->name ?? 'Отсувствуют данные' }}</td>
+                    <td>{{ $item->tdf }}</td>
+                    <td>{{ $item->tdf_ros }}</td>
+                    <td>{{ $item->ves }}</td>
+                    <td>{{ $item->barcode }}</td>
                     <td>
                         <form action="{{ route('admin-products.destroy', $item->id) }}" method="Post">
                             @csrf

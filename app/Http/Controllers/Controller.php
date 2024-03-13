@@ -126,6 +126,8 @@ class Controller extends BaseController
 
     public function importPrices(Request $request): \Illuminate\Http\JsonResponse
     {
+        Products::query()->delete();
+        System::query()->delete();
         Excel::import(new PricesImport(),storage_path('app/public/prices.xlsx'));
         $data = Products::all();
         return response()->json($data);
@@ -177,8 +179,17 @@ class Controller extends BaseController
         $price_ru = $price * $rates->Valute->EUR->Value;
         $fio = Auth::user()->fio;
         $phone = Auth::user()->phone;
+        $city = Auth::user()->city;
         $description = 'Заказ из TDF';
         $number = rand(10, 1000);
-        return view('pay_page',['amount' => $price_ru, 'order' => $number, 'description' => $description, 'name' => $fio, 'email' => $email, 'phone' => $phone]);
+        if(Auth::check()){
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+        }
+        else{
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+        }
+
+
+        return view('payment',['amount' => $price_ru,'cards' =>$cards, 'order' => $number,'city' => $city, 'description' => $description, 'name' => $fio, 'email' => $email, 'phone' => $phone]);
     }
 }

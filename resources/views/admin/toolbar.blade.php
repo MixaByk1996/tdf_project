@@ -8,11 +8,18 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #232425;
+            color: white;
         }
-
+        button{
+            background-color: #EA600A;
+        }
+        table, th, td, tr{
+            color: white;
+        }
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #3F3F43;
         }
 
         .topnav a {

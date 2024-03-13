@@ -24,7 +24,12 @@ class Products extends Model
         'system_id',
         'producer_id',
         'category_id',
-        'angle_id',
+        'currency',
+        'tdf',
+        'tdf_ros',
+        'ves',
+        'barcode',
+        'model',
     ];
     protected $guarded = [
         '_method',

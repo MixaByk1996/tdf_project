@@ -20,21 +20,9 @@ class PricesImport implements ToModel
             return null;
         }
 
-        $angle_id = 0;
-        $angle = Angle::query()->where('name', '0')->first();
-        if(!$angle){
-            $temp = Angle::query()->create([
-                'name' => '0'
-            ]);
-            $angle_id = $temp->id;
-        }else{
-            $angle_id = $angle->id;
-        }
+        $angle_id = Angle::query()->first()->id;
 
-
-        $systemstr = trim(strtolower(explode(' ', $row[2])[0])) . ' ' . trim(strtolower(explode(' ', $row[2])[1] ?? ''));
-
-
+        $systemstr = trim($row[11]);
 
         $data_t = System::query()->where('name', $systemstr)->first();
         if ($data_t){
@@ -47,40 +35,26 @@ class PricesImport implements ToModel
             $system_id = $item->id;
         }
 
-        $temp_angle_str = trim(strtolower(explode(',', $row[2])[0]));
-        $temp_angle_arr = explode(" ", $temp_angle_str);
-        $res = '';
-        foreach ($temp_angle_arr as $it){
-            if(str_contains( trim($it), '°',)){
-                $res = str_replace('°','',$it);
-                break;
-            }
-        }
-        if($res != ''){
-            $angle_temp = Angle::query()->where('name', $res)->first();
-            if($angle_temp){
-                $angle_id = $angle_temp->id;
-            }
-            else{
-                $cr = Angle::query()->create([
-                    'name' => $res
-                ]);
-                $angle_id = $cr->id;
-            }
-        }
+
 
         return new Products([
             'name' => $row[2] ?? 'Не указаны данные',
             'price' => $row[6] ?? '0',
-            'photo_url' => $row[1],
+            'photo_url' => '',
             'image_path' => 'image/LEumoBOXxcev1dXsnbt8qplYKGVsINPe5S2gsYba.png',
             'serial_id' => 1,
+            'angle_id' => $angle_id,
             'description' => 'Не указано описание',
-            'article' => $row[1],
+            'article' => $row[0],
             'system_id' => $system_id,
             'producer_id' => 1,
             'category_id' => 1,
-            'angle_id' => $angle_id,
+            'currency' => $row[5],
+            'tdf' => $row[6],
+            'tdf_ros' => $row[7],
+            'ves' => $row[8],
+            'barcode' => $row[9] ?? '',
+            'model' => $row[1] ?? '',
         ]);
     }
 }
