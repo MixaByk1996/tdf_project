@@ -1681,10 +1681,10 @@ button:hover {
     }
 }
 
-.catalog-mainitems-block {
+.catalog-mainitems-block-pay {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-between;
     width: 90vw;
     max-width: 90%;
@@ -1693,7 +1693,7 @@ button:hover {
 }
 
 @media screen and (max-width: 750px) {
-    .catalog-mainitems-block {
+    .catalog-mainitems-block-pay {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -5491,6 +5491,7 @@ button:hover {
         justify-content: center;
         align-items: center;
         gap: 20px;
+        margin-left: 50px;
     }
 }
 

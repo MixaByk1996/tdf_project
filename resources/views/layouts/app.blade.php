@@ -22,6 +22,7 @@
     <script src="/js/modalCart2.js"></script>
     <script src="/js/modalCart3.js"></script>
     <script src="/js/modalCart4.js"></script>
+    <script src="/js/modalCart5.js"></script>
 
     <script src="/js/cabinet.js"></script>
     <script src="/js/home.js"></script>

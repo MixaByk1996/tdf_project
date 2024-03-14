@@ -92,10 +92,9 @@
 
     <div class="register-auth-container">
         @if (!Auth::guest())
-        <!-- <a class="profile-url" href="/cabinet">Профиль</a> -->
-        <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
+        <!-- <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
             Выйти
-        </div>
+        </div> -->
         @else
         <div class="register-btn-shows">
             Зарегистрироваться
