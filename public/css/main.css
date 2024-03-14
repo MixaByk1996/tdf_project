@@ -40,6 +40,44 @@ body {
     }
 }
 
+.social-icons--two {
+    display: flex;
+    gap: 20px;
+
+    position: absolute;
+    top: 40px;
+    right: 52px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .social-icons--two {
+        display: none;
+    }
+
+    .social-icons--three {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 85px;
+        gap: 20px;
+        right: 35px;
+    }
+    
+}
+
+@media screen and (min-width:700px) {
+    .social-icons--three {
+        display: none;
+    }
+    
+}
+
+.social-icons--line--one {
+    position: absolute;
+    bottom: 388px;
+}
+
 .burger-menu-container.open {
     display: flex;
     animation: slideDown 0.5s ease forwards;
@@ -49,9 +87,58 @@ body {
     animation: slideUp 0.5s ease forwards;
 }
 
+
+
+@media screen and (min-width: 700px) { 
+    .social-icons--line--two {
+        position: absolute;
+        top: 30px;
+        left: 90px;
+    }
+
+    .social-icons--line--three {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .social-icons--line--three {
+        position: absolute;
+
+        bottom: 26px;
+        left: 40%;
+
+        
+        
+    }
+
+    .social-icons--line--two {
+        display: none;
+
+        bottom: 30px;
+        
+        
+    }
+}
+
+/* @media screen and (max-width: 700px) {
+
+
+    .social-icons--line--three {
+        display: flex;
+    }
+}
+
+.social-icons--line--three {
+    display: none ;
+    
+} */
+
+
 .burger-menu-container {
     display: none;
-    position: fixed;
+    position: absolute;
     justify-content: end;
     /* align-items: center; */
     flex-direction: column;
@@ -60,7 +147,7 @@ body {
     top: 0;
     right: 0;
     width: 556px;
-    height: 80vh;
+    height: 775px;
     margin-top: 100px;
     background-color: #ea600a;
     overflow-y: auto;
@@ -69,8 +156,8 @@ body {
 
 @media screen and (max-width: 700px) {
     .burger-menu-container {
-        width: 300px;
-        height: 600px;
+        width: 100%;
+        height: 90vh;
     }
 }
 
@@ -1341,7 +1428,7 @@ body {
 
 @media screen and (max-width: 700px) {
     .header-menu {
-        padding-left: 30px;
+        padding-left: 60px;
     }
 }
 .header-menu-item {
@@ -1656,7 +1743,7 @@ button:hover {
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
-    width: 160px;
+    width: 210px;
     text-align: center;
 }
 
@@ -3330,7 +3417,6 @@ button:hover {
     }
 }
 
-
 .cart-tovars-item {
     display: flex;
     flex-direction: row;
@@ -4872,7 +4958,8 @@ button:hover {
     padding-left: 37px;
     padding-right: 37px;
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000B2;
+
     backdrop-filter: blur(5px);
 }
 
@@ -5119,6 +5206,7 @@ button:hover {
     .register-auth-container {
         padding-right: 0px;
         padding-left: 0px;
+        margin-bottom: 40px;
     }
 }
 .register-btn-shows {
@@ -5127,7 +5215,6 @@ button:hover {
     align-items: center;
     justify-content: center;
     margin: 0px;
-    padding: 0px;
     outline: none;
     border: none;
     background-color: transparent;
@@ -5145,8 +5232,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     margin: 0px;
-    padding: 0px;
-    outline: none;
+     outline: none;
     border: none;
     background-color: transparent;
     width: auto;
@@ -5156,6 +5242,19 @@ button:hover {
     font-size: 25px;
     font-weight: 500;
     color: white;
+}
+
+@media screen and (max-width:700px) {
+    .auth-btn-shows {
+        padding-left: 60px;
+        align-items: start;
+    }
+    .register-btn-shows {
+        padding-left: 60px;
+        align-items: start;
+
+    }
+
 }
 
 .logout-btn-shows:hover {
@@ -5312,16 +5411,27 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px;
+    padding-right: 52px;
+    padding-left: 52px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
     margin: 0px;
     cursor: pointer;
     background-color: transparent;
     outline: none;
-    border: none;
+    border: solid 1px #EA600A;
+    border-radius: 30px;
 
     font-size: 25px;
     font-weight: 500;
     color: white;
+}
+
+.logout-btn-shows:hover {
+    background-color: #EA600A;
+    color: white;
+    transition: 0.5s all ease-in-out;
 }
 
 .profile-url {
@@ -5356,7 +5466,7 @@ button:hover {
     gap: 50px;
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width: 750px) {
     .catalog-mainitems-container {
         flex-direction: column;
         gap: 20px;

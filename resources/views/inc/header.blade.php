@@ -29,6 +29,44 @@
 </header>
 
 <div class="burger-menu-container">
+    <div>
+        <div class="social-icons--line--one">
+            <img src="/img/line/Line 13.jpg" alt="">
+        </div>
+
+        <div class="social-icons--line--two">
+            <img src="/img/line/Line 14.jpg" alt="">
+        </div>
+
+<div class="social-icons--two">
+<a href="tel:+7123456789">
+    <img src="/img/phone.svg" alt="phone">
+</a>
+<a href="https://vk.com/your_page">
+    <img src="/img/vk.svg" alt="vk">
+</a>
+<a href="https://t.me/your_channel">
+    <img src="/img/telegram.svg" alt="telegram">
+</a>
+</div>
+
+<div class="social-icons--three">
+<a href="tel:+7123456789" >
+    <img src="/img/phone.svg" alt="phone">
+</a>
+<a href="https://vk.com/your_page">
+    <img src="/img/vk.svg" alt="vk">
+</a>
+<a href="https://t.me/your_channel">
+    <img src="/img/telegram.svg" alt="telegram">
+</a>
+</div>
+
+<div class="social-icons--line--three">
+            <img src="/img/line/LineBottom.jpg" alt="">
+        </div>
+
+    </div>
 
 <ul class="header-menu">
             <li class="header-menu-item">

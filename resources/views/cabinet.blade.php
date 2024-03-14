@@ -121,6 +121,10 @@
                 <span class="data-url data-url-history">История заказов</span>
                 <span class="data-url data-url-favorites">Избранные</span>
                 <span class="data-url">Личные сообщения</span>
+       
+        <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
+            Выход
+        </div>
             </div>
 
             <div class="data-profileform-container">

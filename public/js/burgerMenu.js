@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
             burgerMenuContainer.classList.add('open');
             burgerMenuContainer.classList.remove('close');
             burgerMenuIcon.classList.add('active'); // Добавляем класс 'active'
-            body.style.overflow = 'hidden'; 
+            // body.style.overflow = 'hidden'; 
             isMenuOpen = true;
         } else {
             burgerMenuContainer.classList.add('close');
             burgerMenuContainer.classList.remove('open');
             burgerMenuIcon.classList.remove('active'); // Удаляем класс 'active'
-            body.style.overflow = 'auto';
+            // body.style.overflow = 'auto';
             isMenuOpen = false;
         }
     });
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             burgerMenuContainer.classList.add('close');
             burgerMenuContainer.classList.remove('open');
             burgerMenuIcon.classList.remove('active'); // Удаляем класс 'active'
-            body.style.overflow = 'auto';
+            // body.style.overflow = 'auto';
             isMenuOpen = false;
         }
     });
