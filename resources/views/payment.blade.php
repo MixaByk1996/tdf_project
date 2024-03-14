@@ -130,8 +130,8 @@
 
     <div class="payment-delivery-container blur__modal">
         <div class="payment-deliver">
-            <input class="payment-input" placeholder="ФИО" value="{{$name}}"/>
-            <input class="payment-input" placeholder="Город" value="{{$city}}"/>
+            <input class="payment-input" placeholder="ФИО" value="{{$name ?? ''}}"/>
+            <input class="payment-input" placeholder="Город" value="{{$city ?? ''}}"/>
             <div class="payment-input-container">
                 <input class="payment-input-small" placeholder="Улица"/>
                 <input class="payment-input-small" placeholder="Дом"/>
@@ -141,7 +141,7 @@
                 <input class="payment-input-small" placeholder="Индекс"/>
             </div>
             <div class="payment-input-container">
-                <input class="payment-input-small" placeholder="Номер телефона" value="{{$phone}}"/>
+                <input class="payment-input-small" placeholder="Номер телефона" value="{{$phone ?? ''}}"/>
                 <input class="payment-input-small" placeholder="Email"/>
             </div>
         </div>
@@ -149,7 +149,7 @@
             <div class="payment-final">
                 <span class="payment-final-text">Итого</span>
                 <!-- <div class="payment-final-dotted"></div> -->
-                <span class="payment-final-text-price">{{number_format($amount, 2, '.', '')}} ₽</span>
+                <span class="payment-final-text-price">{{number_format($amount ?? 0, 2, '.', '') }} ₽</span>
             </div>
             <div class="payment-block-finalyze">
                 <div class="payment-sumall-container">

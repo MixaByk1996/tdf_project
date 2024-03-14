@@ -11,11 +11,12 @@ class PaymentController extends Controller
 {
     public function index(Request $request){
         if(Auth::check()){
-            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get();
+            $cards = Backet::query()->where('user_id', Auth::user()->id)->with(['product','user'])->get() ?? collect();
         }
         else{
-            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
+            $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get() ?? collect();
         }
-        return view('payment',['cards' => $cards]);
+
+        return Auth::check() ? view('payment',['cards' => $cards]) : view('errors.404');
     }
 }
