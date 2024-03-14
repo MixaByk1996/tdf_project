@@ -251,6 +251,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
     if(document.getElementsByClassName("logout-btn-shows").length!=0){
       document.getElementsByClassName("logout-btn-shows")[0].addEventListener("click",send_logout);
+      document.getElementsByClassName("logout-btn-shows")[1].addEventListener("click",send_logout);
     }
     if(document.getElementsByClassName("register-input").length!=0){
       let s=document.getElementsByClassName("register-input");
