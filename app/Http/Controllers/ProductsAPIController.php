@@ -64,7 +64,14 @@ class ProductsAPIController extends Controller
         $product->system_id = $request->get('system_id');
         $product->producer_id = $request->get('producer_id');
         $product->category_id = $request->get('category_id');
+        $product->currency = 'RUB';
+        $product->tdf = $request->get('tdf');
+        $product->tdf_ros = $request->get('tdf_ros');
+        $product->ves = $request->get('ves');
+        $product->barcode = $request->get('barcode');
+        $product->model = $request->get('model');
         $product->angle_id = $request->get('angle_id');
+
         $product->save();
         // Products::query()->create($request->all());
         return redirect()->route('admin-products.index')->with('status', 'Продукт успешно добавлен');

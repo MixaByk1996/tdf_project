@@ -133,6 +133,19 @@ class Controller extends BaseController
         return response()->json($data);
     }
 
+    public function uploadProducts(Request $request){
+        $request->validate([
+            'file' => 'required|file|mimes:xlsx,xls',
+        ]);
+
+        $file = $request->file('file');
+        Excel::import(new PricesImport(),$file);
+
+
+        $products = Products::query()->with(['system', 'angle', 'producer'])->paginate(75);
+        return view('admin.products.index', ['products' => $products]);
+    }
+
     public function set_svg(Request $request): \Illuminate\Http\JsonResponse
     {
         $name = $request->get('name');
@@ -166,8 +179,9 @@ class Controller extends BaseController
     }
 
     public function toPlay(Request $request){
-        static $rates;
+
         $email = Auth::user()->email;
+        static $rates;
         if ($rates === null) {
             $rates = json_decode(file_get_contents('https://www.cbr-xml-daily.ru/daily_json.js'));
         }

@@ -101,7 +101,7 @@
                                 <div>
                                     <div style="margin-top: 20px">
 
-                                        <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
+                                        <span class="products-item-price" style="text-align: center;">{{$product->price}} руб.</span>
                                         {{-- @if(\Auth::check())--}}
                                         <form action="{{route("add-to-card", $product->id)}}" method="get">
                                             @csrf
@@ -166,7 +166,7 @@
                                     <div>
                                         <div style="margin-top: 20px">
 
-                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
+                                            <span class="products-item-price" style="text-align: center;">{{$product->price}} руб.</span>
                                             {{-- @if(\Auth::check())--}}
                                             <form action="{{route("add-to-card", $product->id)}}" method="get">
                                                 @csrf
@@ -229,7 +229,7 @@
                                 <div>
                                     <div style="margin-top: 20px">
 
-                                        <span class="products-item-price" style="text-align: center;">{{$product->price}} EUR</span>
+                                        <span class="products-item-price" style="text-align: center;">{{$product->price}} руб.</span>
                                         {{-- @if(\Auth::check())--}}
                                         <form action="{{route("add-to-card", $product->id)}}" method="get">
                                             @csrf
@@ -341,7 +341,7 @@
                                                     </button>
                                                 </form>
 
-                            <span class="cart-product-price">{{$card->product->price}} EUR</span>
+                            <span class="cart-product-price">{{$card->product->price}} руб.</span>
                         </div>
 
                     </div>
@@ -355,7 +355,7 @@
             <div class="products-item__bottom-cart">
                 <div class="products-item__bottom-cart-text">
                     <img src="/img/iconTruck.svg" alt="">
-                    <div>Добавьте в корзину товаров на 3 297,48 EUR для бесплатной доставки по Москве
+                    <div>Добавьте в корзину товаров на 3 297,48 руб. для бесплатной доставки по Москве
                     </div>
                 </div>
                 <div class="products-item__bottom-cart-summary">

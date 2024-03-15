@@ -14,7 +14,10 @@
         button{
             background-color: #EA600A;
         }
-        table, th, td, tr{
+        select{
+         background-color: #4a5568;
+        }
+        table, th, td, tr,select{
             color: white;
         }
         .topnav {

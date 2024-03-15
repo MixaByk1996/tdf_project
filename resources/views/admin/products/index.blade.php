@@ -25,6 +25,16 @@
                     </div>
                 </div>
             </form>
+            <div class="container mt-5">
+                <h2>Загрузить файл</h2>
+                <form action="{{ route('upload-file-excel') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                        <input class="form-control" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Загрузить</button>
+                </form>
+            </div>
 
         </div>
         @if ($message = Session::get('success'))

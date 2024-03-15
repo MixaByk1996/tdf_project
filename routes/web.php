@@ -96,3 +96,4 @@ Route::post('products-search', [ProductsAPIController::class, 'productsSearch'])
 Route::resource('series', \App\Http\Controllers\SeriesAPIController::class);
 
 Route::get('to-pay', [\App\Http\Controllers\Controller::class, 'toPlay'])->name('to-pay');
+Route::post('upload-file', [\App\Http\Controllers\Controller::class, 'uploadProducts'])->name('upload-file-excel');
