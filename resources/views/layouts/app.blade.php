@@ -24,6 +24,8 @@
     <script src="/js/modalCart4.js"></script>
     <script src="/js/modalCart5.js"></script>
 
+    <script src="/js/quantity.js"></script>
+
     <script src="/js/cabinet.js"></script>
     <script src="/js/home.js"></script>
     <script src="/js/burgerMenu.js"></script>

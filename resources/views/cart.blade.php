@@ -6,9 +6,10 @@
         $count = 0;
     @endphp
 <section class="cartmain-section">
-<div class="catalog-mainitems-block">
+<div class="catalog-mainitems-block catalog-mainitems-block222">
     <div class="catalog-mainitems-container">
-    <h1 class="catalog-main-text">Корзина</h1>
+    <h1 class="catalog-main-text"
+    style="margin-left: 25px">Корзина</h1>
     <span class="catalog-main-grides-text">Главная / Корзина</span>
 </div>
     <div class="catalog-allblocks">
@@ -202,7 +203,7 @@
 
                                     <div class="quantity-controls">
   <div class="decrease">−</div>
-  <span class="quantity">100 комплект</span>
+  <span class="quantity">1 комплект</span>
   <div class="increase">+</div>
 </div>
 
