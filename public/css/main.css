@@ -1718,8 +1718,8 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 220px;
+    min-width: 220px;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
@@ -1767,8 +1767,26 @@ button:hover {
     width: 100%;
 }
 
+.catalog-main-grides2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+
 @media screen and (max-width: 1300px) {
     .catalog-main-grides {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .catalog-main-grides2 {
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;

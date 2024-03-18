@@ -25,7 +25,7 @@
 {{--            @include('productCatalog')--}}
         <div style="max-width:70%">
 
-            <div class="catalog-main-grides">
+            <div class="catalog-main-grides2">
 
                 <h1 class="catalog-main-text hidden1300After" style="opacity:1">Каталог</h1>
 
