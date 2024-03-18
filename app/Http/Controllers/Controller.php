@@ -143,7 +143,7 @@ class Controller extends BaseController
 
 
         $products = Products::query()->with(['system', 'angle', 'producer'])->paginate(75);
-        return view('admin.products.index', ['products' => $products]);
+        return redirect('admin-products');//view('admin.products.index', ['products' => $products]);
     }
 
     public function set_svg(Request $request): \Illuminate\Http\JsonResponse

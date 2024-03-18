@@ -7,10 +7,10 @@
             <div class="products__title--container">
 
             <span class="catalog-main-grides-text" style="margin-bottom: 15px;"><a href="/">Главная</a>/<a
-                        href="{{route('with-system', ['id' => 1])}}">Каталог</a></span>          
-                        
-                        
-                       
+                        href="{{route('with-system', ['id' => 1])}}">Каталог</a></span>
+
+
+
                 <span class="catalog-main-grides-text" style="font-size:20px;"><a
                         href="{{route('with-system', ['id' => 1])}}">< Вернутся</a></span>
            </div>
@@ -133,16 +133,32 @@
                 <div class="products-item-infromation">
                     <div class="products-item-price">
                         <span class="products-nameprice-text">Розничная цена:</span>
-                        <span class="products-price-text">{{$product->price}} EUR</span>
+                        <span class="products-price-text">{{number_format($product->tdf_ros, 2)}} RUB</span>
                     </div>
                     <div class="product-item-character-container">
+                        <div class="product-item-character-item">
+                            <span class="product-item-character-nametext">Категория:</span>
+                            <span class="product-item-character-valuetext">{{$product->system->name ?? 'Не указан'}}</span>
+                        </div>
                         <div class="product-item-character-item">
                             <span class="product-item-character-nametext">Производитель:</span>
                             <span class="product-item-character-valuetext">{{$product->producer->name ?? 'Не указан'}}</span>
                         </div>
                         <div class="product-item-character-item">
                             <span class="product-item-character-nametext">Описание:</span>
-                            <span class="product-item-character-valuetext">{{$product->description}}</span>
+                            <span class="product-item-character-valuetext">{{$product->name}}</span>
+                        </div>
+                        <div class="product-item-character-item">
+                            <span class="product-item-character-nametext">Вес:</span>
+                            <span class="product-item-character-valuetext">{{$product->ves ?? 'Не указан'}}</span>
+                        </div>
+                        <div class="product-item-character-item">
+                            <span class="product-item-character-nametext">Модель:</span>
+                            <span class="product-item-character-valuetext">{{$product->model ?? 'Не указан'}}</span>
+                        </div>
+                        <div class="product-item-character-item">
+                            <span class="product-item-character-nametext">Штрихкод:</span>
+                            <span class="product-item-character-valuetext">{{$product->barcode ?? 'Не указан'}}</span>
                         </div>
                     </div>
 
