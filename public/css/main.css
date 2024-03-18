@@ -3683,10 +3683,10 @@ button:hover {
 .cart-product-price {
     color: #5d5d5d;
     text-align: center;
-    font-family: "Montserrat1";
+    font-family: "Montserrat";
     font-size: 17px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 150%;
 }
 .cartmain-container {
