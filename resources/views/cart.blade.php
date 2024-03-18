@@ -186,7 +186,8 @@
                             </div>
 
                             <div class="cart-product-actions">
-                                <div class="cart-product-deletes-block">
+                                <div class="cart-product-deletes-block" 
+                                style="padding-right:20px;">
                                     <form action="{{route("remove-card", $card->product->id)}}" method="get">
                                         @csrf
                                         <button type="submit" class="cart-product-deletes-btn">
@@ -198,6 +199,13 @@
                                     </form>
 
                                     <span class="cart-product-price">{{$card->product->price}} руб.</span>
+
+                                    <div class="quantity-controls">
+  <div class="decrease">−</div>
+  <span class="quantity">100 комплект</span>
+  <div class="increase">+</div>
+</div>
+
                                 </div>
                                 @if(\Illuminate\Support\Facades\Auth::check())
 
