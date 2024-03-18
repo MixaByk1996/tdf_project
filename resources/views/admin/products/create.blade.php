@@ -89,6 +89,16 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
+                        <strong>Модель:</strong>
+                        <input type="text" name="model" class="form-control"  required>
+                        @error('name')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
                         <strong>Описание:</strong>
                         <textarea name="description" class="form-control" placeholder="Описание" required></textarea>
                         @error('name')

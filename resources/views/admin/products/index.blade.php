@@ -18,7 +18,7 @@
                         <h2>Введите артикул для поиска</h2>
                     </div>
                     <div class="pull-left">
-                        <input type="text" name="search" id="search" required placeholder="Введите артикул">
+                        <input type="text" name="search" id="search" class="form-control" required placeholder="Введите артикул">
                     </div>
                     <div class="pull-right mb-2">
                         <input type="submit" class="btn btn-success" value="Найти">
