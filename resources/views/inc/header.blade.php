@@ -87,10 +87,7 @@
             @else
             @endif
 
-        </ul>
-
-
-    <div class="register-auth-container">
+            
         @if (!Auth::guest())
         <!-- <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
             Выйти
@@ -105,7 +102,9 @@
         @endif
 
 
-    </div>
+        </ul>
+
+
 </div>
 
 

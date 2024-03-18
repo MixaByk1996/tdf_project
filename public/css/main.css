@@ -151,7 +151,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .burger-menu-container {
-       height: 600px;
+        height: 600px;
     }
 }
 
@@ -312,22 +312,17 @@ body {
     height: 912px;
 }
 
-
 @media screen and (max-width: 950px) {
     .furniture-set-section {
         height: 1050px;
     }
-    
 }
 
 @media screen and (max-width: 500px) {
     .furniture-set-section {
         height: 600px;
     }
-    
 }
-
-
 
 .furniture-set-container {
     display: flex;
@@ -5265,7 +5260,7 @@ button:hover {
 .register-btn-shows {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     margin: 0px;
     outline: none;
@@ -5275,14 +5270,18 @@ button:hover {
     height: auto;
     cursor: pointer;
 
+    font-family: "Montserrat";
     font-size: 25px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 40px;
+    text-decoration: none;
     color: white;
 }
 .auth-btn-shows {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     margin: 0px;
     outline: none;
@@ -5292,21 +5291,16 @@ button:hover {
     height: auto;
     cursor: pointer;
 
+    font-family: "Montserrat";
     font-size: 25px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 40px;
+    text-decoration: none;
     color: white;
 }
 
-@media screen and (max-width: 700px) {
-    .auth-btn-shows {
-        padding-left: 60px;
-        align-items: start;
-    }
-    .register-btn-shows {
-        padding-left: 60px;
-        align-items: start;
-    }
-}
+
 
 .logout-btn-shows:hover {
     color: grey;
