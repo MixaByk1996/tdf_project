@@ -1718,9 +1718,13 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     max-width: 200px;
+    min-width: 200px;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
+
+    font-size: 17px;
+    font-family: "Montserrat";
 }
 
 @media screen and (max-width: 1200px) {
