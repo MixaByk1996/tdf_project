@@ -62,14 +62,20 @@
 </a>
 </div>
 
-<div class="social-icons--line--three">
+
+<!-- <div class="social-icons--line--three">
             <img src="/img/line/LineBottom.jpg" alt="">
-        </div>
+        </div> -->
 
     </div>
 
 <ul class="header-menu">
             <li class="header-menu-item">
+            <div class="social-icons--line--three">
+            <img src="/img/line/LineBottom.jpg" alt="">
+        </div>
+
+    </div>
                 <a href="/" class="header-menu-item-url">Главная</a>
             </li>
             <li class="header-menu-item">

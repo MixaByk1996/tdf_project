@@ -73,7 +73,8 @@ body {
 
 .social-icons--line--one {
     position: absolute;
-    bottom: 356px;
+    margin-top: 28px;
+    /* bottom: 356px; */
 }
 
 .burger-menu-container.open {
