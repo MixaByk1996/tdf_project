@@ -73,7 +73,7 @@ body {
 
 .social-icons--line--one {
     position: absolute;
-    bottom: 388px;
+    bottom: 299px;
 }
 
 .burger-menu-container.open {
@@ -877,7 +877,8 @@ body {
 
 .title__feedback {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: Montserrat;
 }
 
 .descr_feedback {
