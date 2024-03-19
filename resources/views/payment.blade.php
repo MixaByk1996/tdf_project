@@ -123,7 +123,7 @@
 
     </div>
 </div>
-    <form name="payform-tinkoff" id="payform-tinkoff">
+    <form name="payform-tinkoff" id="payform-tinkoff" onsubmit="pay(this); return false;">
     <div class="payment-delivery-container blur__modal">
         <div class="payment-deliver">
             <input class="payment-input" placeholder="ФИО" value="{{$name ?? ''}}"/>
@@ -143,10 +143,9 @@
         </div>
 
 
-            <input type="hidden" name="terminalkey" value="TinkoffBankTest">
+            <input type="hidden" name="terminalkey" value="1709672710530DEMO">
             <input type="hidden" name="frame" value="false">
             <input type="hidden" name="language" value="ru">
-            <input type="hidden" name="receipt" value="">
             <input  type="hidden" placeholder="Сумма заказа" name="amount" value="{{$amount ?? ''}}" required>
             <input  type="hidden" placeholder="Номер заказа" name="order" value="{{$order ?? ''}}">
             <input  type="hidden" placeholder="Описание заказа" name="description" value="{{$description ?? ''}}">
@@ -157,7 +156,7 @@
                 <div class="payment-final">
                     <span class="payment-final-text">Итого</span>
                     <!-- <div class="payment-final-dotted"></div> -->
-                    <span class="payment-final-text-price" >{{number_format($amount ?? 0, 2, '.', '') }} ₽</span>
+                    <span class="payment-final-text-price" >{{number_format($amount ?? 0, 2) }} ₽</span>
                 </div>
                 <div class="payment-block-finalyze">
                     <div class="payment-sumall-container">
@@ -197,23 +196,20 @@
                                     </defs>
                                 </svg>
                             </div>
-                            <button class="payment-cart-btn">Оплатить</button>
+                            <button type="submit" class="payment-cart-btn" value="Оплатить">Оплатить</button>
+{{--                            <button class="payform-tinkoff-row payform-tinkoff-btn" type="submit" value="Оплатить">--}}
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
-
-
-
     </div>
     </form>
 </section>
-
-@endsection
 <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+{{--<script src="./js/pay.js"></script>--}}
+@endsection
+
 <script>
 
         document.addEventListener('DOMContentLoaded', function() {

@@ -190,7 +190,7 @@ class Controller extends BaseController
         foreach ($cards as $card){
             $price += $card->product->price;
         }
-        $price_ru = $price * $rates->Valute->EUR->Value;
+        $price_ru = $price;
         $fio = Auth::user()->fio;
         $phone = Auth::user()->phone;
         $city = Auth::user()->city;
