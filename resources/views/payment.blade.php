@@ -52,7 +52,7 @@
                             {{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
                             {{--                                </div>--}}
                             <div class="cart-product-imgcontainer">
-                                <img class="cart-product-img" src="https://tdfurnitur.com/storage/{{$card->product->image_path}}"/>
+                                <img class="cart-product-img" src="http://tdfurnitur.com/storage/{{$card->product->image_path}}"/>
                                 <button class="cart-product-deletes-btn--two">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>

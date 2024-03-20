@@ -64,7 +64,7 @@
             @foreach ($products as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td><img width="100" height="100" src="https://tdfurnitur.com/storage/{{ $item->image_path }}"></td>
+                    <td><img width="100" height="100" src="http://tdfurnitur.com/storage/{{ $item->image_path }}"></td>
                     <td>{{ $item->article ?? 'Отсувствуют данные' }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->model }}</td>
