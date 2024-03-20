@@ -49,7 +49,7 @@
                                 {{--                                    <input class="cart-product-chekbox" type="checkbox" checked="checked">--}}
                                 {{--                                </div>--}}
                                 <div class="cart-product-imgcontainer">
-                                    <img class="cart-product-img" src="https://tdfurnitur.com/storage/{{$card->product->image_path}}"/>
+                                    <img class="cart-product-img" src="http://5.35.94.70/storage/{{$card->product->image_path}}"/>
                                     <button class="cart-product-deletes-btn--two">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M1 1L23 22.5" stroke="#EA600A" stroke-width="1.5" stroke-linecap="round"/>
@@ -128,7 +128,7 @@
         <div class="products-item-container blur__modal">
             <div class="products-item-product">
                 <div class="products-item-img-container">
-                    <img class="products-item-img-production" width="400" height="400" src="https://tdfurnitur.com/storage/{{$product->image_path}}"/>
+                    <img class="products-item-img-production" width="400" height="400" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                 </div>
                 <div class="products-item-infromation">
                     <div class="products-item-price">

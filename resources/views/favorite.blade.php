@@ -33,7 +33,7 @@
                         <div class="products-item-img-container--text--one">
                             <div >
                                 <div class="products-item-img">
-                                    <img width="175" height="132" src="http://tdfurnitur.com/storage/{{$product->image_path}}"/>
+                                    <img width="175" height="132" src="http://5.35.94.70/storage/{{$product->image_path}}"/>
                                 </div>
                             </div>
                             <div >
