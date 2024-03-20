@@ -18,7 +18,7 @@
 
         <div class="furniture-set-items">
 
-        
+
         <div class="furniture-set-item">
                 <span class="furniture-set-item-maintext">Качество без компромиссов:</span>
                 <span class="furniture-set-item-text">Только лучшие производители мебельной фурнитуры: продукция,
@@ -77,16 +77,16 @@
         <div class="catalog-main-items">
 
             @foreach($systems as $system)
-            @if(in_array($system->id, [1,2,3,4,5,6,7,8]) )
+{{--            @if(in_array($system->id, [1,2,3,4,5,6,7,8]) )--}}
             <button type="button" onclick="window.location='{{route('with-system', ['id' => $system->id])}}'"
                 class="catalog-main-item">
                 <span class="catalog-main-item-text">{{$system->name}}</span>
             </button>
-            @else
-            <button type="button" onclick="window.location='{{route('catalog')}}'" class="catalog-main-item">
-                <span class="catalog-main-item-text">{{$system->name}}</span>
-            </button>
-            @endif
+{{--            @else--}}
+{{--            <button type="button" onclick="window.location='{{route('catalog')}}'" class="catalog-main-item">--}}
+{{--                <span class="catalog-main-item-text">{{$system->name}}</span>--}}
+{{--            </button>--}}
+{{--            @endif--}}
 
             @endforeach
 

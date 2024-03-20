@@ -43,8 +43,14 @@ class CatalogController extends Controller
             $cards = TempBacket::query()->where('ip', $request->ip())->with(['product'])->get();
         }
         $text = $request->get('text');
-        $products = Products::with(['system', 'category','angle', 'producer'])->where('name', 'like', '%' . $text . '%' )->where('description', 'like', '%' . $text . '%' )->paginate(10);
-        $systems = System::query()->whereIn('id', [1,2,3,4,5,6,7,8,9,10,11])->get();
+        $text = trim($text);
+        $products = Products::with(['system', 'category','angle', 'producer'])
+            ->where('name', 'like', '%' . $text . '%' )
+            ->OrWhere('description', 'like', '%' . $text . '%' )
+            ->OrWhere('model', 'like', '%' . $text . '%' )
+            ->OrWhere('article', 'like', '%' . $text . '%' )
+            ->paginate(10);
+        $systems = System::all();
         $producers = Producer::all();
         $series = Series::all();
         $categories =Categories::all();
