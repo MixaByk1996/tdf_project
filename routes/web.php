@@ -74,7 +74,7 @@ Route::post('/logout',
     [App\Http\Controllers\UserController::class,'logout']
 );
 
-Route::post('/search',[\App\Http\Controllers\CatalogController::class,'search'])->name('search');
+Route::get('/search',[\App\Http\Controllers\CatalogController::class,'search'])->name('search');
 
 /*
  * Админка

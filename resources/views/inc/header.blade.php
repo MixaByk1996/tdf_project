@@ -4,7 +4,7 @@
         <a href="/">
             <img src="/img/logoheader.svg" />
         </a>
-        <form class="search-form" action="{{route('search')}}" method="post">
+        <form class="search-form" action="{{route('search')}}" method="get">
             @csrf
             <input class="search-form-input" type="text" name="text" placeholder="Поиск..." />
             <button class="search-form-btn" type="submit">
@@ -88,7 +88,7 @@
             @else
             @endif
 
-            
+
         @if (!Auth::guest())
         <!-- <div class="logout-btn-shows" tokendat="{{ csrf_token() }}">
             Выйти
